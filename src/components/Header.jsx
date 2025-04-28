@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header id="header" role="banner">
-      <div className="header_center">
+      <div className="wrap">
 
         {/* header logo */}
         <h1 className="logo_header">
