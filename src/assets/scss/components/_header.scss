@@ -1,0 +1,120 @@
+.header_center {
+  width: 1320px;
+  margin: 0 auto;
+
+  @include flex-between-center;
+}
+
+.logo_header {
+  width: 100px;
+
+  .logo_header_link {
+    display: block;
+    width: 6rem;
+    height: 2.125rem;
+    background-image: url(../../img/logo/logo.svg);
+  }
+}
+
+.primary_menu {
+  width: auto;
+
+  .primary_menu_box {
+    @include flex-center;
+
+    li {
+      font-size: 1.063rem;
+      padding: 1rem 1.125rem;
+      line-height: 1.2em;
+      position: relative;
+      cursor: pointer;
+      font-weight: 600;
+      color: #fff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0.7rem;
+        left: 1.125rem;
+        right: 1.125rem;
+        height: 1.2px;
+        background-color: var(--white);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .primary_menu_2 {
+      .depth2 {
+        display: none;
+      }
+    }
+
+    .primary_menu_pro_1 {
+      .color {
+        padding-right: 1.25rem;
+
+        &::before {
+          content: "";
+          width: calc(100% - 1rem);
+          height: calc(100% - 1.5rem);
+          border-radius: 100px 100px;
+          background-color: #f246ac;
+          z-index: -1;
+
+          @include absolute-center;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 15%;
+          transform: translateY(-50%);
+          width: 0.875rem;
+          height: 0.875rem;
+          background-image: url(../../img/icon/primary_menu_ico.svg);
+          background-size: 0.875rem 0.875rem;
+          margin-top: -1px;
+        }
+
+        &:hover {
+            color: #f246ac;
+            
+            &::before {
+              background-color: var(--white);
+            }
+      
+            &::after {
+              background-image: url(../../img/icon/primary_menu_ico_p.svg);
+            }
+          }
+      }
+    }
+  }
+}
+
+.header_search {
+  width: auto;
+  background-color: aqua;
+  @include flex-center;
+
+  .header_promotion {
+  }
+
+  .header_lang {
+    .header_lang_box {
+      display: flex;
+    }
+  }
+}
