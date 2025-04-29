@@ -1,21 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import { Hero } from "../components/Hero";
 
 const Main = () => {
   return (
     <main id="main" role="banner">
       <div className="main_wrap">
-        <div className="hero">
-          <div className="hero_text">
-            <div className="hero_text_subtitle">What’s On</div>
-            <div className="hero_text_title"></div>
-            <div className="hero_text_bottom">
-              <div className="info_left"></div>
-              <Link to="/"></Link>
-            </div>
-          </div>
-          <div className="hero_slide"></div>
-        </div>
+
+        {/* hero 영역 */}
+        <Hero />
 
         <div className="guide">
           <div className="guide_left"></div>

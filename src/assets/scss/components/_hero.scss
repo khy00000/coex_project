@@ -1,0 +1,75 @@
+.hero {
+  width: 100%;
+  padding-top: 8.4rem;
+  padding-bottom: 5.438rem;
+
+  .hero_slide_box {
+    .hero_slide {
+      display: flex;
+
+      // 히어로 왼쪽 텍스트 영역
+      .hero_slide_left {
+        width: calc(100% - 35rem);
+        height: 428px;
+        position: relative;
+
+        .hero_sub_title {
+          font-size: 1.688rem;
+          line-height: 1.4em;
+          font-weight: 600;
+          font-family: var(--mainfont-Poppins);
+          color: var(--pink);
+          margin-bottom: 0.625rem;
+        }
+
+        // 히어로 타이틀
+        .hero_title {
+          .hero_title_slide {
+            font-size: 4rem;
+            line-height: 1.3em;
+            color: var(--black);
+            font-weight: bold;
+          }
+        }
+
+        // 히어로 타이틀 하단
+        .here_title_info {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+
+          .here_title_info_date {
+            font-size: 1.625rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            font-family: var(--mainfont-Poppins);
+          }
+
+          .here_title_info_location {
+            font-size: 1.625rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            margin-top: 0.188rem;
+          }
+        }
+
+        // 히어로 어로우 링크
+        .here_title_arrow{
+            background-image: url(../../img/icon/hero_arrow.svg);
+            width: 14.125rem;
+            height: 12.688rem;
+            background-size: 14.125rem 12.688rem;
+            position: absolute;
+            bottom: 0.5rem;
+            right: 2.8rem;
+        }
+      }
+
+      //히어로 오른쪽 이미지 슬라이드 영역
+      .hero_slide_right {
+        width: 35rem;
+        background-color: cornflowerblue;
+      }
+    }
+  }
+}
