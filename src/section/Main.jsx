@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -10,7 +11,7 @@ const Main = () => {
             <div className="hero_text_title"></div>
             <div className="hero_text_bottom">
               <div className="info_left"></div>
-              <a href="/"></a>
+              <Link to="/"></Link>
             </div>
           </div>
           <div className="hero_slide"></div>

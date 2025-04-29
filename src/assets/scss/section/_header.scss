@@ -1,3 +1,5 @@
+@use "../setting/index" as *;
+
 .logo_header {
   width: 100px;
 
@@ -10,90 +12,141 @@
 }
 
 .primary_menu {
-  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 
   .primary_menu_box {
-    @include flex-center;
-
     li {
-      font-size: 1.063rem;
-      padding: 1rem 1.125rem;
-      line-height: 1.2em;
-      position: relative;
-      cursor: pointer;
-      font-weight: 600;
-      color: #fff;
+      display: inline-block;
+      .depth1 {
+        display: block;
+        font-size: 1.063rem;
+        line-height: 1.2em;
+        font-weight: 600;
+        color: #fff;
+        padding: 1.438rem 1.125rem;
+        position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0.7rem;
-        left: 1.125rem;
-        right: 1.125rem;
-        height: 1.2px;
-        background-color: var(--white);
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-
-      &:hover::after {
-        opacity: 1;
-      }
-
-      &:last-child {
-        &::after {
-          display: none;
-        }
-      }
-    }
-
-    .primary_menu_2 {
-      .depth2 {
-        display: none;
-      }
-    }
-
-    .primary_menu_pro_1 {
-      .color {
-        padding-right: 1.25rem;
-
-        &::before {
-          content: "";
-          width: calc(100% - 1rem);
-          height: calc(100% - 1.5rem);
-          border-radius: 100px 100px;
-          background-color: #f246ac;
-          z-index: -1;
-
-          @include absolute-center;
-        }
-
-        //화이트 화살표
         &::after {
           content: "";
           position: absolute;
-          top: 50%;
-          right: 15%;
-          transform: translateY(-50%);
-          width: 0.875rem;
-          height: 0.875rem;
-          background-image: url(../../img/icon/primary_menu_ico.svg);
-          background-size: 0.875rem 0.875rem;
-          margin-top: -1px;
+          bottom: 1.125em;
+          left: 1.125rem;
+          right: 1.125rem;
+          height: 1px;
+          background-color: var(--white);
+          opacity: 0;
+          transition: opacity 0.3s;
         }
 
-        &:hover {
-          color: #f246ac;
+        &:hover::after,
+        &:focus::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 
-          //보더래디어스
-          &::before {
-            background-color: var(--white);
-          }
+  //투뎁스 메뉴
+  .primary_menu_2 {
 
-          //핑크 화살표
-          &::after {
-            background-image: url(../../img/icon/primary_menu_ico_p.svg);
-          }
+    //2depth 메뉴
+    .depth2_menu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      background-color: var(--white);
+      border-bottom: solid 1px #e5e5e5;
+      @include flex-center;
+      opacity: 0;
+      visibility: hidden;
+
+      .menu a {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--black);
+        position: relative;
+        line-height: 1.4em;
+        padding: 1.063rem 1.125rem 0.938rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0.8rem;
+          left: 1.2em;
+          right: 1.2em;
+          height: 1px;
+          background-color: var(--black);
+          opacity: 0;
+        }
+
+        &:hover::after, &:focus:after{
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover .depth2_menu, &:focus .depth2_menu{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+//프로모션 메뉴 비지니스
+.primary_menu_pro_1 {
+  .depth1_pro {
+    display: block;
+    font-size: 1.063rem;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: #fff;
+    padding: 1.438rem 1.1rem;
+    position: relative;
+
+    .box {
+      padding-right: 1.4rem;
+      position: relative;
+
+      //화이트 화살표
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 0.875rem;
+        height: 0.875rem;
+        background-image: url(../../img/icon/primary_menu_ico.svg);
+        background-size: 0.875rem 0.875rem;
+        margin-top: -1px;
+      }
+
+      //핑크 보더 래디어스
+      &::before {
+        content: "";
+        @include absolute-center;
+        width: calc(100% + 1.3rem);
+        height: calc(100% + 0.6rem);
+        border-radius: 100px 100px;
+        background-color: #f246ac;
+        z-index: -1;
+      }
+
+      &:hover {
+        color: #f246ac;
+
+        //보더래디어스
+        &::before {
+          background-color: var(--white);
+        }
+
+        //핑크 화살표
+        &::after {
+          background-image: url(../../img/icon/primary_menu_ico_p.svg);
         }
       }
     }
@@ -107,30 +160,43 @@
   @include flex-between-center;
   position: relative;
 
-  .header_promotion {
+  .header_promotion a {
     font-size: 1.0625rem;
     line-height: 1.1em;
     font-weight: bold;
     border-right: 1px solid #4b4b4b;
-    padding-right: 2.7rem;
-    margin-right: 1.375rem;
+    padding-right: 2.6rem;
+    margin-right: 1.3rem;
     position: relative;
+    cursor: pointer;
 
+    //화살표
     &::after {
       content: "";
       display: block;
-      width: 1rem;
-      height: 1rem;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       right: 15%;
       background-image: url(../../img/icon/header_search_arrow.svg);
       background-size: 1rem 1rem;
+      width: 1rem;
+      height: 1rem;
       margin-top: -1px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #42c1c7;
+    }
+
+    //청록색 어로우
+    &:hover::after {
+      background-image: url(../../img/icon/promotion_hover.svg);
     }
   }
 
+  //글로벌 사이트 연결
   .header_lang {
     margin-right: 1.7rem;
 
@@ -142,6 +208,11 @@
 
       .kor {
         margin-right: 0.625rem;
+
+        &.current {
+          text-decoration: underline;
+          font-weight: 600;
+        }
       }
     }
   }

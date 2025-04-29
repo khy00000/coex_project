@@ -1,14 +1,10 @@
 @charset "UTF-8";
 
 // setting
-@import "setting/fonts";
-@import "setting/vars";
-@import "setting/reset";
-@import "setting/mixin";
-@import "setting/common";
+@use "setting/index" as *;
 
-// components
-@import "components/layout";
-@import "components/header";
-@import "components/main";
-@import "components/footer";
+// section
+@use "section/layout";
+@use "section/header";
+@use "section/main";
+@use "section/footer";

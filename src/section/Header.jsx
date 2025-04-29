@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [active, setActive] = useState(false);
 
   return (
-    <header id="header" role="banner">
+    <header id="header">
       <div className="wrap">
         {/* header logo */}
         <h1 className="logo_header">
@@ -19,35 +20,70 @@ const Header = () => {
         {/* primary menu */}
         <nav id="top_navi" className="primary_menu" aria-label="주요 메뉴">
           <ul className="primary_menu_box">
-            <li className="primary_menu_1">행사</li>
+            <li className="primary_menu_1">
+              <Link to="/" className="depth1">
+                행사
+              </Link>
+            </li>
+            {/* 2depth */}
             <li className="primary_menu_2">
-              가이드
-              <ul className="depth2">
-                <li className="primary_menu_4">오시는 길</li>
-                <li className="primary_menu_5">실내 길찾기</li>
-                <li className="primary_menu_6">Coex VR</li>
-                <li className="primary_menu_7">주차안내</li>
-                <li className="primary_menu_8">편의시설</li>
-                <li className="primary_menu_9">알림마당</li>
-                <li className="primary_menu_10">고객 문의</li>
-                <li className="primary_menu_11">뉴스</li>
+              <Link to="/" className="depth1">
+                가이드
+              </Link>
+              <ul className="depth2_menu">
+                <li className="primary_menu_4 menu">
+                  <Link to="/">오시는 길</Link>
+                </li>
+                <li className="primary_menu_5 menu">
+                  <Link to="/">실내 길찾기</Link>
+                </li>
+                <li className="primary_menu_6 menu">
+                  <Link to="/">Coex VR</Link>
+                </li>
+                <li className="primary_menu_7 menu">
+                  <Link to="/">주차안내</Link>
+                </li>
+                <li className="primary_menu_8 menu">
+                  <Link to="/">편의시설</Link>
+                </li>
+                <li className="primary_menu_9 menu">
+                  <Link to="/">알림마당</Link>
+                </li>
+                <li className="primary_menu_10 menu">
+                  <Link to="/">고객 문의</Link>
+                </li>
+                <li className="primary_menu_11 menu">
+                  <Link to="/">뉴스</Link>
+                </li>
               </ul>
             </li>
-            <li className="primary_menu_3">하이라이트</li>
+            <li className="primary_menu_3">
+              <Link to="/" className="depth1">
+                하이라이트
+              </Link>
+            </li>
             <li className="primary_menu_pro_1">
-              <span className="color">Business</span>
+              <Link to="/" className="depth1_pro">
+                <span className="box">Business</span>
+              </Link>
             </li>
           </ul>
         </nav>
 
         {/* header search */}
         <div className="header_search">
-          <div className="header_promotion">마곡 컨벤션센터</div>
+          <div className="header_promotion">
+            <Link to="/">마곡 컨벤션센터</Link>
+          </div>
 
           <div className="header_lang">
             <ul className="header_lang_box">
-              <li className="kor">KOR</li>
-              <li className="eng">ENG</li>
+              <li className="kor current">
+                <a href="/">KOR</a>
+              </li>
+              <li className="eng">
+                <a href="#">ENG</a>
+              </li>
             </ul>
           </div>
 
