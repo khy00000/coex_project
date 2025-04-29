@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer id="footer" role="contentinfo">
-      <div className="wrap">
+      <div className="footer_wrap">
         <div className="footer_flex">
           <div className="footer_info">
             로고

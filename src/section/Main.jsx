@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <main id="main" role="banner">
-      <div className="hero">
-        <div className="wrap">
+      <div className="main_wrap">
+        <div className="hero">
           <div className="hero_text">
             <div className="hero_text_subtitle">What’s On</div>
             <div className="hero_text_title"></div>
@@ -16,10 +16,8 @@ const Main = () => {
           </div>
           <div className="hero_slide"></div>
         </div>
-      </div>
 
-      <div className="guide">
-        <div className="wrap">
+        <div className="guide">
           <div className="guide_left"></div>
           <div className="guide_right">
             <div className="guide_title">GUIDE</div>
@@ -31,22 +29,12 @@ const Main = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="event">
-        <div className="wrap"></div>
-      </div>
+        <div className="event"></div>
 
-      <div className="ticket">
-        <div className="wrap"></div>
-      </div>
+        <div className="ticket"></div>
 
-      <div className="news">
-        <div className="wrap"></div>
-      </div>
-
-      <div className="media_wall">
-        <div className="wrap"></div>
+        <div className="media_wall"></div>
       </div>
     </main>
   );

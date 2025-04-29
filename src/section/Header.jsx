@@ -1,14 +1,29 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  //헤더 우측 서치 영역 액티브
   const [active, setActive] = useState(false);
 
+  //헤더 스코롤 효과
+  const [hidden, setHidden] = useState(false);
+  const [lastscroll, setLastcroll] = useState(0);
+
+  useEffect(() => {
+    const onscroll = () => {
+      const currentscroll = window.scrollY;
+      if (Math.abs(currentscroll - lastscroll) > 30) {
+        setHidden(currentscroll > lastscroll);
+        setLastcroll(currentscroll);
+      }
+    };
+    window.addEventListener('scroll', onscroll);
+    return () => window.removeEventListener('scroll', onscroll);}, [lastscroll]);
+
   return (
-    <header id="header">
-      <div className="wrap">
+    <header id="header" className={`header ${hidden ? 'hide' : ''}`}>
+      <div className="header_wrap">
         {/* header logo */}
         <h1 className="logo_header">
           <a href="/" className="logo_header_link" aria-label="Home"></a>
@@ -25,6 +40,7 @@ const Header = () => {
                 행사
               </Link>
             </li>
+
             {/* 2depth */}
             <li className="primary_menu_2">
               <Link to="/" className="depth1">
