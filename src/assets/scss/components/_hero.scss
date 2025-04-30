@@ -72,6 +72,7 @@
         background-color: cornflowerblue;
         position: relative;
 
+        //이미지 랩
         .hero_slide_r_box {
           .hero_slide_r_con {
             .hero_slide_r_wrapper {
@@ -111,6 +112,29 @@
               font-size: 1.625rem;
               line-height: 1.2em;
               font-weight: 500;
+            }
+          }
+        }
+
+        //페이지네이션
+        .hero_slide_pagination{
+          position: absolute;
+          width: 35rem;
+          height: 0.6875rem;
+          bottom: -1.9375rem;
+          
+          @include flex-center;
+          gap: 0.625rem;
+
+          //페이지 네이션 불렛
+          .swiper-pagination-bullet{
+            width: 0.688rem;
+            height: 0.688rem;
+            border-radius: 100%;
+            background-color: #E8E8E8;
+
+            &.swiper-pagination-bullet-active{
+              background-color: var(--black);
             }
           }
         }
