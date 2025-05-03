@@ -1,86 +1,112 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+import { Controller, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 import heroData from "../data/heroData";
-import { useRef } from "react";
 
 export const Hero = () => {
-  const swiperRef = useRef(null);
+  const [textSwiper, setTextSwiper] = useState(null);
+  const [imgSwiper, setImgSwiper] = useState(null);
+
+  // herodata 맵함수 외부로
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (textSwiper && imgSwiper) {
+      textSwiper.controller.control = imgSwiper;
+      imgSwiper.controller.control = textSwiper;
+
+      // 콘솔 디버깅용
+      window.textSwiper = textSwiper;
+      window.imgSwiper = imgSwiper;
+    }
+  }, [textSwiper, imgSwiper]);
 
   return (
     <div className="hero">
-      {/* 히어로 스와이퍼 */}
-      <Swiper
-        className="hero_slide_box"
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-          window.heroSwiper = swiper;
-        }}
-        modules={[Autoplay, Pagination, Navigation, EffectFade]}
-        navigation
-        autoplay={{ delay: 4000 }}
-        pagination={{
-          el: ".swiper-pagination",
-          clickable: true,
-        }}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-      >
-        {heroData.map((item) => (
-          <SwiperSlide key={item.id} className="hero_slide">
-            {/* hero 슬라이드 왼쪽 텍스트 영역 */}
-            <div className="hero_slide_left">
-              <div className="hero_sub_title">{item.sub}</div>
-              <h2 className="hero_title">
-                <Link
-                  to={item.link}
-                  className="hero_title_slide"
-                  target="_blank"
-                >
-                  {item.title}
-                </Link>
-              </h2>
+      <div className="hero_slide_box">
+        <div className="hero_slide">
+          <div className="hero_slide_left">
+            <div className="hero_sub_title">{heroData[currentIndex].sub}</div>
+            {/* 텍스트 슬라이드 */}
+            <Swiper
+              direction="vertical"
+              modules={[Controller, Autoplay]}
+              autoplay={{
+                delay: 4000
+              }}
+              loop={true}
+              onSwiper={setTextSwiper}
+              onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+              className="hero_title_wrap"
+            >
+              {heroData.map((item) => (
+                <SwiperSlide key={item.id} className="hero_title">
+                  <Link
+                    to={item.link}
+                    className="hero_title_slide"
+                    target="_blank"
+                  >
+                    {item.title}
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-              <div className="here_title_info">
-                <div className="here_title_info_date">{item.date}</div>
-                <div className="here_title_info_location">{item.location}</div>
+            {/* 스와이퍼 밖 데이터 */}
+            <div className="here_title_info">
+              <div className="here_title_info_date">
+                {heroData[currentIndex].date}
               </div>
-
-              <Link
-                to={item.link}
-                className="here_title_arrow"
-                target="_blank"
-              ></Link>
-            </div>
-
-            {/* hero 이미지 슬라이드 영역 */}
-            <div className="hero_slide_right">
-              {/* hero 이미지 슬라이드 박스 */}
-              <Link to={item.link} className="hero_slide_r_box">
-                <span className="hero_slide_r_ad blind">AD</span>
-                <img
-                  className="hero_slide_img"
-                  src={item.img}
-                  alt={`슬라이드 이미지 ${item.id}`}
-                />
-              </Link>
-
-              {/* hero 오른쪽 여백 */}
-              <div className="hero_slide_rightnull">
-                <span className="hero_slide_barcode"></span>
-                <div className="hero_slide_rightnull_text">{item.category}</div>
+              <div className="here_title_info_location">
+                {heroData[currentIndex].location}
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            <Link
+              to={heroData[currentIndex].link}
+              className="here_title_arrow"
+              target="_blank"
+            ></Link>
+          </div>
 
-      {/* 페이지네이션 커스텀 */}
+          <div className="hero_slide_right">
+            {/* 이미지 슬라이드 */}
+            <Swiper
+              modules={[Controller, Pagination]}
+              onSwiper={setImgSwiper}
+              pagination={{
+                el: ".swiper-pagination",
+                clickable: true,
+              }}
+              loop={true}
+            >
+              {heroData.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <Link to={item.link} className="hero_slide_r_box">
+                    <img
+                      className="hero_slide_img"
+                      src={item.img}
+                      alt={`슬라이드 이미지 ${item.id}`}
+                    />
+                  </Link>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+
+        {/* 오른쪽 여백 바코드 영역 */}
+        <div className="hero_slide_rightnull">
+          <span className="hero_slide_barcode"></span>
+          <div className="hero_slide_rightnull_text">
+            {heroData[currentIndex].category}
+          </div>
+        </div>
+      </div>
+
+      {/* 커스텀 페이지네이션 */}
       <div className="custom-pagination-wrapper">
         <div className="swiper-pagination" />
       </div>

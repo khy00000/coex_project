@@ -4,22 +4,22 @@
   width: 100%;
   padding-top: 8.4rem;
   padding-bottom: 5.438rem;
-  position: relative;
 
   .hero_slide_box {
     position: relative;
 
     .hero_slide {
-      display: flex;
-      position: relative;
       width: 100%;
       height: 100%;
+      display: flex;
 
-      // 히어로 왼쪽 텍스트 영역
+      //히어로 텍스트 영역
       .hero_slide_left {
         width: calc(100% - 35rem);
+        height: 35rem;
         position: relative;
 
+        // 히어로 서브 타이틀
         .hero_sub_title {
           font-size: 1.688rem;
           line-height: 1.4em;
@@ -29,15 +29,27 @@
           margin-bottom: 0.625rem;
         }
 
-        // 히어로 타이틀
-        .hero_title {
-          width: 40rem;
+        .hero_title_wrap {
+          width: 100%;
+          height: 17rem;
 
-          .hero_title_slide {
-            font-size: 4rem;
-            line-height: 1.3em;
-            color: var(--black);
-            font-weight: bold;
+          .hero_title {
+            width: 40rem;
+
+            // 타이틀
+            .hero_title_slide {
+              font-size: 4rem;
+              line-height: 1.3em;
+              color: var(--black);
+              font-weight: bold;
+              transform: translateY(104%);
+              display: block;
+              width: 100%;
+              height: auto;
+              overflow: hidden;
+              font-size: 4rem;
+              text-overflow: ellipsis;
+            }
           }
         }
 
@@ -64,100 +76,106 @@
 
         // 히어로 어로우 링크
         .here_title_arrow {
+          display: block;
           background-image: url(../../img/icon/hero_arrow.svg);
           width: 14.125rem;
           height: 12.688rem;
           background-size: 14.125rem 12.688rem;
           position: absolute;
-          bottom: 0.5rem;
-          right: 2.8rem;
+          left: 35rem;
+          bottom: 0rem;
+          z-index: 1;
         }
       }
 
-      //히어로 오른쪽 이미지 슬라이드 영역
+      //히어로 이미지 영역
       .hero_slide_right {
         width: 35rem;
         height: 35rem;
         position: relative;
-        background-color: aquamarine;
 
-        //이미지 랩
+        //이미지 링크
         .hero_slide_r_box {
+          display: block;
+
           //히어로 슬라이드 이미지
           .hero_slide_img {
             width: 35rem;
             height: 35rem;
           }
         }
-
-        //hero 오른쪽 여백 바코드 영역
-        .hero_slide_rightnull {
-          display: flex;
-          justify-content: space-between;
-          position: absolute;
-          top: 15.6rem;
-          right: -24rem;
-          width: 35rem;
-          height: 3.75rem;
-          transform: rotate(-90deg);
-          // 박스 기준점 (왼쪽 아래 중심)
-          // transform-origin: left bottom;
-
-          .hero_slide_barcode {
-            display: block;
-            background-image: url(../../img/bg/hero_slide_barcode.png);
-            width: 11.625rem;
-            height: 3.25rem;
-            background-repeat: no-repeat;
-            background-size: 11.625rem 3.25rem;
-          }
-
-          .hero_slide_rightnull_text {
-            font-size: 1.625rem;
-            line-height: 1.2em;
-            font-weight: 500;
-          }
-        }
       }
     }
+
+    //hero 오른쪽 여백 바코드 영역
+    .hero_slide_rightnull {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 15.6rem;
+      right: -24rem;
+      width: 35rem;
+      height: 3.75rem;
+      transform: rotate(-90deg);
+      // 박스 기준점 (왼쪽 아래 중심)
+      // transform-origin: left bottom;
+
+      .hero_slide_barcode {
+        display: block;
+        background-image: url(../../img/bg/hero_slide_barcode.png);
+        width: 11.625rem;
+        height: 3.25rem;
+        background-repeat: no-repeat;
+        background-size: 11.625rem 3.25rem;
+      }
+
+      .hero_slide_rightnull_text {
+        font-size: 1.625rem;
+        line-height: 1.2em;
+        font-weight: 500;
+      }
     }
   }
 
-  .swiper{
-    overflow: visible;
-  }
-
-  .custom-pagination-wrapper{
+  //페이지네이션
+  .custom-pagination-wrapper {
     position: relative;
     width: 100%;
     height: 2.626rem;
     display: flex;
     align-items: end;
     justify-content: flex-end;
-
-    .swiper-pagination{
+  
+    .swiper-pagination {
       position: static;
       width: 35rem;
       height: 0.688rem;
       @include flex-center;
       gap: 0.688rem;
-
+  
       .swiper-pagination-bullet {
         margin: 0;
         width: 0.688rem;
         height: 0.688rem;
         border-radius: 100%;
         background-color: #c7c7c7;
-
+  
         &.swiper-pagination-bullet-active {
           background-color: var(--black);
         }
       }
     }
   }
+}
 
-  // 스와이퍼 기본 디자인 수정
-  .swiper-button-prev:after,
-  .swiper-button-next:after {
-    display: none;
+// 히어로 타이틀 액티브 효과
+.swiper-slide.swiper-slide-active {
+  .hero_title_slide {
+    transform: translateY(0%) !important;
   }
+}
+
+.swiper-slide:not(.swiper-slide-active) .hero_title_slide {
+  opacity: 0;
+  pointer-events: none;
+}

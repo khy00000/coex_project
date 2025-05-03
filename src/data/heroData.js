@@ -1,16 +1,27 @@
-import heroImg1 from "../assets/img/bg/hero_slide_1_themaision.jpg";
-import heroImg2 from "../assets/img/bg/hero_slide_2_heartproj.png";
-import heroImg3 from "../assets/img/bg/hero_slide_3_babyfair.png";
+import heroImg0 from "../assets/img/bg/hero_slide_0.jpg";
+import heroImg1 from "../assets/img/bg/hero_slide_1.jpg";
+import heroImg2 from "../assets/img/bg/hero_slide_2.png";
+import heroImg3 from "../assets/img/bg/hero_slide_3.png";
 
 const heroData = [
     {
-        "id": 1,
+        "id": 0,
         "category": "EXHIBITION",
         "sub": "What’s On",
         "title": "2025 더 메종",
         "date": "2025.05.08-2025.05.11",
         "location": "A홀",
         "link": "https://www.hometabledeco.com",
+        "img": heroImg0
+      },
+      {
+        "id": 1,
+        "category": "EXHIBITION",
+        "sub": "What’s On",
+        "title": "2025 올댓트래블",
+        "date": "2025.05.08-2025.05.10",
+        "location": "HALL D",
+        "link": "https://www.coex.co.kr/exhibitions/2025-%ec%98%ac%eb%8c%93%ed%8a%b8%eb%9e%98%eb%b8%94/",
         "img": heroImg1
       },
       {
