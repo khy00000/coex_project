@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, Pagination, Autoplay } from "swiper/modules";
@@ -10,8 +10,11 @@ export const Hero = () => {
   const [textSwiper, setTextSwiper] = useState(null);
   const [imgSwiper, setImgSwiper] = useState(null);
 
-  // herodata 맵함수 외부로
+  // herodata index 외부로
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // .hero_title_slide 높이에 따라 부모 박스 높이 가변
+  const textWrapRef = useRef(null);
 
   useEffect(() => {
     if (textSwiper && imgSwiper) {
@@ -24,6 +27,18 @@ export const Hero = () => {
     }
   }, [textSwiper, imgSwiper]);
 
+  useEffect(() => {
+    const activeSlide = document.querySelector(
+      ".swiper-slide-active .hero_title_slide"
+    );
+    const wrap = textWrapRef.current;
+    
+    if (activeSlide && wrap) {
+      const height = activeSlide.getBoundingClientRect().height;
+      wrap.style.height = `${height}px`;
+    }
+  }, [currentIndex]);
+
   return (
     <div className="hero">
       <div className="hero_slide_box">
@@ -35,12 +50,13 @@ export const Hero = () => {
               direction="vertical"
               modules={[Controller, Autoplay]}
               autoplay={{
-                delay: 4000
+                delay: 4000,
               }}
               loop={true}
               onSwiper={setTextSwiper}
               onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
               className="hero_title_wrap"
+              ref={textWrapRef}
             >
               {heroData.map((item) => (
                 <SwiperSlide key={item.id} className="hero_title">
