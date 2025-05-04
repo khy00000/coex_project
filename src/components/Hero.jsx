@@ -36,7 +36,7 @@ export const Hero = () => {
     if (activeSlide && wrap) {
       const height = activeSlide.getBoundingClientRect().height;
       wrap.style.height = `${height}px`;
-    }
+    };
   }, [currentIndex]);
 
   return (

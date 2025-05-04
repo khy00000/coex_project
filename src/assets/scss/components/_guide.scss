@@ -1,0 +1,63 @@
+@use "../setting/index" as *;
+
+.guide {
+  width: 100%;
+  height: 213px;
+  margin-bottom: 10.938rem;
+  display: flex;
+
+  .guide_left {
+    width: 20%;
+    background-color: #e5e5e5;
+    padding: 1.6875rem 2.688rem 2.1875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    .guide_left_title {
+      font-weight: bold;
+      font-size: 1.625rem;
+      line-height: 1.4em;
+    }
+
+    .guide_left_title_text {
+        font-size: 1.125rem;
+        line-height: 1.3em;
+        font-weight: 500;
+    }
+
+    &::after{
+        content: '';
+        background-image: url(../../img/icon/guide_icon.svg);
+        width: 5.625rem;
+        height: 4.5rem;
+        background-size: 5.625rem 4.5rem;
+        position: absolute;
+        bottom: 2.5rem;
+        right: 2.5rem;
+    }
+  }
+
+  .guide_right {
+    width: 80%;
+    background-color: #F8F8F8;
+    padding: 1.6875rem 2.125rem 2.1875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .guide_right_title{
+        width: 100%;
+        padding-bottom: 1.625rem;
+        font-size: 1.625rem;
+        line-height: 1.2em;
+        font-weight: 500;
+        font-family: var(--mainfont-Poppins);
+    }
+
+    .guide_right_list{
+        background-color: aqua;
+    }
+  }
+}
