@@ -1,0 +1,73 @@
+@use "../setting/index" as *;
+
+.event {
+  width: 100%;
+  height: 982px;
+  margin-bottom: 9.75rem;
+
+  .event_title_wrap {
+    width: 324px;
+    height: 379px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      position: relative;
+      display: inline-block;
+
+      .event_title {
+        font-size: 3.125rem;
+        font-weight: bold;
+        line-height: 1.2em;
+      }
+      .event_title_num {
+        position: absolute;
+        display: block;
+        top: -0.25rem;
+        right: 0;
+        font-size: 1.875rem;
+        line-height: 1.2em;
+      }
+    }
+
+    .event_cal_text{
+        width: 196px;
+        position: relative;
+        padding-left: 2.5rem;
+        padding-right: 1.25rem;
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.6em;
+        font-family: var(--mainfont-Poppins);
+
+        &::before{
+            content: '';
+            margin-top: -2px;
+            background-image: url(../../img/icon/event_calender.svg);
+            width: 1.9375rem;
+            height: 1.6875rem;
+            background-size: 1.9375rem 1.6875rem;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+        }
+
+        &::after{
+            content: '';
+            background-image: url(../../img/icon/event_arrow.svg);
+            width: 0.9375rem;
+            height: 0.9375rem;
+            background-size: 0.9375rem 0.9375rem;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: block;
+            margin-top: -2px;
+        }
+    }
+  }
+}

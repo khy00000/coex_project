@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import guideData from "../data/guideData";
 
-export const Guide = () => {
+const Guide = () => {
   return (
     <div className="guide">
       <div className="guide_left">
@@ -38,3 +38,5 @@ export const Guide = () => {
     </div>
   );
 };
+
+export default Guide;

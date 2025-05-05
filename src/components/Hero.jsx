@@ -4,13 +4,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import heroData from "../data/heroData";
+import eventlistData from "../data/eventlistData";
 
-export const Hero = () => {
+const Hero = () => {
+  const heroitem = eventlistData.filter(item => item.hero === true && item.heroid !== undefined);
+  
   const [textSwiper, setTextSwiper] = useState(null);
   const [imgSwiper, setImgSwiper] = useState(null);
 
-  // herodata index 외부로
+  // herodata 현재 index
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // .hero_title_slide 높이에 따라 부모 박스 높이 가변
@@ -44,7 +46,7 @@ export const Hero = () => {
       <div className="hero_slide_box">
         <div className="hero_slide">
           <div className="hero_slide_left">
-            <div className="hero_sub_title">{heroData[currentIndex].sub}</div>
+            <div className="hero_sub_title">{heroitem[currentIndex].sub}</div>
             {/* 텍스트 슬라이드 */}
             <Swiper
               direction="vertical"
@@ -58,8 +60,8 @@ export const Hero = () => {
               className="hero_title_wrap"
               ref={textWrapRef}
             >
-              {heroData.map((item) => (
-                <SwiperSlide key={item.id} className="hero_title">
+              {heroitem.map((item) => (
+                <SwiperSlide key={item.heroid} className="hero_title">
                   <Link
                     to={item.link}
                     className="hero_title_slide"
@@ -74,14 +76,14 @@ export const Hero = () => {
             {/* 스와이퍼 밖 데이터 */}
             <div className="here_title_info">
               <div className="here_title_info_date">
-                {heroData[currentIndex].date}
+                {heroitem[currentIndex].date}
               </div>
               <div className="here_title_info_location">
-                {heroData[currentIndex].location}
+                {heroitem[currentIndex].location}
               </div>
             </div>
             <Link
-              to={heroData[currentIndex].link}
+              to={heroitem[currentIndex].link}
               className="here_title_arrow"
               target="_blank"
             ></Link>
@@ -98,8 +100,8 @@ export const Hero = () => {
               }}
               loop={true}
             >
-              {heroData.map((item) => (
-                <SwiperSlide key={item.id}>
+              {heroitem.map((item) => (
+                <SwiperSlide key={item.heroid}>
                   <Link to={item.link} className="hero_slide_r_box">
                     <img
                       className="hero_slide_img"
@@ -117,7 +119,7 @@ export const Hero = () => {
         <div className="hero_slide_rightnull">
           <span className="hero_slide_barcode"></span>
           <div className="hero_slide_rightnull_text">
-            {heroData[currentIndex].category}
+            {heroitem[currentIndex].category}
           </div>
         </div>
       </div>
@@ -129,3 +131,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;
