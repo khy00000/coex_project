@@ -1,6 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="71.955" height="76.129" viewBox="0 0 71.955 76.129">
-  <g id="그룹_471005" data-name="그룹 471005" transform="translate(2 2.828)">
-    <path id="패스_85321" data-name="패스 85321" d="M13587.6,2491.557v-29.494h43.9v-42.111" transform="translate(-13587.604 -2418.257)" fill="none" stroke="#000" stroke-width="4"/>
-    <path id="패스_85322" data-name="패스 85322" d="M13663.841,2698.836l24.639-24.637,24.639,24.637" transform="translate(-13644.577 -2674.199)" fill="none" stroke="#000" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="93.09" height="86.496" viewBox="0 0 93.09 86.496">
+  <g id="그룹_465210" data-name="그룹 465210" transform="translate(0 0)">
+    <g id="사각형_536" data-name="사각형 536" transform="translate(47.588 46.692)" fill="none" stroke="#000" stroke-width="5">
+      <rect width="45.503" height="39.803" stroke="none"/>
+      <rect x="2.5" y="2.5" width="40.503" height="34.803" fill="none"/>
+    </g>
+    <g id="사각형_537" data-name="사각형 537" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="5">
+      <rect width="52.444" height="86.496" stroke="none"/>
+      <rect x="2.5" y="2.5" width="47.444" height="81.496" fill="none"/>
+    </g>
+    <g id="사각형_545" data-name="사각형 545" transform="translate(47.588 63.532)" fill="none" stroke="#000" stroke-width="5">
+      <rect width="26.222" height="22.963" stroke="none"/>
+      <rect x="2.5" y="2.5" width="21.222" height="17.963" fill="none"/>
+    </g>
   </g>
 </svg>

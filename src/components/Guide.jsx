@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import guideData from "../data/guideData";
 
 export const Guide = () => {
   return (
@@ -15,13 +16,22 @@ export const Guide = () => {
       <div className="guide_right">
         <div className="guide_right_title">GUIDE</div>
         <div className="guide_right_list">
-          <ul>
-            <li>
-              <Link to="#">
-                <div className="guide_right_icon"></div>
-                <div className="guide_right_text"></div>
-              </Link>
+          <ul className="guide_right_list_wrap">
+          {guideData.map((item) => (
+            <li key={item.id} className="guide_right_item">
+                <Link to={item.link}
+                target="_blank"
+                className="guide_right_item_link">
+                  <img className="guide_right_icon"
+                  src={item.icon}
+                  alt={`가이드 아이콘 ${item.id}`}
+                  />
+                  <div className="guide_right_text">
+                  {item.title}
+                  </div>
+                </Link>
             </li>
+            ))}
           </ul>
         </div>
       </div>
