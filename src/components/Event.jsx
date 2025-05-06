@@ -16,24 +16,38 @@ const Event = () => {
       </div>
 
       <div className="event_table">
-        <div className="event_list">
-          {eventlistData.map((item) => (
-            <div className="event_list_item" key={item.id}>
-              <Link to={eventlistData.link} className="event_list_item_link">
-                <div className="evnet_list_item_category">
-                  {eventlistData.category}
+        <div className="event_table_wrap">
+          {eventlistData.map((item, index) => (
+            <div
+              className={`
+                event_list_item
+                ${index === 0 ? "first_item" : ""}
+                ${index > 5 ? "bottom_item" : ""}
+                ${[2, 6].includes(index) ? "item_3_7" : ""}
+                ${item.ad ? "has-ad" : ""}
+              `.trim()}
+              key={item.id}
+            >
+              {/* 이벤트 아이템 */}
+              <Link to={item.link} className={`event_list_item_link`}>
+                <div className="item_padding">
+                  <div className="evnet_list_item_category"
+                  data-category={item.category}>
+                    {item.category}
+                  </div>
+                  <div className="event_list_item_title">{item.title}</div>
+                  <div className="event_list_item_date">{item.date}</div>
                 </div>
-                <div className="event_list_item_title">
-                  {eventlistData.title}
-                </div>
-                <div className="event_list_item_date">{eventlistData.date}</div>
               </Link>
-              <div className="event_list_item_hover">
-                <img
-                  className="blind"
-                  src={eventlistData.img}
-                  alt={`이벤트 리스트이미지 ${eventlistData.id}`}
-                />
+
+              {/* 호버 아이템 */}
+              <Link to={item.link}className="event_list_item_hover">
+                <img src={item.img} alt={`이벤트 리스트이미지 ${item.id}`} />
+              </Link>
+
+              {/* 광고 아이템 */}
+              <div className="ad_box">
+                <div className="ad">AD</div>
               </div>
             </div>
           ))}
