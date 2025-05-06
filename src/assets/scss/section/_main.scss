@@ -8,11 +8,22 @@
   position: relative;
   display: flex;
   justify-content: center;
-  z-index: -2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.731);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 
   .main_ticket_wrap {
     width: 1374px;
-    z-index: 999;
+    position: relative;
+    z-index: 2;
 
     h3 {
       position: relative;
@@ -87,10 +98,22 @@
           }
         }
 
+        // 티켓 센터
         .ticket_center {
           width: 100%;
           height: 100%;
           background-color: white;
+          padding: 1.375rem 1.375rem;
+          display: flex;
+
+          .center_img{
+            width: calc(100% - 69.21%);
+          }
+
+          .center_right{
+            width: 69.21%;
+            
+          }
         }
 
         .ticket_right {
@@ -133,17 +156,6 @@
       }
     }
   }
-}
-
-.main_ticket::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.219);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 }
 
 .news {

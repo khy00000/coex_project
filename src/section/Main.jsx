@@ -24,7 +24,20 @@ const Main = () => {
               <div className="ticket_left">
                 <span className="left_bg" />
               </div>
-              <div className="ticket_center"></div>
+              <div className="ticket_center">
+                <div className="center_img">
+                  <img src="#" alt="" />
+                </div>
+                <div className="center_right">
+                  <div className="center_right_title"></div>
+                  <div className="center_right_list">
+
+                  </div>
+                  <div className="center_right_link">
+                    
+                  </div>
+                </div>
+              </div>
               <div className="ticket_right">
                 <span className="right_bg" />
               </div>
