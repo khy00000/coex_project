@@ -10,7 +10,7 @@
   justify-content: center;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -48,14 +48,14 @@
       }
     }
 
+    // 티켓 영역
     .ticket_con {
-      background-color: aqua;
+      width: 1143px;
+      height: 356.82px;
       display: flex;
       justify-content: center;
 
       .ticket_con_wrap {
-        width: 1144px;
-        height: 356.82px;
         display: flex;
         align-items: center;
 
@@ -74,7 +74,7 @@
             display: block;
 
             &::before {
-              content: '';
+              content: "";
               background-image: url(../../img/bg/ticket_left_top.png);
               background-size: 2.7rem 2.7rem;
               width: 2.7rem;
@@ -84,9 +84,9 @@
               left: 0;
               z-index: 1;
             }
-            
-            &::after{
-              content: '';
+
+            &::after {
+              content: "";
               background-image: url(../../img/bg/ticket_left_bottom.png);
               background-size: 2.7rem 2.7rem;
               width: 2.7rem;
@@ -100,19 +100,178 @@
 
         // 티켓 센터
         .ticket_center {
-          width: 100%;
-          height: 100%;
+          width: 1060px;
+          height: 356.82px;
           background-color: white;
           padding: 1.375rem 1.375rem;
           display: flex;
+          position: relative;
+          margin-left: -3px;
 
-          .center_img{
-            width: calc(100% - 69.21%);
+          .center_img {
+            width: 312.82px;;
+            height: 312.82px;
+            position: relative;
+            overflow: hidden;
+            background-color: aquamarine;
+
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
 
-          .center_right{
-            width: 69.21%;
-            
+          // 티켓 정보
+          .center_right {
+            width: 703.17px;
+            height: 312.82px;
+            padding-left: 2.875rem;
+            background-color: aqua;
+
+            .center_right_title {
+              font-size: 1.875rem;
+              font-weight: 600;
+              line-height: 1.4em;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              height: 2.8em;
+              padding-top: 1.25rem;
+            }
+
+            .center_right_list {
+              display: flex;
+              gap: 1.7rem;
+
+              .list_info {
+                width: 33.33%;
+                margin-top: 2.625rem;
+
+                .list_info_title {
+                  margin-bottom: 0.9375rem;
+                  font-size: 0.8125rem;
+                  font-weight: 600;
+                  line-height: 1.2em;
+                }
+
+                .list_info_Dday {
+                  font-size: 2.375rem;
+                  line-height: normal;
+                  font-weight: 500;
+                }
+
+                .list_info_day {
+                  font-size: 1.1875rem;
+                  font-weight: 500;
+                  line-height: 1.4em;
+                }
+              }
+            }
+
+            .center_right_link {
+              position: absolute;
+              bottom: 1.35rem;
+              left: 23.8rem;
+
+              // 티켓 하단 링크 영역
+              .link_wrap1 {
+                display: inline-block;
+
+                .center_link {
+                  position: relative;
+                  display: block;
+                  padding: 1.1875rem 1.5rem;
+                  color: var(--black);
+                  font-size: 0.9375rem;
+                  font-weight: 600;
+                  line-height: 1.2em;
+                  background-color: white;
+                  border: 1px solid #000;
+
+                  &::before {
+                    content: "";
+                    background-color: var(--black);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    transform: scaleY(0);
+                    transition: transform 0.2s;
+                    transform-origin: bottom;
+                  }
+
+                  &:hover::before {
+                    transform: scaleY(1);
+                    z-index: 0;
+                  }
+
+                  &:hover .center_link_text {
+                    color: white;
+                    z-index: 1;
+                    position: relative;
+                    transition-duration: 0.2s;
+                  }
+                }
+              }
+
+              .link_wrap2 {
+                display: inline-block;
+                margin-left: -2px;
+
+                .center_booklink {
+                  position: relative;
+                  display: block;
+                  padding: 1.1875rem 1.5rem;
+                  color: var(--black);
+                  font-size: 0.9375rem;
+                  font-weight: 600;
+                  line-height: 1.2em;
+                  background-color: white;
+                  border: 1px solid #000;
+
+                  &::before {
+                    content: "";
+                    background-color: var(--black);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    transform: scaleY(0);
+                    transition: transform 0.2s;
+                    transform-origin: bottom;
+                  }
+
+                  &:hover::before {
+                    transform: scaleY(1);
+                    z-index: 0;
+                  }
+
+                  &:hover .center_link_text {
+                    color: white;
+                    z-index: 1;
+                    position: relative;
+                    transition-duration: 0.2s;
+                  }
+                }
+              }
+            }
+
+            .ticket_bc {
+              position: absolute;
+              bottom: 1.375rem;
+              right: 1.375rem;
+              background-image: url(../../img/bg/ticket_center_bc.png);
+              width: 12.875rem;
+              height: 2.6rem;
+              background-size: 12.875rem 7rem;
+              z-index: 1;
+            }
           }
         }
 
@@ -129,9 +288,10 @@
             background-color: white;
             position: relative;
             display: block;
+            border-right: 3px dashed #b1b1b1;
 
             &::before {
-              content: '';
+              content: "";
               background-image: url(../../img/bg/ticket_right_top.png);
               background-size: 2.7rem 2.7rem;
               width: 2.7rem;
@@ -140,9 +300,9 @@
               top: -2.6rem;
               right: 0;
             }
-            
-            &::after{
-              content: '';
+
+            &::after {
+              content: "";
               background-image: url(../../img/bg/ticket_right_bottom.png);
               background-size: 2.7rem 2.7rem;
               width: 2.7rem;
@@ -156,18 +316,18 @@
       }
     }
   }
-}
 
-.news {
-  width: 100%;
-  margin: 0 auto;
-  height: 436.235px;
-  background-color: darkkhaki;
-}
+  .news {
+    width: 100%;
+    margin: 0 auto;
+    height: 436.235px;
+    background-color: darkkhaki;
+  }
 
-.media_wall {
-  width: 100%;
-  margin: 0 auto;
-  height: 1480px;
-  background-color: mediumpurple;
+  .media_wall {
+    width: 100%;
+    margin: 0 auto;
+    height: 1480px;
+    background-color: mediumpurple;
+  }
 }

@@ -17,7 +17,7 @@ const Event = () => {
 
       <div className="event_table">
         <div className="event_table_wrap">
-          {eventlistData.map((item, index) => (
+          {eventlistData.slice(0, 10).map((item, index) => (
             <div
               className={`
                 event_list_item
