@@ -1,5 +1,14 @@
 @use "../setting/index" as *;
 
+//헤더 스코롤 효과
+.header{
+  transition: transform 0.3s ease;
+
+  &.hide{
+    transform: translateY(-100%);
+  }
+}
+
 .logo_header {
   width: 100px;
 
