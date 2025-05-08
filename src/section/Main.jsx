@@ -16,11 +16,6 @@ import "swiper/css/pagination";
 const Main = () => {
   //부킹 데이터만 필터
   const bookingitem = eventlistData.filter((item) => item.booking === true);
-  //3개로 복제 (왼쪽 오른쪽 티켓 보이게)
-  const repeatBooking = Array.from(
-    { length: 3 },
-    (_, i) => bookingitem[i % bookingitem.length]
-  );
 
   return (
     <main id="main" role="banner">
@@ -40,8 +35,8 @@ const Main = () => {
           <div className="ticket_con">
             <div className="ticket_navi">
               <div className="ticket_navi_wrap">
-                <div className="ticket_prev"></div>
-                <div className="ticket_next"></div>
+                <button className="ticket_prev" aria-label="이전 슬라이드"></button>
+                <button className="ticket_next" aria-label="다음 슬라이드"></button>
               </div>
             </div>
 
@@ -49,13 +44,13 @@ const Main = () => {
               modules={[Navigation, Pagination]}
               pagination={{ el: ".ticket_pagination", clickable: true }}
               navigation={{ nextEl: ".ticket_next", prevEl: ".ticket_prev" }}
-              centeredSlides={true}
-              slidesPerView={1.2}
               loop={true}
+              slidesPerView={3}
+              centeredSlides={true}
               className="ticket_swiper"
             >
-              {repeatBooking.map((item) => (
-                <SwiperSlide className="ticket_con_wrap" key={item.id}>
+              {bookingitem.map((item, index) => (
+                <SwiperSlide className="ticket_con_wrap" key={index}>
                   <div className="ticket_left">
                     <span className="left_bg" />
                   </div>
