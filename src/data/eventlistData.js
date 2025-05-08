@@ -128,19 +128,19 @@ const eventlistData = [
     link: "https://www.coex.co.kr/exhibitions/2025-%ea%b5%ad%ec%a0%9c%ec%9d%b8%ea%b3%b5%ec%a7%80%eb%8a%a5%eb%8c%80%ec%a0%84/",
     img: eventlist9,
   },
-  // {
-  //   id: 10,
-  //   hero: false,
-  //   booking: true,
-  //   category: "EXHIBITION",
-  //   sub: "What’s On",
-  //   title: "EV트렌드코리아 2025",
-  //   date: "2025.06.03-2025.06.05",
-  //   location: "HALL A",
-  //   link: "https://evtrendkorea.co.kr/",
-  //   bookinglink: "https://tickgo.kr/exhibition/1264",
-  //   img: eventlist10
-  // }
+  {
+    id: 10,
+    hero: false,
+    booking: true,
+    category: "EXHIBITION",
+    sub: "What’s On",
+    title: "EV트렌드코리아 2025",
+    date: "2025.06.03-2025.06.05",
+    location: "HALL A",
+    link: "https://evtrendkorea.co.kr/",
+    bookinglink: "https://tickgo.kr/exhibition/1264",
+    img: eventlist10
+  }
 ];
 
 export default eventlistData;
