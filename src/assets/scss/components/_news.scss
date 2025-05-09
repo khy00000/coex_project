@@ -51,5 +51,27 @@
   .news_con {
     width: calc(100% - 33.23%);
     background-color: rgb(231, 205, 218);
+
+    // 탭메뉴 타이틀 영역
+    .news_con_tap_wrap {
+      margin-bottom: 2rem;
+
+      .news_con_tap {
+        margin: 0 -0.8125rem;
+
+        .news_con_tap_item {
+          float: left;
+          padding: 0 0.8125rem;
+
+          .news_con_tap_item_link {
+            display: block;
+            color: #afafaf;
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.4em;
+          }
+        }
+      }
+    }
   }
 }
