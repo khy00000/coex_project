@@ -9,6 +9,23 @@ import mediawallimg5 from "../assets/img/bg/mediawall_con5.jpg";
 import mediawallimg6 from "../assets/img/bg/mediawall_con6.jpg";
 
 function Mediawall() {
+  const mediaImg = [
+    mediawallimg1,
+    mediawallimg2,
+    mediawallimg3,
+    mediawallimg4,
+    mediawallimg5,
+    mediawallimg6,
+  ];
+
+  const mediametaItem = [
+    "INSTAGRAM",
+    "YOUTUBE",
+    "FACEBOOK",
+    "NAVER BLOG",
+    "Twitter",
+  ];
+
   return (
     <div className="mediawall">
       <div className="media_back"></div>
@@ -21,21 +38,11 @@ function Mediawall() {
 
           <div className="mediameta">
             <ul className="mediameta_item">
-              <li className="mediameta_item_list">
-                <Link className="mediameta_item_list_link">INSTAGRAM</Link>
-              </li>
-              <li className="mediameta_item_list">
-                <Link className="mediameta_item_list_link">YOUTUBE</Link>
-              </li>
-              <li className="mediameta_item_list">
-                <Link className="mediameta_item_list_link">FACEBOOK</Link>
-              </li>
-              <li className="mediameta_item_list">
-                <Link className="mediameta_item_list_link">NAVER BLOG</Link>
-              </li>
-              <li className="mediameta_item_list">
-                <Link className="mediameta_item_list_link">Twitter</Link>
-              </li>
+              {mediametaItem.map((metaitem, index) => (
+                <li className="mediameta_item_list">
+                  <Link className="mediameta_item_list_link">{metaitem}</Link>
+                </li>
+              ))}
             </ul>
 
             <div className="mediawall_sub">
@@ -50,26 +57,23 @@ function Mediawall() {
 
         <div className="mediawall_right">
           {/* 미디어 이미지 영역 */}
-          {/* <div className="mediawall_right_wrap">
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg1} alt="mediawallimg1" />
-            </div>
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg2} alt="mediawallimg2" />
-            </div>
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg3} alt="mediawallimg3" />
-            </div>
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg4} alt="mediawallimg4" />
-            </div>
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg5} alt="mediawallimg5" />
-            </div>
-            <div className="mediawall_ins_img">
-              <img src={mediawallimg6} alt="mediawallimg6" />
-            </div>
-          </div> */}
+          <div className="mediawall_right_wrap">
+            {mediaImg.map((img, index) => (
+              <div className="mediawall_ins_img">
+                <img src={img} alt={`mediawallimg${index + 1}`} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  className="carousel_icon"
+                >
+                  <path d="M464 0H144c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h320c26.51 0 48-21.49 48-48v-48h48c26.51 0 48-21.49 48-48V48c0-26.51-21.49-48-48-48ZM362 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h42v224c0 26.51 21.49 48 48 48h224v42a6 6 0 0 1-6 6Zm96-96H150a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h308a6 6 0 0 1 6 6v308a6 6 0 0 1-6 6Z" />
+                </svg>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
