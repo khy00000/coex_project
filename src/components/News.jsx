@@ -18,21 +18,20 @@ function News() {
         </div>
       </div>
       <div className="news_con">
+        {/* 탭메뉴 타이틀 */}
         <div className="news_con_tap_wrap">
           <ul className="news_con_tap">
-            {mainnewsdata.map((item, index) => {
-              console.log("탭 데이터(item):", item); // ← 여기!
-              return (
-                <li className="news_con_tap_item" key={item.tabid}>
-                  <Link to="#" className="news_con_tap_item_link">
-                    {item.tabtitle}
-                  </Link>
-                </li>
-              );
-            })}
+            {mainnewsdata.map((item, index) => (
+              <li className="news_con_tap_item" key={item.tabid}>
+                <Link to="#" className="news_con_tap_item_link">
+                  {item.tabtitle}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* 탭메뉴 리스트 영역 */}
         <div className="news_con_list">
           <ul className="news_area">
             {mainnewsdata.map((item) =>
