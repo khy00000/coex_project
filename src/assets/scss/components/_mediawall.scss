@@ -1,2 +1,119 @@
 @use "../setting/index" as *;
 
+.mediawall {
+  width: 100%;
+  height: 1590px;
+  padding: 7.5rem 3rem;
+  overflow: hidden;
+  position: relative;
+
+  .media_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 160%;
+    background-image: url(../../img/bg/mediawall_bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    transform: translate3d(0px, -217.877px, 0px);
+    z-index: -1;
+
+    &::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.85);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  .mediawall_wrap {
+    .mediawall_left {
+      width: 50%;
+      height: 1350px;
+      position: relative;
+
+      .mediawall_title_wrap {
+        .mediawall_title {
+          font-size: 3.75rem;
+          line-height: 1.2em;
+          color: #fff;
+          font-weight: 600;
+        }
+      }
+
+      .mediameta {
+        height: 574px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .mediameta_item {
+          height: 264px;
+
+          .mediameta_item_list {
+            margin-top: 1.5rem;
+
+            &:hover .mediameta_item_list_link {
+              color: #fff;
+            }
+
+            &:hover .mediameta_item_list_link::after {
+              opacity: 1;
+            }
+
+            &:first-child{
+                margin-top: 0;
+            }
+
+            .mediameta_item_list_link {
+              display: inline-block;
+              font-size: 1.75rem;
+              line-height: 1.2em;
+              color: rgba(255, 255, 255, 0.25);
+              font-weight: 500;
+              font-family: var(--mainfont-Poppins);
+              text-transform: uppercase;
+              padding-right: 2.188rem;
+              position: relative;
+
+              &::after {
+                content: "";
+                background-image: url(../../img/icon/mediawall_arrow.svg);
+                width: 1.563rem;
+                height: 1.375rem;
+                background-size: 1.563rem 1.375rem;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                margin-top: -0.125rem;
+                opacity: 0;
+              }
+            }
+          }
+        }
+
+        .mediawall_sub {
+          .mediawall_sub_text {
+            font-size: 4.375rem;
+            line-height: 1.2em;
+            color: #fff;
+            font-family: var(--mainfont-Poppins);
+          }
+        }
+      }
+    }
+
+    .mediawall_right {
+      width: 50%;
+    }
+  }
+}

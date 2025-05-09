@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import mediawallimg1 from "../assets/img/bg/mediawall_con1.jpg";
 import mediawallimg2 from "../assets/img/bg/mediawall_con2.jpg";
@@ -19,13 +20,23 @@ function Mediawall() {
           </h3>
 
           <div className="mediameta">
-            <div className="mediameta_item">
-              <span className="mediameta_item_list">INSTAGRAM</span>
-              <span className="mediameta_item_list">YOUTUBE</span>
-              <span className="mediameta_item_list">FACEBOOK</span>
-              <span className="mediameta_item_list">NAVER BLOG</span>
-              <span className="mediameta_item_list">Twitter</span>
-            </div>
+            <ul className="mediameta_item">
+              <li className="mediameta_item_list">
+                <Link className="mediameta_item_list_link">INSTAGRAM</Link>
+              </li>
+              <li className="mediameta_item_list">
+                <Link className="mediameta_item_list_link">YOUTUBE</Link>
+              </li>
+              <li className="mediameta_item_list">
+                <Link className="mediameta_item_list_link">FACEBOOK</Link>
+              </li>
+              <li className="mediameta_item_list">
+                <Link className="mediameta_item_list_link">NAVER BLOG</Link>
+              </li>
+              <li className="mediameta_item_list">
+                <Link className="mediameta_item_list_link">Twitter</Link>
+              </li>
+            </ul>
 
             <div className="mediawall_sub">
               <span className="mediawall_sub_text">
@@ -36,9 +47,10 @@ function Mediawall() {
             </div>
           </div>
         </div>
+
         <div className="mediawall_right">
           {/* 미디어 이미지 영역 */}
-          <div className="mediawall_right_wrap">
+          {/* <div className="mediawall_right_wrap">
             <div className="mediawall_ins_img">
               <img src={mediawallimg1} alt="mediawallimg1" />
             </div>
@@ -57,7 +69,7 @@ function Mediawall() {
             <div className="mediawall_ins_img">
               <img src={mediawallimg6} alt="mediawallimg6" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
