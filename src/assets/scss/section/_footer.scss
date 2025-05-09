@@ -1,7 +1,365 @@
 @use "../setting/index" as *;
 
-.footer_wrap{
-    width: 100%;
-    height: 169.38px;
-    margin-top: 8.125rem;
+.footer_wrap {
+  width: 100%;
+  height: 169.38px;
+  padding-top: 8.125rem;
+
+  .footer {
+    display: flex;
+
+    .footermain {
+      width: 25%;
+      padding: 1.625rem 1.25rem 1.625rem 0;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      border-right: 1px solid black;
+      position: relative;
+
+      .footermaininfo {
+        .footerinfo_logo {
+          display: block;
+          background-image: url(../../img/logo/footer_logo_c.svg);
+          background-size: 7.438rem 2.625rem;
+          width: 7.438rem;
+          height: 2.625rem;
+          margin-bottom: 1.875rem;
+        }
+
+        .footeraddress {
+          .address_item {
+            font-size: 1.125rem;
+            line-height: 1.5em;
+            color: #000;
+            margin-top: 0.125rem;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .tel {
+        display: block;
+        font-size: 1.125rem;
+        line-height: 1.4em;
+        font-weight: 600;
+        text-align: center;
+        padding: 1rem 1rem;
+        background-color: #f7f7f7;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0.625rem;
+        border-top: solid 1px #000;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0.625rem;
+        border-top: solid 1px #000;
+      }
+    }
+
+    .footernav {
+      width: 25%;
+
+      .footernavlist {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        .footernavlist_item {
+          width: 50%;
+          height: 50%;
+          border-right: solid 1px #000;
+          position: relative;
+
+          &:nth-child(-n + 2)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0.625rem;
+            right: 0.625rem;
+            border-top: 1px solid #000;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0.625rem;
+            right: 0.625rem;
+            border-top: solid 1px #000;
+          }
+
+          .footernav_link {
+            font-size: 1.375rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            position: absolute;
+            top: 1.375rem;
+            left: 1.25rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .footerlink {
+      width: 25%;
+      padding: 1.625rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      border-right: 1px solid black;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0.625rem;
+        right: 0.625rem;
+        border-top: solid 1px #000;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0.625rem;
+        right: 0.625rem;
+        border-top: solid 1px #000;
+      }
+
+      .footerlinklist {
+        .footerlinklist_item {
+          margin-bottom: 0.75rem;
+
+          .footerlink_link {
+            display: block;
+            font-size: 1.125rem;
+            line-height: 1.4em;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .footerlinksns {
+        .footerlinksns_item {
+          display: flex;
+          gap: 0.375rem;
+          flex-wrap: wrap;
+
+          .footersns_link {
+            display: block;
+            width: 2.938rem;
+            height: 2.938rem;
+            position: relative;
+            border-radius: 100%;
+            border: 1px solid black;
+            flex-shrink: 0;
+
+            &:hover {
+              border: 2px solid black;
+            }
+
+            &:first-child::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_insta.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+
+            &:nth-child(2)::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_youtube.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+
+            &:nth-child(3)::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_facebook.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+
+            &:nth-child(4)::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_linkedin.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+
+            &:nth-child(5)::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_x.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+
+            &:nth-child(6)::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-image: url(../../img/icon/footer_naverblog.svg);
+              width: 1.125rem;
+              height: 1.125rem;
+              background-size: 1.125rem 1.125rem;
+            }
+          }
+        }
+      }
+    }
+
+    .footeinfo {
+      width: 25%;
+      padding: 1.625rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      position: relative;
+      gap: 1.78rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0.625rem;
+        right: 0;
+        border-top: solid 1px #000;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0.625rem;
+        right: 0;
+        border-top: solid 1px #000;
+      }
+
+      .footerinfo_list {
+        .footerinfo_item {
+          .footerinfo_link {
+            display: block;
+            font-size: 1.125rem;
+            line-height: 1.4em;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+
+      .family_site {
+        position: relative;
+
+        .family_list_link {
+          display: block;
+          padding: 1.25rem 3.25rem 1.25rem 1.25rem;
+          font-size: 1.125rem;
+          line-height: 1.2em;
+          font-weight: 500;
+          background-color: #f7f7f7;
+          position: relative;
+          width: 100%;
+          text-align: left;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 1.25rem;
+            transform: translateY(-50%);
+            background-image: url(../../img/icon/footer_familyarrow.svg);
+            width: 0.938rem;
+            height: 0.5rem;
+            background-size: 0.938rem 0.5rem;
+          }
+
+          &.active::after{
+            transform: translateY(-50%) rotate(180deg);
+          }
+
+          &.active + .family_site_item_box{
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .family_site_item_box {
+          position: absolute;
+          bottom: 4.4rem;
+          left: 0;
+          right: 0;
+          background-color: #f7f7f7;
+          padding: 0.75rem 0;
+          opacity: 0;
+          visibility: hidden;
+
+          .family_site_item{
+
+            .family_site_item_link{
+                display: block;
+                padding: 0.75rem 1.25rem;
+                font-size: 1rem;
+                line-height: 1.2em;
+                font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  padding: 2rem 0 2.5rem;
 }

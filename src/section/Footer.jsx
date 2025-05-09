@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  // 패밀리 사이트 오픈
+  const [active, setActive] = useState(false);
+
   const footersns = [
     "인스타그램",
     "유투브",
@@ -37,61 +40,75 @@ const Footer = () => {
           <div className="footermain">
             <div className="footermaininfo">
               <div className="footerinfo_logo">
-                <span className="footerinfo_logo_text">코엑스</span>
+                <span className="footerinfo_logo_text blind">코엑스</span>
               </div>
+
               <address className="footeraddress">
                 <div className="address_item">
                   서울특별시 강남구 영동대로 513
                 </div>
                 <div className="address_item">(삼성동, 코엑스) 06164</div>
               </address>
-              <Link to="#">대표번호 02-6000-0114</Link>
             </div>
+
+            <Link className="tel" to="#">
+              대표번호 02-6000-0114
+            </Link>
           </div>
 
           <div className="footernav">
             <ul className="footernavlist">
               <li className="footernavlist_item">
-                <Link to="#">행사일정</Link>
+                <Link className="footernav_link" to="#">
+                  행사일정
+                </Link>
               </li>
               <li className="footernavlist_item">
-                <Link to="#">오시는길</Link>
+                <Link className="footernav_link" to="#">
+                  오시는길
+                </Link>
               </li>
               <li className="footernavlist_item">
-                <Link to="#">주차안내</Link>
+                <Link className="footernav_link" to="#">
+                  주차안내
+                </Link>
               </li>
               <li className="footernavlist_item">
-                <Link to="#">편의시설</Link>
+                <Link className="footernav_link" to="#">
+                  편의시설
+                </Link>
               </li>
             </ul>
           </div>
 
           <div className="footerlink">
-            <div className="footerlinklist">
-              <ul className="footerlinklist_wrap">
-                <li className="footerlinklist_item">
-                  <Link to="#">Coex 소개</Link>
-                </li>
-                <li className="footerlinklist_item">
-                  <Link to="#">Cyber Coex</Link>
-                </li>
-                <li className="footerlinklist_item">
-                  <Link to="#">Coex MICE Cluster</Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="footerlinklist">
+              <li className="footerlinklist_item">
+                <Link to="#" className="footerlink_link">
+                  Coex 소개
+                </Link>
+              </li>
+              <li className="footerlinklist_item">
+                <Link to="#" className="footerlink_link">
+                  Cyber Coex
+                </Link>
+              </li>
+              <li className="footerlinklist_item">
+                <Link to="#" className="footerlink_link">
+                  Coex MICE Cluster
+                </Link>
+              </li>
+            </ul>
 
-            <div className="footerlinksns">
-              <ul className="footerlinksns_wrap">
-                <li className="footerlinksns_item">
-                  {footersns.map((sns, index) => (
-                    <Link to="#" className="footersns_link">
-                      <span className="snstext">{sns}</span>
-                    </Link>
-                  ))}
-                </li>
-              </ul>
-            </div>
+            <ul className="footerlinksns">
+              <li className="footerlinksns_item">
+                {footersns.map((sns, index) => (
+                  <Link to="#" className="footersns_link">
+                    <span className="snstext blind">{sns}</span>
+                  </Link>
+                ))}
+              </li>
+            </ul>
           </div>
 
           <div className="footeinfo">
@@ -104,15 +121,24 @@ const Footer = () => {
                 ))}
               </li>
             </ul>
+
             <div className="family_site">
-              <ul className="family_list">
-                <li className="family_list_item">
-                  {familysite.map((family, index) => (
-                    <Link to="#" className="family_list_link">
+              {/* 패밀리 사이트 버튼 */}
+              <button
+                className={`family_list_link ${active ? "active" : ""}`}
+                onClick={() => setActive(!active)}
+              >
+                Family Site
+              </button>
+              {/* 패밀리 메뉴 */}
+              <ul className="family_site_item_box">
+                {familysite.map((family, index) => (
+                  <li className="family_site_item">
+                    <Link to="#" className="family_site_item_link">
                       {family}
                     </Link>
-                  ))}
-                </li>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
