@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import mainnewsdata from "../data/mainnewsData";
 
 function News() {
+  // 공지사항 tabid : 0 기본값으로
+  const [activeTabId, setActiveTabId] = useState(0);
+
+  //활성화된 탭 콘텐츠
+  const activeTab = mainnewsdata.find((item) => item.tabid === activeTabId);
+
   return (
     <div className="news">
       {/* 뉴스 타이틀 */}
@@ -21,11 +27,26 @@ function News() {
         {/* 탭메뉴 타이틀 */}
         <div className="news_con_tap_wrap">
           <ul className="news_con_tap">
-            {mainnewsdata.map((item, index) => (
-              <li className="news_con_tap_item" key={item.tabid}>
-                <Link to="#" className="news_con_tap_item_link">
-                  {item.tabtitle}
-                </Link>
+            {mainnewsdata.map((item) => (
+              <li
+                key={item.tabid}
+                className={`news_con_tap_item ${
+                  item.tabid === activeTabId ? "active" : ""
+                }`}
+              >
+                {item.contents ? (
+                  <button
+                    type="button"
+                    className="news_con_tap_item_button"
+                    onClick={() => setActiveTabId(item.tabid)}
+                  >
+                    {item.tabtitle}
+                  </button>
+                ) : (
+                  <Link to={item.link} className="news_con_tap_item_link">
+                    {item.tabtitle}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -34,27 +55,21 @@ function News() {
         {/* 탭메뉴 리스트 영역 */}
         <div className="news_con_list">
           <ul className="news_area">
-            {mainnewsdata.map((item) =>
-              item.contents
-                ? item.contents.map((contentsItem) => (
-                    <li className="news_item" key={contentsItem.contentsid}>
-                      <Link to={contentsItem.link} className="news_item_link">
-                        <div className="news_item_date">
-                          <span className="news_item_dateday">
-                            {contentsItem.dateday}
-                          </span>
-                          <span className="news_item_datemonth">
-                            {contentsItem.datemonth}
-                          </span>
-                        </div>
-                        <div className="news_item_title">
-                          {contentsItem.title}
-                        </div>
-                      </Link>
-                    </li>
-                  ))
-                : null
-            )}
+            {activeTab?.contents?.map((contentsItem) => (
+              <li className="news_item" key={contentsItem.contentsid}>
+                <Link to={contentsItem.link} className="news_item_link">
+                  <div className="news_item_date">
+                    <span className="news_item_dateday">
+                      {contentsItem.dateday}
+                    </span>
+                    <span className="news_item_datemonth">
+                      {contentsItem.datemonth}
+                    </span>
+                  </div>
+                  <div className="news_item_title">{contentsItem.title}</div>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

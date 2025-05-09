@@ -69,10 +69,10 @@ const mainnewsdata = [
     ],
   },
   {
-    tabid: 3,
+    tabid: 2,
     tabtitle: "뉴스",
-    link: "#",
-  },
+    link: "https://www.coex.co.kr/guide/news/"
+  }
 ];
 
 export default mainnewsdata;
