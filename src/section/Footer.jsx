@@ -1,37 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { footersns, footerinfo, familysite } from "../data/footerData";
 
 const Footer = () => {
   // 패밀리 사이트 오픈
   const [active, setActive] = useState(false);
-
-  const footersns = [
-    "인스타그램",
-    "유투브",
-    "페이스북",
-    "링크드인",
-    "엑스",
-    "네이버 블로그",
-  ];
-
-  const footerinfo = [
-    "안전경영",
-    "친환경",
-    "개인정보처리방침",
-    "이메일무단수집거부",
-    "무역센터 신문고",
-    "사이트맵",
-  ];
-
-  const familysite = [
-    "KITA",
-    "WTC Seoul",
-    "KTNET",
-    "CALT",
-    "CAAM",
-    "Coex VINA",
-    "CoexMall",
-  ];
 
   return (
     <footer id="footer" role="contentinfo">
