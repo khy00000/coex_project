@@ -36,16 +36,17 @@ const Widget = () => {
           <div className="chatbot_logo">
             <img src={chatbotLogo} alt="chatbot_logo" />
           </div>
-          <span className="chatbot_name"> VISITOR</span>
+          <span className="chatbot_name">VISITOR</span>
         </div>
+
         <div className="chatbot_chatarea">
           <div className="message">
             <div className="text">
               안녕하세요 🤚
               <br />
-              안내를 도와드릴 코엑스 챗봇입니다.
               <br />
-              궁금하신 점을 입력하시거나 아래 버튼을 눌러주세요!
+              안내를 도와드릴 코엑스 챗봇입니다.
+              지금은 자동안내 가능 시간입니다.
             </div>
             <div className="chatbutton_list">
               {chatbotData.map((item) => (
@@ -56,38 +57,33 @@ const Widget = () => {
             </div>
           </div>
         </div>
+
         <div className="chatbot_input">
           <div className="chatbot_input_inner">
-            <div className="input_icon">
-              <svg
-                data-v-170f181a=""
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-labelledby="homeIconTitle"
-                aria-describedby="homeIconDesc"
-              >
-                <g data-v-170f181a="" clip-path="url(#clip0_1718_122)">
-                  <path
-                    data-v-170f181a=""
-                    d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <div className="input_wrap">
-              <input
-                type="text"
-                placeholder="여기에 입력해 주세요."
-                title="여기에 입력해 주세요."
-                tabindex={0}
-                class="input_chatbot"
-                style={{ textAlign: "center" }}
-              />
-            </div>
+            <svg
+              data-v-170f181a=""
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g data-v-170f181a="" clip-path="url(#clip0_1718_122)">
+                <path
+                  data-v-170f181a=""
+                  d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"
+                  fill="currentColor"
+                ></path>
+              </g>
+            </svg>
+            <input
+              type="text"
+              placeholder="지금은 상담시간이 아닙니다."
+              title="여기에 입력해 주세요."
+              tabIndex={0}
+              className="input_chatbot"
+              style={{ textAlign: "center" }}
+            />
           </div>
         </div>
       </div>

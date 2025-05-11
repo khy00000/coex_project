@@ -1,42 +1,202 @@
 @use "../setting/index" as *;
 
 // 탑버튼
-.top_button{
-    width: 2.75rem;
-    height: 2.75rem;
-    position: fixed;
-    border: solid 2px #000;
-    bottom: 1.25rem;
-    right: 2rem;
-    transition-duration: 0.2s;
-    z-index: 9999;
-    background-image: url(../../img/icon/top_button.svg);
-    background-size: 1rem 1.125rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    visibility: hidden;
+.top_button {
+  width: 2.75rem;
+  height: 2.75rem;
+  position: fixed;
+  border: solid 2px #000;
+  bottom: 1.25rem;
+  right: 2rem;
+  transition-duration: 0.2s;
+  z-index: 9999;
+  background-image: url(../../img/icon/top_button.svg);
+  background-size: 1rem 1.125rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  visibility: hidden;
 
-    &.visible{
-      opacity: 1;
-      visibility: visible;
-    }
+  &.visible {
+    opacity: 1;
+    visibility: visible;
   }
+}
 
 //챗봇 영역
-.chatbot_container{
+.chatbot_container {
   width: 370px;
-  height: 60vh;
+  max-height: calc(100vh - 2rem);
+  height: auto;
   background-color: white;
   position: fixed;
   top: 1rem;
   right: 1.5rem;
   z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  font-family: Apple SD Gothic Neo;
+  border-radius: 17px 17px;
+  letter-spacing: -0.08px;
+  -webkit-font-smoothing: auto;
+  line-height: 1.275;
+  box-shadow: 0 6px 60px 0 rgba(79, 98, 114, .2);
 
-  .chatbot_header{
+  .chatbot_header {
+    flex-shrink: 0;
     width: 370px;
     height: 70px;
-    background-color: var(--blakc);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 17px 17px 0 0;
+
+    .chatbot_logo {
+      width: 50px;
+      height: 50px;
+    }
+
+    .chatbot_name {
+      font-size: 19px;
+      font-weight: 400;
+      color: white;
+      display: block;
+      margin-top: 3px;
+    }
+  }
+
+  // 메세지 영역
+  .chatbot_chatarea {
+    width: 100%;
+    flex: 1 1 auto;
+    background-color: white;
+    overflow-y: auto;
+    padding-bottom: 40px;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #dcdcdc;
+    }
+
+    /* 스크롤바 손잡이 */
+    &::-webkit-scrollbar-thumb {
+      background-color: #a4a2a2;
+      background-clip: padding-box;
+    }
+
+    .message {
+      background-color: #f2f2f2;
+      border-radius: 0 14px 14px 14px;
+      width: 274px;
+      margin: 30px 0 0 15px;
+      padding: 10px;
+
+      &:hover{
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .text {
+        width: 100%;
+        height: 95px;
+        color: #6c6c6c;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .chatbutton_list {
+        width: 100%;
+
+        .chatinfo_item {
+          display: block;
+          width: 248px;
+          min-width: 228px;
+          height: 40px;
+          cursor: pointer;
+          padding: 10px 14px;
+          background-color: white;
+          margin-top: 6px;
+          border-radius: 14px;
+          text-align: left;
+
+          .chatinfo_txt {
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          &:hover{
+            background-color: var(--black);
+            box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+          }
+
+          &:hover .chatinfo_txt{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  // 챗봇 입력창
+  .chatbot_input {
+    flex-shrink: 0;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 17px 17px;
+
+    .chatbot_input_inner {
+      width: 338px;
+      height: 48px;
+      background-color: #f2f2f2;
+      padding: 0 10px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        color: #6c6c6c;
+
+        &:hover{
+          color: #000;
+        }
+      }
+
+      .input_chatbot {
+        width: 290px;
+        height: 36px;
+        background-color: #f2f2f2;
+        font-size : 16px;
+        color: rgb(193, 193, 193);
+        outline: none;
+        
+        &:hover {
+          color: #6c6c6c;
+        }
+
+        &::placeholder{
+          color: rgb(193, 193, 193);
+        }
+
+        &:hover::placeholder{
+          color: #6c6c6c;
+        }
+
+        &:focus {
+          outline: auto;
+          color: #6c6c6c;
+        }
+      }
+    }
   }
 }

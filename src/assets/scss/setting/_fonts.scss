@@ -1,3 +1,5 @@
+// 프리텐다드
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 900;
@@ -80,6 +82,8 @@
     url(../../fonts/pretendard/woff/Pretendard-Thin.woff) format("woff");
 }
 
+
+// 팝핀
 @font-face {
   font-family: "Poppins";
   font-weight: 100;
@@ -141,4 +145,55 @@
   font-weight: 900;
   src: local("Poppins Black"),
     url("../../fonts/poppins/woff/Poppins-Black.woff") format("woff");
+}
+
+
+// 노토산스
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 100;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 200;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-DemiLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-weight: 900;
+  font-style: normal;
+  src: url("../../fonts/notosanskr/NotoSans-Bold.woff") format("woff");
 }
