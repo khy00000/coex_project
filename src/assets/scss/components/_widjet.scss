@@ -24,177 +24,266 @@
   }
 }
 
-//챗봇 영역
-.chatbot_container {
-  width: 370px;
-  max-height: calc(100vh - 2rem);
-  height: auto;
-  background-color: white;
+// 챗봇 활성 버튼
+.chatbot {
   position: fixed;
-  top: 1rem;
-  right: 1.5rem;
-  z-index: 999999;
-  display: flex;
-  flex-direction: column;
-  font-family: Apple SD Gothic Neo;
-  border-radius: 17px 17px;
-  letter-spacing: -0.08px;
-  -webkit-font-smoothing: auto;
-  line-height: 1.275;
-  box-shadow: 0 6px 60px 0 rgba(79, 98, 114, .2);
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 9999;
+  cursor: pointer;
 
-  .chatbot_header {
-    flex-shrink: 0;
-    width: 370px;
-    height: 70px;
-    background-color: var(--black);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 17px 17px 0 0;
-
-    .chatbot_logo {
-      width: 50px;
-      height: 50px;
-    }
-
-    .chatbot_name {
-      font-size: 19px;
-      font-weight: 400;
-      color: white;
-      display: block;
-      margin-top: 3px;
-    }
+  &.active .chatbot_active_x {
+    opacity: 1 !important;
+    transform: rotate(0deg) !important;
   }
 
-  // 메세지 영역
-  .chatbot_chatarea {
-    width: 100%;
-    flex: 1 1 auto;
+  &.active .chatbot_icon {
+    opacity: 1 !important;
+    transform: scale(0) !important;
+  }
+
+  &.active + .chatbot_container_wrap {
+    display: block;
+  }
+
+  .chatbot_button {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #000;
+    overflow: hidden;
+
+    .chatbot_icon {
+      background-image: url(../../img/logo/chatbot_icon.png);
+      background-size: 60px 60px;
+      width: 60px;
+      height: 60px;
+      position: relative;
+      transform: scale(1);
+      transition: transform 0.16s linear, opacity 0.08s linear,
+        -webkit-transform 0.16s linear;
+    }
+
+    // 챗봇 아이콘 닫기
+    .chatbot_close {
+      position: absolute;
+      top: -3px;
+      right: -9px;
+
+      &.cb_close .chatbot{
+        display: none;
+      }
+
+      .close_svg {
+        width: 15px;
+        height: 15px;
+
+        .chatbot_close_bg {
+          fill: #fff;
+        }
+
+        .chatbot_close_x {
+          stroke: #000000;
+          stroke-linecap: round;
+          stroke-miterlimit: 10;
+          stroke-width: 7px;
+        }
+      }
+    }
+
+    // 챗봇 컨테이너 클로즈
+    .chatbot_active_x {
+      background-image: url(../../img/logo/chatbot_active_x.png);
+      background-size: 60px 60px;
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: rotate(-40deg);
+      transition:  transform 0.16s linear, opacity 0.08s linear,
+      -webkit-transform 0.16s linear;
+    }
+  }
+}
+
+//챗봇 영역
+.chatbot_container_wrap{
+  display: none;
+
+  .chatbot_container {
+    width: 370px;
+    max-height: calc(100vh - 2rem);
+    height: auto;
     background-color: white;
-    overflow-y: auto;
-    padding-bottom: 40px;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: #dcdcdc;
-    }
-
-    /* 스크롤바 손잡이 */
-    &::-webkit-scrollbar-thumb {
-      background-color: #a4a2a2;
-      background-clip: padding-box;
-    }
-
-    .message {
-      background-color: #f2f2f2;
-      border-radius: 0 14px 14px 14px;
-      width: 274px;
-      margin: 30px 0 0 15px;
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    font-family: Apple SD Gothic Neo;
+    border-radius: 17px 17px;
+    letter-spacing: -0.08px;
+    -webkit-font-smoothing: auto;
+    line-height: 1.275;
+    box-shadow: 0 6px 60px 0 rgba(79, 98, 114, 0.2);
+  
+    .chatbot_header {
+      flex-shrink: 0;
+      width: 370px;
+      height: 70px;
+      background-color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px;
-
-      &:hover{
-        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      border-radius: 17px 17px 0 0;
+  
+      .chatbot_logo {
+        width: 50px;
+        height: 50px;
       }
-
-      .text {
-        width: 100%;
-        height: 95px;
-        color: #6c6c6c;
-        font-size: 14px;
-        line-height: 1.4;
+  
+      .chatbot_name {
+        font-size: 19px;
+        font-weight: 400;
+        color: white;
+        display: block;
+        margin-top: 3px;
       }
-
-      .chatbutton_list {
-        width: 100%;
-
-        .chatinfo_item {
-          display: block;
-          width: 248px;
-          min-width: 228px;
-          height: 40px;
-          cursor: pointer;
-          padding: 10px 14px;
-          background-color: white;
-          margin-top: 6px;
-          border-radius: 14px;
-          text-align: left;
-
-          .chatinfo_txt {
-            font-size: 14px;
-            font-weight: 500;
-          }
-
-          &:hover{
-            background-color: var(--black);
-            box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
-          }
-
-          &:hover .chatinfo_txt{
-            color: white;
+    }
+  
+    // 메세지 영역
+    .chatbot_chatarea {
+      width: 100%;
+      flex: 1 1 auto;
+      background-color: white;
+      overflow-y: auto;
+      padding-bottom: 40px;
+  
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background: #dcdcdc;
+      }
+  
+      /* 스크롤바 손잡이 */
+      &::-webkit-scrollbar-thumb {
+        background-color: #a4a2a2;
+        background-clip: padding-box;
+      }
+  
+      .message {
+        background-color: #f2f2f2;
+        border-radius: 0 14px 14px 14px;
+        width: 274px;
+        margin: 30px 0 0 15px;
+        padding: 10px;
+  
+        &:hover {
+          box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+        }
+  
+        .text {
+          width: 100%;
+          height: 95px;
+          color: #6c6c6c;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+  
+        .chatbutton_list {
+          width: 100%;
+  
+          .chatinfo_item {
+            display: block;
+            width: 248px;
+            min-width: 228px;
+            height: 40px;
+            cursor: pointer;
+            padding: 10px 14px;
+            background-color: white;
+            margin-top: 6px;
+            border-radius: 14px;
+            text-align: left;
+  
+            .chatinfo_txt {
+              font-size: 14px;
+              font-weight: 500;
+            }
+  
+            &:hover {
+              background-color: var(--black);
+              box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2);
+            }
+  
+            &:hover .chatinfo_txt {
+              color: white;
+            }
           }
         }
       }
     }
-  }
-
-  // 챗봇 입력창
-  .chatbot_input {
-    flex-shrink: 0;
-    width: 100%;
-    height: 70px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 17px 17px;
-
-    .chatbot_input_inner {
-      width: 338px;
-      height: 48px;
-      background-color: #f2f2f2;
-      padding: 0 10px;
-      border-radius: 5px;
+  
+    // 챗봇 입력창
+    .chatbot_input {
+      flex-shrink: 0;
+      width: 100%;
+      height: 70px;
+      background-color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      svg {
-        color: #6c6c6c;
-
-        &:hover{
-          color: #000;
-        }
-      }
-
-      .input_chatbot {
-        width: 290px;
-        height: 36px;
+      border-radius: 0 0 17px 17px;
+  
+      .chatbot_input_inner {
+        width: 338px;
+        height: 48px;
         background-color: #f2f2f2;
-        font-size : 16px;
-        color: rgb(193, 193, 193);
-        outline: none;
-        
-        &:hover {
+        padding: 0 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        svg {
           color: #6c6c6c;
+  
+          &:hover {
+            color: #000;
+          }
         }
-
-        &::placeholder{
+  
+        .input_chatbot {
+          width: 290px;
+          height: 36px;
+          background-color: #f2f2f2;
+          font-size: 16px;
           color: rgb(193, 193, 193);
-        }
-
-        &:hover::placeholder{
-          color: #6c6c6c;
-        }
-
-        &:focus {
-          outline: auto;
-          color: #6c6c6c;
+          outline: none;
+  
+          &:hover {
+            color: #6c6c6c;
+          }
+  
+          &::placeholder {
+            color: rgb(193, 193, 193);
+          }
+  
+          &:hover::placeholder {
+            color: #6c6c6c;
+          }
+  
+          &:focus {
+            outline: auto;
+            color: #6c6c6c;
+          }
         }
       }
     }
