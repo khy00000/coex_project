@@ -6,8 +6,8 @@ const Widget = () => {
   // 탑버튼 visible
   const [visible, setVisible] = useState(false);
   // 챗봇 아이콘 클릭 close/챗봇 컨테이너 활성 비활성
-  const [cbActive, setCbactive] = useState(false);
-  // 챗봇 오른쪽 작은 닫기 버튼
+  const [cbActive, setCbActive] = useState(false);
+  // 챗봇 닫기 버튼
   const [cbClose, setCbclose] = useState(false);
 
   // 탑버튼 visible 시점
@@ -25,14 +25,15 @@ const Widget = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // 챗봇 컨테이너/close 활성 비활성
+  // 챗봇 close 아이콘 활성/비활성
   const chatbotActive = () => {
-    setCbactive(!cbActive);
+    setCbActive((prev) => !prev);
   };
 
   // 챗봇 오른쪽 닫기
   const cbiconClose = () => {
-    setCbclose(!cbClose);
+    setCbclose(true);
+    console.log('cbClose 상태:', true);
   };
 
   return (
@@ -47,54 +48,51 @@ const Widget = () => {
 
       {/* 챗봇 */}
       <div
-        className={`chatbot ${cbActive ? "active" : ""}`}
+        className={`chatbot ${cbActive ? "active" : ""}  ${cbClose ? "cb_close" : ""} `}
         onClick={chatbotActive}
       >
         <div className="chatbot_button">
           {/* 챗봇 아이콘 */}
           <div className="chatbot_icon"></div>
-
-          {/* 챗봇 아이콘 닫기 */}
-          <div className={`chatbot_close ${cbClose ? "cb_close" : ""}`} onClick={cbiconClose}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 64.19 64.19"
-              width="24"
-              height="24"
-              className="close_svg"
-            >
-              <g data-name="chatbot-close">
-                <circle
-                  cx="32.1"
-                  cy="32.1"
-                  r="32.1"
-                  className="chatbot_close_bg"
-                />
-                <line
-                  x1="41.58"
-                  y1="22.28"
-                  x2="22.62"
-                  y2="41.24"
-                  className="chatbot_close_x"
-                />
-                <line
-                  x1="41.58"
-                  y1="41.24"
-                  x2="22.62"
-                  y2="22.28"
-                  className="chatbot_close_x"
-                />
-              </g>
-            </svg>
-          </div>
-
           {/* 챗봇 컨테이너 활성 & 닫기 */}
           <div className="chatbot_active_x"></div>
         </div>
       </div>
 
+      {/* 챗봇 닫기 */}
+      <div
+        className={`chatbot_close ${cbClose ? "cb_close" : ""}`}
+        onClick={cbiconClose}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 64.19 64.19"
+          width="24"
+          height="24"
+          className="close_svg"
+        >
+          <g data-name="chatbot-close">
+            <circle cx="32.1" cy="32.1" r="32.1" className="chatbot_close_bg" />
+            <line
+              x1="41.58"
+              y1="22.28"
+              x2="22.62"
+              y2="41.24"
+              className="chatbot_close_x"
+            />
+            <line
+              x1="41.58"
+              y1="41.24"
+              x2="22.62"
+              y2="22.28"
+              className="chatbot_close_x"
+            />
+          </g>
+        </svg>
+      </div>
+
       {/* 챗봇 컨테이너 */}
-      <div className="chatbot_container_wrap">
+      <div className={`chatbot_container_wrap ${cbActive ? "active" : ""} ${cbClose ? "cb_close" : ""} `}>
         <div className="chatbot_container">
           <div className="chatbot_header">
             <div className="chatbot_logo">
