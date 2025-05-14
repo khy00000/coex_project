@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Controller, Pagination, Autoplay } from "swiper/modules";
+import { Autoplay, Controller, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -31,6 +31,7 @@ const Hero = () => {
     }
   }, [textSwiper, imgSwiper]);
 
+  //활성 hero_title_slide 높이 설정
   useEffect(() => {
     const activeSlide = document.querySelector(
       ".swiper-slide-active .hero_title_slide"
@@ -53,10 +54,10 @@ const Hero = () => {
             <Swiper
               direction="vertical"
               modules={[Controller, Autoplay]}
+              loop={true}
               autoplay={{
                 delay: 4000,
               }}
-              loop={true}
               onSwiper={setTextSwiper}
               onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
               className="hero_title_wrap"
