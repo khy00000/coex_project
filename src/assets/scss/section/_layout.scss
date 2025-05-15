@@ -34,3 +34,10 @@
   height: 595px;
   position: relative;
 }
+
+// 전체 fadein 효과
+.fadein_gsap{
+  opacity: 0;
+  transform: translateY(50px);
+  will-change: opacity, transform;
+}

@@ -94,18 +94,18 @@ const Header = () => {
           <div className="header_lang">
             <ul className="header_lang_box">
               <li className="kor current">
-                <a href="/">KOR</a>
+                <Link to="/">KOR</Link>
               </li>
               <li className="eng">
-                <a href="#">ENG</a>
+                <Link to="#">ENG</Link>
               </li>
             </ul>
           </div>
 
           {/* 우측 서치 아이콘 영역 */}
           <div className="header_search_link">
-            <a
-              href="#"
+            <Link
+              to="#"
               className={`header_search_link_open ${active ? "active" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
@@ -113,9 +113,9 @@ const Header = () => {
               }}
             >
               <span className="blind">검색창 열기</span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="#"
               className={`header_search_link_close ${active ? "active" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
@@ -123,7 +123,7 @@ const Header = () => {
               }}
             >
               <span className="blind">검색창 닫기</span>
-            </a>
+            </Link>
           </div>
 
           {/* 서치창 */}

@@ -9,8 +9,10 @@ import "swiper/css/pagination";
 import eventlistData from "../data/eventlistData";
 
 const Hero = () => {
-  const heroitem = eventlistData.filter(item => item.hero === true && item.heroid !== undefined);
-  
+  const heroitem = eventlistData.filter(
+    (item) => item.hero === true && item.heroid !== undefined
+  );
+
   const [textSwiper, setTextSwiper] = useState(null);
   const [imgSwiper, setImgSwiper] = useState(null);
 
@@ -20,12 +22,12 @@ const Hero = () => {
   // .hero_title_slide 높이에 따라 부모 박스 높이 가변
   const textWrapRef = useRef(null);
 
+  //콘솔 디버깅 용
   useEffect(() => {
     if (textSwiper && imgSwiper) {
       textSwiper.controller.control = imgSwiper;
       imgSwiper.controller.control = textSwiper;
 
-      // 콘솔 디버깅용
       window.textSwiper = textSwiper;
       window.imgSwiper = imgSwiper;
     }
@@ -37,11 +39,11 @@ const Hero = () => {
       ".swiper-slide-active .hero_title_slide"
     );
     const wrap = textWrapRef.current;
-    
+
     if (activeSlide && wrap) {
       const height = activeSlide.getBoundingClientRect().height;
       wrap.style.height = `${height}px`;
-    };
+    }
   }, [currentIndex]);
 
   return (
@@ -50,6 +52,7 @@ const Hero = () => {
         <div className="hero_slide">
           <div className="hero_slide_left">
             <div className="hero_sub_title">{heroitem[currentIndex].sub}</div>
+
             {/* 텍스트 슬라이드 */}
             <Swiper
               direction="vertical"
@@ -63,7 +66,7 @@ const Hero = () => {
               className="hero_title_wrap"
               ref={textWrapRef}
             >
-              {heroitem.map((item) => (
+              {heroitem.map((item, index) => (
                 <SwiperSlide key={item.heroid} className="hero_title">
                   <Link
                     to={item.link}
