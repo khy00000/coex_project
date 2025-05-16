@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import FadeInGSAP from "../components/FadeInGSAP";
+
 const Ticket = () => {
   //부킹 데이터만 필터
   const bookingitem = eventlistData.filter((item) => item.booking === true);
@@ -34,10 +36,12 @@ const Ticket = () => {
   return (
     <div className="main_ticket">
       <div className="main_ticket_wrap">
-        <h3>
-          <span className="ticket_title">티켓 오픈</span>
-          <span className="ticket_title_num">{bookingitem.length}</span>
-        </h3>
+        <FadeInGSAP delay={0.6}>
+          <h3>
+            <span className="ticket_title">티켓 오픈</span>
+            <span className="ticket_title_num">{bookingitem.length}</span>
+          </h3>
+        </FadeInGSAP>
 
         <div className="ticket_con">
           <div className="ticket_navi">

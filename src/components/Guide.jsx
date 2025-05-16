@@ -7,7 +7,7 @@ import FadeInGSAP from "../components/FadeInGSAP";
 const Guide = () => {
   return (
     <div className="guide">
-      <FadeInGSAP delay={0.2}>
+      <FadeInGSAP delay={0.3}>
         <div className="guide_left">
           <h3 className="guide_left_title">대관안내</h3>
           <span className="guide_left_title_text">
@@ -17,7 +17,7 @@ const Guide = () => {
           </span>
         </div>
       </FadeInGSAP>
-      <FadeInGSAP delay={0.3}>
+      <FadeInGSAP delay={0.4}>
         <div className="guide_right">
           <div className="guide_right_title">GUIDE</div>
           <div className="guide_right_list">

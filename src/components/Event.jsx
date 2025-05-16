@@ -2,14 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import eventlistData from "../data/eventlistData";
 
+import FadeInGSAP from "../components/FadeInGSAP";
+
 const Event = () => {
   return (
     <div className="event">
       <div className="event_title_wrap">
-        <h3>
-          <span className="event_title">진행 중인 행사</span>
-          <span className="event_title_num">23</span>
-        </h3>
+        <FadeInGSAP delay={0.5}>
+          <h3>
+            <span className="event_title">진행 중인 행사</span>
+            <span className="event_title_num">23</span>
+          </h3>
+        </FadeInGSAP>
         <Link to="#" className="event_cal_text">
           View All Events
         </Link>
@@ -31,8 +35,10 @@ const Event = () => {
               {/* 이벤트 아이템 */}
               <Link to={item.link} className={`event_list_item_link`}>
                 <div className="item_padding">
-                  <div className="evnet_list_item_category"
-                  data-category={item.category}>
+                  <div
+                    className="evnet_list_item_category"
+                    data-category={item.category}
+                  >
                     {item.category}
                   </div>
                   <div className="event_list_item_title">{item.title}</div>
@@ -41,7 +47,7 @@ const Event = () => {
               </Link>
 
               {/* 호버 아이템 */}
-              <Link to={item.link}className="event_list_item_hover">
+              <Link to={item.link} className="event_list_item_hover">
                 <img src={item.img} alt={`이벤트 리스트이미지 ${item.id}`} />
               </Link>
 

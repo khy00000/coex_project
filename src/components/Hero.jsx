@@ -66,7 +66,7 @@ const Hero = () => {
               className="hero_title_wrap"
               ref={textWrapRef}
             >
-              {heroitem.map((item, index) => (
+              {heroitem.map((item) => (
                 <SwiperSlide key={item.heroid} className="hero_title">
                   <Link
                     to={item.link}

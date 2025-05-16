@@ -8,6 +8,8 @@ import mediawallimg4 from "../assets/img/bg/mediawall_con4.jpg";
 import mediawallimg5 from "../assets/img/bg/mediawall_con5.jpg";
 import mediawallimg6 from "../assets/img/bg/mediawall_con6.jpg";
 
+import FadeInGSAP from "../components/FadeInGSAP";
+
 function Mediawall() {
   const mediaImg = [
     mediawallimg1,
@@ -32,25 +34,31 @@ function Mediawall() {
 
       <div className="mediawall_wrap">
         <div className="mediawall_left">
-          <h3 className="mediawall_title_wrap">
-            <span className="mediawall_title">Media Wall</span>
-          </h3>
+          <FadeInGSAP delay={0.9}>
+            <h3 className="mediawall_title_wrap">
+              <span className="mediawall_title">Media Wall</span>
+            </h3>
+          </FadeInGSAP>
 
           <div className="mediameta">
-            <ul className="mediameta_item">
-              {mediametaItem.map((metaitem, index) => (
-                <li className="mediameta_item_list">
-                  <Link className="mediameta_item_list_link">{metaitem}</Link>
-                </li>
-              ))}
-            </ul>
+            <FadeInGSAP delay={0.10}>
+              <ul className="mediameta_item">
+                {mediametaItem.map((metaitem, index) => (
+                  <li className="mediameta_item_list">
+                    <Link className="mediameta_item_list_link">{metaitem}</Link>
+                  </li>
+                ))}
+              </ul>
+            </FadeInGSAP>
 
             <div className="mediawall_sub">
-              <span className="mediawall_sub_text">
-                To Create The Best
-                <br />
-                Event Service
-              </span>
+              <FadeInGSAP delay={0.11}>
+                <span className="mediawall_sub_text">
+                  To Create The Best
+                  <br />
+                  Event Service
+                </span>
+              </FadeInGSAP>
             </div>
           </div>
         </div>

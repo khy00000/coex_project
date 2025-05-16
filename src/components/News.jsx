@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import mainnewsdata from "../data/mainnewsData";
 
+import FadeInGSAP from "../components/FadeInGSAP";
+
 function News() {
   // 공지사항 tabid : 0 기본값으로
   const [activeTabId, setActiveTabId] = useState(0);
@@ -15,7 +17,9 @@ function News() {
       {/* 뉴스 타이틀 */}
       <div className="news_title">
         <h3 className="news_title_wrap">
+        <FadeInGSAP delay={0.7}>
           <span className="news_title_text">코엑스 소식</span>
+          </FadeInGSAP>
         </h3>
         <div className="news_link_wrap">
           <Link className="news_link" to="#">
@@ -56,6 +60,7 @@ function News() {
         <div className="news_con_list">
           <ul className="news_area">
             {activeTab?.contents?.map((contentsItem) => (
+              <FadeInGSAP delay={0.8}>
               <li className="news_item" key={contentsItem.contentsid}>
                 <Link to={contentsItem.link} className="news_item_link">
                   <div className="news_item_date">
@@ -69,6 +74,7 @@ function News() {
                   <div className="news_item_title">{contentsItem.title}</div>
                 </Link>
               </li>
+              </FadeInGSAP>
             ))}
           </ul>
         </div>

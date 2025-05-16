@@ -23,7 +23,7 @@ const FadeInGSAP = ({ children, delay = 0 }) => {
         duration: 0.3,
         scrollTrigger: {
           trigger: el,
-          start: "top 80%",
+          start: "top 100%",
           toggleActions: "play none none none",
         },
       }
