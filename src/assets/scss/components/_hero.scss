@@ -29,10 +29,11 @@
           margin-bottom: 0.625rem;
         }
 
+        // swiper
         .hero_title_wrap {
           width: 40rem;
-          overflow: hidden;
 
+          // swiper-slide & swiper-slide-active
           .hero_title {
             // 타이틀
             .hero_title_slide {
@@ -41,7 +42,7 @@
               line-height: 1.3em;
               color: var(--black);
               font-weight: bold;
-              transform: translateY(104%);
+              transform: translateY(100px);
               max-height: 3.7em;
               width: 100%;
               overflow: hidden;
@@ -170,14 +171,32 @@
 // 히어로 타이틀 액티브 효과
 .swiper-slide.swiper-slide-active {
   .hero_title_slide {
-    transform: translateY(0%) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transition: 0.5s;
+    // transform: translateY(0%) !important;
+    // opacity: 1 !important;
+    // visibility: visible !important;
+    // transition: 0.5s;
+    // pointer-events: auto;
+    animation: slideUp 0.5s ease forwards !important;
   }
 }
 
 // 스와이퍼 플러그인 기본 해제
-.swiper{
+.swiper {
   margin-left: 0 !important;
+}
+
+// .first-load {
+//   animation: slideUp 0.5s ease forwards !important;
+// }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 }

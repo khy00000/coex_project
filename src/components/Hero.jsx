@@ -16,22 +16,11 @@ const Hero = () => {
   const [textSwiper, setTextSwiper] = useState(null);
   const [imgSwiper, setImgSwiper] = useState(null);
 
-  // herodata 현재 index
+  // herodata 현재 활성 index
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // .hero_title_slide 높이에 따라 부모 박스 높이 가변
   const textWrapRef = useRef(null);
-
-  //콘솔 디버깅 용
-  useEffect(() => {
-    if (textSwiper && imgSwiper) {
-      textSwiper.controller.control = imgSwiper;
-      imgSwiper.controller.control = textSwiper;
-
-      window.textSwiper = textSwiper;
-      window.imgSwiper = imgSwiper;
-    }
-  }, [textSwiper, imgSwiper]);
 
   //활성 hero_title_slide 높이 설정
   useEffect(() => {
@@ -45,6 +34,17 @@ const Hero = () => {
       wrap.style.height = `${height}px`;
     }
   }, [currentIndex]);
+
+  //콘솔 디버깅 용
+  useEffect(() => {
+    if (textSwiper && imgSwiper) {
+      textSwiper.controller.control = imgSwiper;
+      imgSwiper.controller.control = textSwiper;
+
+      window.textSwiper = textSwiper;
+      window.imgSwiper = imgSwiper;
+    }
+  }, [textSwiper, imgSwiper]);
 
   return (
     <div className="hero">
