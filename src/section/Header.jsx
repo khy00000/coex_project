@@ -17,11 +17,12 @@ const Header = () => {
         setLastcroll(currentscroll);
       }
     };
-    window.addEventListener('scroll', onscroll);
-    return () => window.removeEventListener('scroll', onscroll);}, [lastscroll]);
+    window.addEventListener("scroll", onscroll);
+    return () => window.removeEventListener("scroll", onscroll);
+  }, [lastscroll]);
 
   return (
-    <header id="header" className={`header ${hidden ? 'hide' : ''}`}>
+    <header id="header" className={`header ${hidden ? "hide" : ""}`}>
       <div className="header_wrap">
         {/* header logo */}
         <h1 className="logo_header">
@@ -86,7 +87,7 @@ const Header = () => {
         </nav>
 
         {/* header search */}
-        <div className="header_search">
+        <div className="header_promotion_wrap">
           <div className="header_promotion">
             <Link to="/">마곡 컨벤션센터</Link>
           </div>
@@ -101,53 +102,53 @@ const Header = () => {
               </li>
             </ul>
           </div>
+        </div>
 
-          {/* 우측 서치 아이콘 영역 */}
-          <div className="header_search_link">
-            <Link
-              to="#"
-              className={`header_search_link_open ${active ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setActive(true);
-              }}
-            >
-              <span className="blind">검색창 열기</span>
-            </Link>
-            <Link
-              to="#"
-              className={`header_search_link_close ${active ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-                setActive(false);
-              }}
-            >
-              <span className="blind">검색창 닫기</span>
-            </Link>
-          </div>
+        {/* 우측 돋보기 아이콘 영역 */}
+        <div className="header_search_link">
+          <Link
+            to="#"
+            className={`header_search_link_open ${active ? "active" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setActive(true);
+            }}
+          >
+            <span className="blind">검색창 열기</span>
+          </Link>
+          <Link
+            to="#"
+            className={`header_search_link_close ${active ? "active" : ""}`}
+            onClick={(e) => {
+              e.preventDefault();
+              setActive(false);
+            }}
+          >
+            <span className="blind">검색창 닫기</span>
+          </Link>
+        </div>
 
-          {/* 서치창 */}
-          <div className={`search_bar ${active ? "active" : ""}`}>
-            <input
-              id="search_bar_keyworld"
-              className="search_bar_keyword"
-              type="search"
-            />
-            <button type="button" class="search_bar_button">
-              <span class="blind">검색</span>
-            </button>
-            <div className="keyword_area">
-              <div className="title">추천 검색어</div>
-              <div className="keyword_list">
-                <ul className="keyword_list_box">
-                  <li className="keyword_list_1">#코엑스 전시</li>
-                  <li className="keyword_list_2">#행사</li>
-                  <li className="keyword_list_3">#주차안내</li>
-                  <li className="keyword_list_4">#편의시설</li>
-                  <li className="keyword_list_5">#오시는 길</li>
-                  <li className="keyword_list_6">#컨퍼런스</li>
-                </ul>
-              </div>
+        {/* 서치창 */}
+        <div className={`search_bar ${active ? "active" : ""}`}>
+          <input
+            id="search_bar_keyworld"
+            className="search_bar_keyword"
+            type="search"
+          />
+          <button type="button" className="search_bar_button">
+            <span className="blind">검색</span>
+          </button>
+          <div className="keyword_area">
+            <div className="title">추천검색어</div>
+            <div className="keyword_list">
+              <ul className="keyword_list_box">
+                <li className="keyword_list_1">#코엑스 전시</li>
+                <li className="keyword_list_2">#행사</li>
+                <li className="keyword_list_3">#주차안내</li>
+                <li className="keyword_list_4">#편의시설</li>
+                <li className="keyword_list_5">#오시는 길</li>
+                <li className="keyword_list_6">#컨퍼런스</li>
+              </ul>
             </div>
           </div>
         </div>

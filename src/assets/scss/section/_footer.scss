@@ -162,11 +162,11 @@
       }
 
       .footerlinksns {
-        .footerlinksns_item {
-          display: flex;
-          gap: 0.375rem;
-          flex-wrap: wrap;
+        display: flex;
+        gap: 0.375rem;
+        flex-wrap: wrap;
 
+        .footerlinksns_item {
           .footersns_link {
             display: block;
             width: 2.938rem;
@@ -180,76 +180,13 @@
               border: 2px solid black;
             }
 
-            &:first-child::after {
-              content: "";
+            img {
+              width: 1.125rem;
+              height: 1.125rem;
               position: absolute;
               top: 50%;
               left: 50%;
               transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_insta.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
-            }
-
-            &:nth-child(2)::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_youtube.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
-            }
-
-            &:nth-child(3)::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_facebook.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
-            }
-
-            &:nth-child(4)::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_linkedin.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
-            }
-
-            &:nth-child(5)::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_x.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
-            }
-
-            &:nth-child(6)::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-image: url(../../img/icon/footer_naverblog.svg);
-              width: 1.125rem;
-              height: 1.125rem;
-              background-size: 1.125rem 1.125rem;
             }
           }
         }

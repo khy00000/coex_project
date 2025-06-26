@@ -15,7 +15,9 @@
   .header_wrap {
     width: 1374px;
     margin: 0 auto;
-    @include flex-between-center;
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 }
 

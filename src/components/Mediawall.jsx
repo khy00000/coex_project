@@ -43,9 +43,9 @@ function Mediawall() {
           <div className="mediameta">
             <FadeInGSAP delay={0.10}>
               <ul className="mediameta_item">
-                {mediametaItem.map((metaitem, index) => (
-                  <li className="mediameta_item_list">
-                    <Link className="mediameta_item_list_link">{metaitem}</Link>
+                {mediametaItem.map((metaitem, m) => (
+                  <li key={m} className="mediameta_item_list">
+                    <Link to="#" className="mediameta_item_list_link">{metaitem}</Link>
                   </li>
                 ))}
               </ul>
@@ -67,7 +67,7 @@ function Mediawall() {
           {/* 미디어 이미지 영역 */}
           <div className="mediawall_right_wrap">
             {mediaImg.map((img, index) => (
-              <div className="mediawall_ins_img">
+              <div key={index} className="mediawall_ins_img">
                 <img src={img} alt={`mediawallimg${index + 1}`} />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

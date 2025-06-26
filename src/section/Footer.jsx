@@ -123,25 +123,31 @@ const Footer = () => {
             </ul>
 
             <ul className="footerlinksns">
-              <li className="footerlinksns_item">
-                {footersns.map((sns, index) => (
-                  <Link to="#" className="footersns_link">
-                    <span className="snstext blind">{sns}</span>
+              {footersns.map((sns, s) => (
+                <li key={s} className="footerlinksns_item">
+                  <Link to="#" className="footersns_link" title={sns.name}>
+                    <img
+                      src={sns.icon}
+                      alt={sns.name}
+                      className="footersns_icon"
+                      width="18"
+                      height="18"
+                    />
                   </Link>
-                ))}
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="footeinfo">
             <ul className="footerinfo_list">
-              <li className="footerinfo_item">
-                {footerinfo.map((info, index) => (
+              {footerinfo.map((info, i) => (
+                <li key={i} className="footerinfo_item">
                   <Link to="#" className="footerinfo_link">
                     {info}
                   </Link>
-                ))}
-              </li>
+                </li>
+              ))}
             </ul>
 
             <div className="family_site">
@@ -154,8 +160,8 @@ const Footer = () => {
               </button>
               {/* 패밀리 메뉴 */}
               <ul className="family_site_item_box">
-                {familysite.map((family, index) => (
-                  <li className="family_site_item">
+                {familysite.map((family, f) => (
+                  <li key={f} className="family_site_item">
                     <Link to="#" className="family_site_item_link">
                       {family}
                     </Link>
@@ -259,9 +265,9 @@ const Footer = () => {
                 시간입니다.
               </div>
               <div className="chatbutton_list">
-                {chatbotData.map((item) => (
-                  <button className="chatinfo_item">
-                    <span className="chatinfo_txt">{item}</span>
+                {chatbotData.map((data, i) => (
+                  <button key={i} className="chatinfo_item">
+                    <span className="chatinfo_txt">{data}</span>
                   </button>
                 ))}
               </div>
@@ -278,7 +284,7 @@ const Footer = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g data-v-170f181a="" clip-path="url(#clip0_1718_122)">
+                <g data-v-170f181a="" clipPath="url(#clip0_1718_122)">
                   <path
                     data-v-170f181a=""
                     d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"

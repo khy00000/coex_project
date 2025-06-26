@@ -34,12 +34,12 @@ const FadeInGSAP = ({ children, delay = 0 }) => {
     };
   }, [delay]);
 
-  // 자식이 단일 React 엘리먼트일 때만 작동하도록
+  // 자식이 단일 엘리먼트일 때만 작동하도록
   if (isValidElement(children)) {
     return cloneElement(children, { ref: sectionRef });
   }
 
-  console.warn("단일 React 엘리먼트만 허용합니다.");
+  console.warn("단일 엘리먼트만 허용합니다.");
   return null;
 };
 

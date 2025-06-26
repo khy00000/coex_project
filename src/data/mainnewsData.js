@@ -71,7 +71,7 @@ const mainnewsdata = [
   {
     tabid: 2,
     tabtitle: "뉴스",
-    link: "https://www.coex.co.kr/guide/news/"
+    link: "#"
   }
 ];
 

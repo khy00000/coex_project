@@ -10,15 +10,15 @@ function News() {
   const [activeTabId, setActiveTabId] = useState(0);
 
   //활성화된 탭 콘텐츠
-  const activeTab = mainnewsdata.find((item) => item.tabid === activeTabId);
+  const activeTab = mainnewsdata.find((news) => news.tabid === activeTabId);
 
   return (
     <div className="news">
       {/* 뉴스 타이틀 */}
       <div className="news_title">
         <h3 className="news_title_wrap">
-        <FadeInGSAP delay={0.7}>
-          <span className="news_title_text">코엑스 소식</span>
+          <FadeInGSAP delay={0.7}>
+            <span className="news_title_text">코엑스 소식</span>
           </FadeInGSAP>
         </h3>
         <div className="news_link_wrap">
@@ -31,24 +31,24 @@ function News() {
         {/* 탭메뉴 타이틀 */}
         <div className="news_con_tap_wrap">
           <ul className="news_con_tap">
-            {mainnewsdata.map((item) => (
+            {mainnewsdata.map((news) => (
               <li
-                key={item.tabid}
+                key={news.tabid}
                 className={`news_con_tap_item ${
-                  item.tabid === activeTabId ? "active" : ""
+                  news.tabid === activeTabId ? "active" : ""
                 }`}
               >
-                {item.contents ? (
+                {news.contents ? (
                   <button
                     type="button"
                     className="news_con_tap_item_button"
-                    onClick={() => setActiveTabId(item.tabid)}
+                    onClick={() => setActiveTabId(news.tabid)}
                   >
-                    {item.tabtitle}
+                    {news.tabtitle}
                   </button>
                 ) : (
-                  <Link to={item.link} className="news_con_tap_item_link">
-                    {item.tabtitle}
+                  <Link to={news.link} className="news_con_tap_item_link">
+                    {news.tabtitle}
                   </Link>
                 )}
               </li>
@@ -60,20 +60,20 @@ function News() {
         <div className="news_con_list">
           <ul className="news_area">
             {activeTab?.contents?.map((contentsItem) => (
-              <FadeInGSAP delay={0.8}>
-              <li className="news_item" key={contentsItem.contentsid}>
-                <Link to={contentsItem.link} className="news_item_link">
-                  <div className="news_item_date">
-                    <span className="news_item_dateday">
-                      {contentsItem.dateday}
-                    </span>
-                    <span className="news_item_datemonth">
-                      {contentsItem.datemonth}
-                    </span>
-                  </div>
-                  <div className="news_item_title">{contentsItem.title}</div>
-                </Link>
-              </li>
+              <FadeInGSAP delay={0.8} key={contentsItem.contentsid}>
+                <li className="news_item">
+                  <Link to={contentsItem.link} className="news_item_link">
+                    <div className="news_item_date">
+                      <span className="news_item_dateday">
+                        {contentsItem.dateday}
+                      </span>
+                      <span className="news_item_datemonth">
+                        {contentsItem.datemonth}
+                      </span>
+                    </div>
+                    <div className="news_item_title">{contentsItem.title}</div>
+                  </Link>
+                </li>
               </FadeInGSAP>
             ))}
           </ul>
