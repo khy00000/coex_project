@@ -8,6 +8,8 @@ import Header from "./section/Header";
 import Main from "./section/Main";
 import Footer from "./section/Footer";
 
+import Cursor from "./components/Cursor";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,6 +21,8 @@ const App = () => {
         </Route>
       </Routes>
       <Footer />
+
+      <Cursor />
     </BrowserRouter>
   );
 };
