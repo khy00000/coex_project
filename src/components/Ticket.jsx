@@ -37,10 +37,12 @@ const Ticket = () => {
     <div className="main_ticket">
       <div className="main_ticket_wrap">
         <FadeInGSAP delay={0.6}>
-          <h3>
-            <span className="ticket_title">티켓 오픈</span>
-            <span className="ticket_title_num">{bookingitem.length}</span>
-          </h3>
+          <div className="ticket_title_wrap">
+            <h3>
+              <span className="ticket_title">티켓 오픈</span>
+              <span className="ticket_title_num">{bookingitem.length}</span>
+            </h3>
+          </div>
         </FadeInGSAP>
 
         <div className="ticket_con">
