@@ -28,6 +28,10 @@
       width: 1374px;
       margin: 0 auto;
 
+      @include respond-min("desktop") {
+        width: 1720px;
+      }
+
       // 티켓 타이틀
       h3 {
         position: relative;

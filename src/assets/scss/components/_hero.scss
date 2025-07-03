@@ -3,7 +3,7 @@
 .hero {
   width: 100%;
   padding-top: 8.4rem;
-  padding-bottom: 5.438rem;
+  padding-bottom: 3.3em;
 
   .hero_slide_box {
     position: relative;
@@ -82,8 +82,8 @@
           height: 12.688rem;
           background-size: 14.125rem 12.688rem;
           position: absolute;
-          left: 35rem;
-          bottom: 0rem;
+          right: 2.8rem;
+          bottom: 0.5rem;
           z-index: 1;
         }
       }
@@ -113,7 +113,7 @@
       justify-content: space-between;
       position: absolute;
       top: 15.6rem;
-      right: -24rem;
+      right: -22rem;
       width: 35rem;
       height: 3.75rem;
       transform: rotate(-90deg);
@@ -141,7 +141,7 @@
   .custom-pagination-wrapper {
     position: relative;
     width: 100%;
-    height: 2.626rem;
+    height: 2rem;
     display: flex;
     align-items: end;
     justify-content: flex-end;

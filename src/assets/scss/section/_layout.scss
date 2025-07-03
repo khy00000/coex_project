@@ -2,27 +2,22 @@
 
 // // 초대형 화면용 (1471px 이상)
 // @include respond-min("desktop") {
-//   font-size: 22px;
 // }
 
 // // 1024px 이하
 // @include respond-max("laptop") {
-//   font-size: 16px;
 // }
 
 // // 768px 이하
 // @include respond-max("tablet") {
-//   font-size: 14px;
 // }
 
 // // 430px 이하
 // @include respond-max("mobile-l") {
-//   font-size: 13px;
 // }
 
 // // 393px 이하
 // @include respond-max("mobile-m") {
-//   font-size: 12px;
 // }
 
 #header {
@@ -44,7 +39,6 @@
     margin: 0 auto;
     position: relative;
 
-    // 초대형 화면용 (1471px 이상)
     @include respond-min("desktop") {
       width: 1720px;
     }
@@ -58,6 +52,10 @@
   .main_wrap {
     width: 1374px;
     margin: 0 auto;
+
+    @include respond-min("desktop") {
+      width: 1720px;
+    }
   }
 }
 

@@ -87,7 +87,7 @@ const Footer = () => {
               </li>
               <li className="footernavlist_item">
                 <Link className="footernav_link" to="#">
-                  오시는길
+                  오시는 길
                 </Link>
               </li>
               <li className="footernavlist_item">
