@@ -21,17 +21,20 @@
     width: 6rem;
     height: 2.125rem;
     background-image: url(../../img/logo/logo.svg);
+    background-size: 6rem 2.125rem;
   }
 }
 
 .primary_menu {
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%,-50%);
 
   .primary_menu_box {
     li {
       display: inline-block;
+      
       .depth1 {
         display: block;
         font-size: 1.063rem;
@@ -349,7 +352,7 @@
   .keyword_area {
     background-color: var(--black);
     position: absolute;
-    top: 1.75rem;
+    top: 3.5rem;
     right: -0.6rem;
     width: 384px;
     height: 138px;
