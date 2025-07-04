@@ -92,7 +92,7 @@ const Header = () => {
               </Link>
             </li>
             <li className="primary_menu_4">
-              <Link to="/" className="depth1">
+              <Link to="/" className="depth1 magok">
                 마곡 컨벤션센터
               </Link>
             </li>

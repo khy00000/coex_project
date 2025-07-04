@@ -138,6 +138,7 @@
           font-size: 1.8rem;
           padding: 0.8rem 0;
           line-height: 1.4em;
+          padding-right: 1.375rem;
         }
 
         &::after {
@@ -153,6 +154,9 @@
 
           @include respond-max("laptop") {
             display: none;
+            content: none;
+            bottom: unset;
+            left: unset;
           }
         }
 
@@ -163,11 +167,6 @@
 
         &.has-children {
           @include respond-max("laptop") {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: block;
-
             &::after {
               display: block;
               content: "";
@@ -183,6 +182,28 @@
               transition: transform 0.2s;
               background-color: transparent;
               opacity: 1;
+            }
+          }
+        }
+
+        &.magok {
+          @include respond-max("laptop") {
+            &::after {
+              display: block;
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: -0.5rem;
+              transform: translateY(-50%);
+              width: 2rem;
+              height: 2rem;
+              background-image: url(../../img/icon/mo_menu_mint.svg);
+              background-size: 2rem 2rem;
+              background-repeat: no-repeat;
+              transition: transform 0.2s;
+              background-color: transparent;
+              opacity: 1;
+              margin-top: -0.2rem;
             }
           }
         }
@@ -227,6 +248,7 @@
           transform: unset;
           justify-content: unset;
           padding: 0.2rem 0 1rem;
+          width: unset;
         }
 
         .menu {
@@ -296,6 +318,12 @@
           padding-right: 1.4rem;
           position: relative;
 
+          @include respond-max("laptop") {
+            display: block;
+            width: 100%;
+            padding-right: unset;
+          }
+
           //핑크 보더 래디어스
           &::before {
             content: "";
@@ -308,6 +336,7 @@
 
             @include respond-max("laptop") {
               content: none;
+              display: none;
             }
           }
 
@@ -323,10 +352,24 @@
             background-image: url(../../img/icon/primary_menu_ico.svg);
             background-size: 0.875rem 0.875rem;
             margin-top: -1px;
+
+            @include respond-max("laptop") {
+              width: 2rem;
+              height: 2rem;
+              background-image: url(../../img/icon/mo_menu_pink.svg);
+              background-size: 2rem 2rem;
+              top: 50%;
+              right: -0.5rem;
+              margin-top: -0.2rem;
+            }
           }
 
           &:hover {
             color: #f246ac;
+
+            @include respond-max("laptop") {
+              color: unset;
+            }
 
             //보더래디어스
             &::before {
