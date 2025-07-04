@@ -29,9 +29,7 @@
   top: 0;
   left: 0;
   right: 0;
-  @include flex-center;
   z-index: 999999;
-  display: flex;
 
   .header_wrap {
     width: 1374px;
@@ -41,6 +39,11 @@
 
     @include respond-min("desktop") {
       width: 1720px;
+    }
+
+    @include respond-max("laptop") {
+      width: 100%;
+      padding: 0 2rem;
     }
   }
 }

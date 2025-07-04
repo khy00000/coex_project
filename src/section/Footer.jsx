@@ -25,13 +25,14 @@ const Footer = () => {
       const windowHeight = window.innerHeight;
       const bodyHeight = document.body.offsetHeight;
 
+      // 푸터 높이보다 조금 작게 설정
       const scrollFooter = 400;
       const isNeerFooter =
         scrollTop + windowHeight >= bodyHeight - scrollFooter;
 
-      //탑버튼 visible
+      //탑버튼 visible 탑버튼 보여줄 조건: 푸터에 가까워지지 않았고 800px 이상 스크롤했을 때
       setVisible(!isNeerFooter && scrollTop > 800);
-      //푸터에 닿았을때
+      //푸터에 닿고 조금 지났을때
       setFooterFix(isNeerFooter);
     };
 
@@ -52,7 +53,6 @@ const Footer = () => {
   // 챗봇 오른쪽 닫기
   const cbiconClose = () => {
     setCbclose(true);
-    console.log("cbClose 상태:", true);
   };
 
   return (

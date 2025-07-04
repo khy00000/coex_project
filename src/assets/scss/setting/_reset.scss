@@ -91,6 +91,7 @@ input,
 textarea,
 button,
 select {
+  all: unset;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
