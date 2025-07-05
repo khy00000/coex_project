@@ -1,25 +1,5 @@
 @use "../setting/index" as *;
 
-// // 초대형 화면용 (1471px 이상)
-// @include respond-min("desktop") {
-// }
-
-// // 1024px 이하
-// @include respond-max("laptop") {
-// }
-
-// // 768px 이하
-// @include respond-max("tablet") {
-// }
-
-// // 430px 이하
-// @include respond-max("mobile-l") {
-// }
-
-// // 393px 이하
-// @include respond-max("mobile-m") {
-// }
-
 #header {
   width: 100%;
   height: 66px;
@@ -36,15 +16,6 @@
     height: 100%;
     margin: 0 auto;
     position: relative;
-
-    @include respond-min("desktop") {
-      width: 1720px;
-    }
-
-    @include respond-max("laptop") {
-      width: 100%;
-      padding: 0 2rem;
-    }
   }
 }
 
@@ -55,10 +26,6 @@
   .main_wrap {
     width: 1374px;
     margin: 0 auto;
-
-    @include respond-min("desktop") {
-      width: 1720px;
-    }
   }
 }
 

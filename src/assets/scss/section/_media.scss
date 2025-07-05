@@ -1,0 +1,291 @@
+@use "../setting/mixin" as *;
+
+// // 초대형 화면용 (1471px 이상)
+// @include respond-min("desktop") {
+// }
+
+// // 1024px 이하
+// @include respond-max("laptop") {
+// }
+
+// // 768px 이하
+// @include respond-max("tablet") {
+// }
+
+// // 430px 이하
+// @include respond-max("mobile-l") {
+// }
+
+// // 393px 이하
+// @include respond-max("mobile-m") {
+// }
+
+@include respond-min("desktop") {
+  .header_wrap {
+    width: 1720px;
+  }
+
+  .main_wrap {
+    width: 1720px;
+  }
+
+  .primary_menu .primary_menu_box li .depth2on:hover + .depth2_menu {
+    display: block;
+  }
+}
+
+@include respond-min("media") {
+  .primary_menu .primary_menu_box li .depth2on:hover + .depth2_menu {
+    display: block;
+  }
+}
+
+@include respond-max("laptop") {
+  .header_wrap {
+    width: 100% !important;
+    padding: 0 2rem;
+  }
+
+  .mo_menu {
+    display: block;
+    width: 1.75rem;
+    height: 1.4rem;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 0.2s;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-direction: column;
+
+    .close {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-50%) scale(0);
+    }
+
+    .mo_menu_item {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+
+      &:nth-child(2) {
+        width: 80%;
+      }
+    }
+  }
+
+  .mo_memu_close {
+    display: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-image: url(../../img/icon/header_search_close.svg);
+    background-size: 1.75rem 1.75rem;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 0.2s;
+    opacity: 0;
+    transform: translateY(-50%) scale(0);
+  }
+
+  .logo_header {
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
+
+  // 메뉴
+  .primary_menu {
+    transform: unset;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    // transform: translateY(0);
+    // transform: translateY(-110%);
+    transition-property: transform;
+    transition-duration: 0.4s;
+    background-color: #000000;
+    padding: 3rem 2rem 4rem;
+
+    .primary_menu_box {
+      li {
+        display: block;
+        border-bottom: dashed 1px rgba(255, 255, 255, 0.2);
+
+        .depth1 {
+          width: 100%;
+          font-size: 1.8rem;
+          padding: 0.8rem 0;
+          line-height: 1.4em;
+          padding-right: 1.375rem;
+
+          &::after {
+            display: none;
+            content: none;
+            bottom: unset;
+            left: unset;
+          }
+
+          &.magok {
+            &::after {
+              display: block;
+              content: "";
+              position: absolute;
+              top: 50%;
+              right: -0.5rem;
+              transform: translateY(-50%);
+              width: 2rem;
+              height: 2rem;
+              background-image: url(../../img/icon/mo_menu_mint.svg);
+              background-size: 2rem 2rem;
+              background-repeat: no-repeat;
+              transition: transform 0.2s;
+              background-color: transparent;
+              opacity: 1;
+              margin-top: -0.2rem;
+            }
+          }
+        }
+
+        .depth2on {
+          width: 100%;
+          font-size: 1.8rem;
+          padding: 0.8rem 0;
+          line-height: 1.4em;
+          padding-right: 1.375rem;
+
+          &::after {
+            display: none;
+            content: none;
+            bottom: unset;
+            left: unset;
+          }
+
+          // 모바일 가이드 어로우
+          .has-children {
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(0deg);
+            width: 1.7rem;
+            height: 1.7rem;
+            background-image: url(../../img/icon/mo_menu_arrow.svg);
+            background-size: 1.7rem 1.7rem;
+            background-repeat: no-repeat;
+            transition: transform 0.2s;
+            background-color: transparent;
+
+            &.rotate {
+              transform: translateY(-50%) rotate(90deg);
+            }
+          }
+        }
+      }
+
+      .primary_menu_2 {
+        //2depth 메뉴
+        .depth2_menu {
+          background-color: var(--black);
+          border-bottom: unset;
+          position: unset;
+          left: unset;
+          transform: unset;
+          justify-content: unset;
+          padding: 0.2rem 0 1rem;
+          width: unset;
+          text-align: start;
+
+          // 2depth li
+          .menu {
+            border-bottom: unset;
+
+            a {
+              color: var(--white);
+              padding: 0.5rem 1.125rem;
+            }
+          }
+        }
+      }
+
+      // 마곡 프로모션 메뉴
+      .primary_menu_pro_1 {
+        .depth1_pro {
+          padding: 0.8rem 0;
+          color: #f53fab;
+          font-size: 1.8rem;
+          line-height: 1.4em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .box {
+            display: block;
+            padding-right: unset;
+
+            // 핑크 보더 래디어스
+            &::before {
+              content: none;
+              display: none;
+            }
+
+            // 화이트 화살표
+            &::after {
+              content: none;
+              display: none;
+            }
+
+            &:hover {
+              color: unset;
+
+              &::before {
+                background-color: unset;
+              }
+
+              &::after {
+                background-image: unset;
+              }
+            }
+          }
+
+          // 핑크 화살표
+          .pro-mo-arrow {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(../../img/icon/mo_menu_pink.svg);
+            background-size: 1.5rem 1.5rem;
+            margin-top: 0.2rem;
+          }
+        }
+      }
+
+      .primary_menu_4 {
+        display: block;
+
+        .depth1 {
+          color: #42c1c7;
+        }
+      }
+    }
+  }
+
+  .header_promotion_wrap {
+    right: 6.4rem;
+
+    .header_promotion {
+      display: none;
+    }
+  }
+
+  .header_search_link {
+    right: 2rem;
+  }
+}

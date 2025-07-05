@@ -12,67 +12,11 @@
 // 모바일 메뉴 버튼
 .mo_menu {
   display: none;
-  width: 1.75rem;
-  height: 1.4rem;
-  position: absolute;
-  top: 50%;
-  left: 2rem;
-  transition-property: transform, opacity, visibility;
-  transition-duration: 0.2s;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) scale(1);
-
-  @include respond-max("laptop") {
-    display: block;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-direction: column;
-  }
-
-  .close {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-50%) scale(0);
-  }
-
-  .mo_menu_item {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-
-    &:nth-child(2) {
-      width: 80%;
-    }
-  }
 }
 
 // 모바일 메뉴 닫기 버튼
 .mo_memu_close {
   display: none;
-  width: 1.75rem;
-  height: 1.75rem;
-  background-image: url(../../img/icon/header_search_close.svg);
-  background-size: 1.75rem 1.75rem;
-  position: absolute;
-  top: 50%;
-  left: 2rem;
-  transition-property: transform, opacity, visibility;
-  transition-duration: 0.2s;
-  opacity: 0;
-  transform: translateY(-50%) scale(0);
-
-  @include respond-max("laptop") {
-    display: none;
-  }
-
-  .open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) scale(1);
-  }
 }
 
 //로고
@@ -81,11 +25,6 @@
   top: 50%;
   left: 0;
   transform: translateY(-65%);
-
-  @include respond-max("laptop") {
-    left: 50%;
-    transform: translate(-50%, -65%);
-  }
 
   .logo_header_link {
     display: block;
@@ -102,27 +41,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @include respond-max("laptop") {
-    transform: unset;
-    top: 4rem;
-    left: 0;
-    right: 0;
-    // transform: translateY(0);
-    // transform: translateY(-110%);
-    transition-property: transform;
-    transition-duration: 0.4s;
-    background-color: #000000;
-    padding: 3rem 2rem 4rem;
-  }
-
   .primary_menu_box {
     li {
       display: inline-block;
-
-      @include respond-max("laptop") {
-        display: block;
-        border-bottom: dashed 1px rgba(255, 255, 255, 0.2);
-      }
 
       .depth1 {
         display: block;
@@ -132,14 +53,6 @@
         color: #fff;
         padding: 1.438rem 1.125rem;
         position: relative;
-
-        @include respond-max("laptop") {
-          width: 100%;
-          font-size: 1.8rem;
-          padding: 0.8rem 0;
-          line-height: 1.4em;
-          padding-right: 1.375rem;
-        }
 
         &::after {
           content: "";
@@ -151,13 +64,33 @@
           background-color: var(--white);
           opacity: 0;
           transition: opacity 0.3s;
+        }
 
-          @include respond-max("laptop") {
-            display: none;
-            content: none;
-            bottom: unset;
-            left: unset;
-          }
+        &:hover::after,
+        &:focus::after {
+          opacity: 1;
+        }
+      }
+
+      .depth2on {
+        display: block;
+        font-size: 1.063rem;
+        line-height: 1.2em;
+        font-weight: 600;
+        color: #fff;
+        padding: 1.438rem 1.125rem;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 1.125em;
+          left: 1.125rem;
+          right: 1.125rem;
+          height: 1px;
+          background-color: var(--white);
+          opacity: 0;
+          transition: opacity 0.3s;
         }
 
         &:hover::after,
@@ -165,61 +98,10 @@
           opacity: 1;
         }
 
-        &.has-children {
-          @include respond-max("laptop") {
-            &::after {
-              display: block;
-              content: "";
-              position: absolute;
-              top: 50%;
-              right: 0;
-              transform: translateY(-50%);
-              width: 1.7rem;
-              height: 1.7rem;
-              background-image: url(../../img/icon/mo_menu_arrow.svg);
-              background-size: 1.7rem 1.7rem;
-              background-repeat: no-repeat;
-              transition: transform 0.2s;
-              background-color: transparent;
-              opacity: 1;
-            }
-          }
-        }
+        // 투뎁스 메뉴 오픈 미디어에서 처리함
 
-        &.magok {
-          @include respond-max("laptop") {
-            &::after {
-              display: block;
-              content: "";
-              position: absolute;
-              top: 50%;
-              right: -0.5rem;
-              transform: translateY(-50%);
-              width: 2rem;
-              height: 2rem;
-              background-image: url(../../img/icon/mo_menu_mint.svg);
-              background-size: 2rem 2rem;
-              background-repeat: no-repeat;
-              transition: transform 0.2s;
-              background-color: transparent;
-              opacity: 1;
-              margin-top: -0.2rem;
-            }
-          }
-        }
-      }
-    }
-
-    .primary_menu_4 {
-      display: none;
-
-      @include respond-max("laptop") {
-        display: block;
-      }
-
-      .depth1 {
-        @include respond-max("laptop") {
-          color: #42c1c7;
+        .has-children {
+          display: none;
         }
       }
     }
@@ -232,29 +114,14 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100vw;
+        white-space: nowrap;
         background-color: var(--white);
         border-bottom: solid 1px #e5e5e5;
-        @include flex-center;
-        opacity: 0;
-        visibility: hidden;
-
-        @include respond-max("laptop") {
-          opacity: 1;
-          visibility: visible;
-          background-color: var(--black);
-          border-bottom: unset;
-          position: unset;
-          left: unset;
-          transform: unset;
-          justify-content: unset;
-          padding: 0.2rem 0 1rem;
-          width: unset;
-        }
+        text-align: center;
+        display: none;
 
         .menu {
-          @include respond-max("laptop") {
-            border-bottom: unset;
-          }
+          display: inline-block;
 
           a {
             display: block;
@@ -264,11 +131,6 @@
             position: relative;
             line-height: 1.4em;
             padding: 1.063rem 1.125rem 0.938rem;
-
-            @include respond-max("laptop") {
-              color: var(--white);
-              padding: 0.5rem 1.125rem;
-            }
 
             &::after {
               content: "";
@@ -288,12 +150,6 @@
           }
         }
       }
-
-      &:hover .depth2_menu,
-      &:focus .depth2_menu {
-        opacity: 1;
-        visibility: visible;
-      }
     }
 
     //프로모션 메뉴 비지니스
@@ -307,22 +163,9 @@
         padding: 1.438rem 1.1rem;
         position: relative;
 
-        @include respond-max("laptop") {
-          padding: 0.8rem 0;
-          color: #f53fab;
-          font-size: 1.8rem;
-          line-height: 1.4em;
-        }
-
         .box {
           padding-right: 1.4rem;
           position: relative;
-
-          @include respond-max("laptop") {
-            display: block;
-            width: 100%;
-            padding-right: unset;
-          }
 
           //핑크 보더 래디어스
           &::before {
@@ -333,11 +176,6 @@
             border-radius: 100px 100px;
             background-color: #f246ac;
             z-index: -1;
-
-            @include respond-max("laptop") {
-              content: none;
-              display: none;
-            }
           }
 
           //화이트 화살표
@@ -352,24 +190,10 @@
             background-image: url(../../img/icon/primary_menu_ico.svg);
             background-size: 0.875rem 0.875rem;
             margin-top: -1px;
-
-            @include respond-max("laptop") {
-              width: 2rem;
-              height: 2rem;
-              background-image: url(../../img/icon/mo_menu_pink.svg);
-              background-size: 2rem 2rem;
-              top: 50%;
-              right: -0.5rem;
-              margin-top: -0.2rem;
-            }
           }
 
           &:hover {
             color: #f246ac;
-
-            @include respond-max("laptop") {
-              color: unset;
-            }
 
             //보더래디어스
             &::before {
@@ -382,7 +206,16 @@
             }
           }
         }
+
+        .pro-mo-arrow{
+          display: none;
+        }
       }
+    }
+
+    //모바일 전용 메뉴 (1depth 메뉴)
+    .primary_menu_4 {
+      display: none;
     }
   }
 }
@@ -396,15 +229,7 @@
   right: 4.4rem;
   transform: translateY(-50%);
 
-  @include respond-max("laptop") {
-    right: 6.4rem;
-  }
-
   .header_promotion {
-    @include respond-max("laptop") {
-      display: none;
-    }
-
     .header_pro_link {
       display: block;
       font-size: 1.0625rem;
@@ -467,10 +292,6 @@
   width: 1.813rem;
   height: 1.75rem;
   display: flex;
-
-  @include respond-max("laptop") {
-    right: 2rem;
-  }
 
   //돋보기 오픈
   .header_search_link_open {
@@ -546,8 +367,8 @@
     top: 50%;
     right: 3.4rem;
     transform: translateY(-50%);
-    width: 20rem;
-    height: 2.6rem;
+    width: 13.3rem;
+    height: 1.6rem;
     border-radius: 0.4rem;
     padding: 0.52rem 4rem 0.52rem 2.7rem;
     transition-property: transform, opacity;
@@ -583,7 +404,7 @@
   .keyword_area {
     background-color: var(--black);
     position: absolute;
-    top: 3.5rem;
+    top: 3.7rem;
     right: -0.6rem;
     width: 384px;
     height: 138px;
