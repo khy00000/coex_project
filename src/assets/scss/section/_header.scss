@@ -108,9 +108,8 @@
 
     //투뎁스 메뉴
     .primary_menu_2 {
-      &:hover .depth2_menu {
-        display: block;
-      }
+
+      //2depth 메뉴 호버 media에서 적용
       
       //2depth 메뉴
       .depth2_menu {
