@@ -29,13 +29,13 @@
     width: 1720px;
   }
 
-  .primary_menu .primary_menu_box li .depth2on:hover + .depth2_menu {
+  .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
     display: block;
   }
 }
 
-@include respond-min("media") {
-  .primary_menu .primary_menu_box li .depth2on:hover + .depth2_menu {
+@include respond-min("1025") {
+  .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
     display: block;
   }
 }

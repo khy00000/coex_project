@@ -108,6 +108,10 @@
 
     //투뎁스 메뉴
     .primary_menu_2 {
+      &:hover .depth2_menu {
+        display: block;
+      }
+      
       //2depth 메뉴
       .depth2_menu {
         position: absolute;
@@ -207,7 +211,7 @@
           }
         }
 
-        .pro-mo-arrow{
+        .pro-mo-arrow {
           display: none;
         }
       }
