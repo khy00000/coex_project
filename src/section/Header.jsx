@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
 
 const Header = () => {
-  //헤더 우측 서치 영역 액티브
+  // 헤더 우측 서치 영역 액티브
   const [active, setActive] = useState(false);
 
-  //헤더 스코롤 효과
+  // 헤더 스코롤 효과
   const [hidden, setHidden] = useState(false);
   const [lastscroll, setLastcroll] = useState(0);
-
-  // 모바일 메뉴
-  const [isMenu, setIsMenu] = useState(false);
-  // 모바일 메뉴 2뎁스 어로우 액티브
-  const [isOpen, setIsOpen] = useState(false);
-  // 모바일에서만, 리사이징에서도 반응하도록
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     const onscroll = () => {
@@ -34,6 +21,43 @@ const Header = () => {
     window.addEventListener("scroll", onscroll);
     return () => window.removeEventListener("scroll", onscroll);
   }, [lastscroll]);
+
+  // 모바일에서만, 리사이징에서도 반응하도록
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 모바일 메뉴 1뎁스
+  const [isMenu, setIsMenu] = useState(false);
+
+  // 모바일 메뉴 2뎁스 어로우 액티브
+  const [isOpen, setIsOpen] = useState(false);
+
+  // 모바일 메뉴 등장 효과
+  const modepth1Ref = useRef(null);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const items = modepth1Ref.current?.querySelectorAll(".mo-li");
+
+    if (isMenu && items?.length) {
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          y: -30,
+        },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out" }
+      );
+    }
+  }, [isMenu, isMobile]);
 
   return (
     <header id="header" className={`header ${hidden ? "hide" : ""}`}>
@@ -76,8 +100,8 @@ const Header = () => {
           className={`primary_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
           aria-label="주요 메뉴"
         >
-          <ul className="primary_menu_box">
-            <li className="primary_menu_1">
+          <ul className="primary_menu_box" ref={modepth1Ref}>
+            <li className="primary_menu_1 mo-li">
               <Link to="/" className="depth1">
                 행사
               </Link>
@@ -85,7 +109,7 @@ const Header = () => {
 
             {/* 2depth */}
             <li
-              className="primary_menu_2"
+              className="primary_menu_2 mo-li"
               onClick={(e) => {
                 if (!isMobile) return;
                 e.preventDefault();
@@ -131,18 +155,18 @@ const Header = () => {
               </ul>
             </li>
 
-            <li className="primary_menu_3">
+            <li className="primary_menu_3 mo-li">
               <Link to="/" className="depth1">
                 하이라이트
               </Link>
             </li>
-            <li className="primary_menu_pro_1">
+            <li className="primary_menu_pro_1 mo-li">
               <Link to="/" className="depth1_pro">
                 <span className="box">Business</span>
                 <span className="pro-mo-arrow"></span>
               </Link>
             </li>
-            <li className="primary_menu_4">
+            <li className="primary_menu_4 mo-li">
               <Link to="/" className="depth1 magok">
                 마곡 컨벤션센터
               </Link>

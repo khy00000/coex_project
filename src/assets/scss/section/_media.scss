@@ -123,7 +123,7 @@
     padding: 3rem 2rem 4rem;
     display: none;
 
-    &.momenuopen{
+    &.momenuopen {
       display: block;
     }
 
@@ -131,6 +131,7 @@
       li {
         display: block;
         border-bottom: dashed 1px rgba(255, 255, 255, 0.2);
+        opacity: 0;
 
         .depth1 {
           width: 100%;
