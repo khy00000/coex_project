@@ -9,7 +9,9 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [lastscroll, setLastcroll] = useState(0);
 
-  //모바일 메뉴 2뎁스 어로우 액티브
+  // 모바일 메뉴
+  const [isMenu, setIsMenu] = useState(false);
+  // 모바일 메뉴 2뎁스 어로우 액티브
   const [isOpen, setIsOpen] = useState(false);
   // 모바일에서만, 리사이징에서도 반응하도록
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
@@ -37,12 +39,28 @@ const Header = () => {
     <header id="header" className={`header ${hidden ? "hide" : ""}`}>
       <div className="header_wrap">
         {/* 모바일 버튼 */}
-        <button className="mo_menu">
+        <button
+          className={`mo_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
+          onClick={(e) => {
+            if (!isMobile) return;
+            e.preventDefault();
+            e.stopPropagation();
+            setIsMenu((prev) => !prev);
+          }}
+        >
           <span className="mo_menu_item"></span>
           <span className="mo_menu_item"></span>
           <span className="mo_menu_item"></span>
         </button>
-        <button className="mo_memu_close"></button>
+        <button
+          className={`mo_menu_close ${isMobile && isMenu ? "momenuopen" : ""}`}
+          onClick={(e) => {
+            if (!isMobile) return;
+            e.preventDefault();
+            e.stopPropagation();
+            setIsMenu((prev) => !prev);
+          }}
+        ></button>
 
         {/* header logo */}
         <h1 className="logo_header">
@@ -53,7 +71,11 @@ const Header = () => {
         </h1>
 
         {/* primary menu */}
-        <nav id="top_navi" className="primary_menu" aria-label="주요 메뉴">
+        <nav
+          id="top_navi"
+          className={`primary_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
+          aria-label="주요 메뉴"
+        >
           <ul className="primary_menu_box">
             <li className="primary_menu_1">
               <Link to="/" className="depth1">
@@ -74,7 +96,9 @@ const Header = () => {
               <Link to="/" className="depth2on">
                 가이드
                 <span
-                  className={`has-children ${isOpen ? "rotate" : ""}`}
+                  className={`has-children ${
+                    isMobile && isOpen ? "rotate" : ""
+                  }`}
                 ></span>
               </Link>
               <ul
