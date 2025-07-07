@@ -193,15 +193,21 @@
       .primary_menu_2 {
         //2depth 메뉴
         .depth2_menu {
+          display: block;
+          overflow: hidden;
           background-color: var(--black);
           border-bottom: unset;
           position: unset;
-          left: unset;
           transform: unset;
-          justify-content: unset;
-          padding: 0.2rem 0 1rem;
           width: unset;
           text-align: start;
+          height: 0;
+          transition: height 0.5s ease, padding 0.5s ease;
+
+          &.active {
+            height: 58px;
+            padding: 0.2rem 0 1rem;
+          }
 
           // 2depth li
           .menu {

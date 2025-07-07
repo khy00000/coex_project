@@ -9,11 +9,11 @@ const Header = () => {
   const [hidden, setHidden] = useState(false);
   const [lastscroll, setLastcroll] = useState(0);
 
-    //모바일 메뉴 2뎁스 어로우 액티브
+  //모바일 메뉴 2뎁스 어로우 액티브
   const [isOpen, setIsOpen] = useState(false);
   // 모바일에서만, 리사이징에서도 반응하도록
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-  useEffect (() => {
+  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
@@ -73,10 +73,12 @@ const Header = () => {
             >
               <Link to="/" className="depth2on">
                 가이드
-                <span className={`has-children ${isOpen ? "rotate" : ""}`}></span>
+                <span
+                  className={`has-children ${isOpen ? "rotate" : ""}`}
+                ></span>
               </Link>
-              <ul className="depth2_menu"
-              style={isMobile && isOpen ? {display: "block"} : {}}
+              <ul
+                className={`depth2_menu ${isMobile && isOpen ? "active" : ""}`}
               >
                 <li className="primary_menu_4 menu">
                   <Link to="/">오시는 길</Link>
@@ -104,6 +106,7 @@ const Header = () => {
                 </li>
               </ul>
             </li>
+
             <li className="primary_menu_3">
               <Link to="/" className="depth1">
                 하이라이트
