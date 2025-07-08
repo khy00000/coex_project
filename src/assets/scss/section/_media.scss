@@ -107,7 +107,7 @@
       left: 50%;
       transform: translate(-50%, -65%);
 
-      &.hide .logo_header_link{
+      &.hide .logo_header_link {
         display: none;
       }
     }
@@ -331,6 +331,95 @@
         height: 109.21px;
         top: 3.8rem;
         right: 1.4rem;
+      }
+    }
+  }
+
+  .main_wrap {
+    width: 1024px !important;
+
+    .hero {
+      padding-top: 4.125rem;
+      padding-bottom: unset;
+
+      .hero_slide_box {
+        .hero_slide {
+          flex-direction: column;
+
+          .hero_slide_left {
+            order: 2;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            height: 220px;
+            padding-left: 2rem;
+
+            .hero_sub_title {
+              font-size: 1.3rem;
+            }
+
+            .hero_title_wrap {
+              .hero_title {
+                .hero_title_slide {
+                  font-size: 2.6rem;
+                  white-space: nowrap;
+                }
+              }
+            }
+
+            .here_title_info {
+              left: 2rem;
+
+              .here_title_info_date {
+                font-size: 1.2rem;
+                font-weight: 500;
+              }
+
+              .here_title_info_location {
+                font-size: 1.2rem;
+                font-weight: 500;
+              }
+            }
+
+            .here_title_arrow {
+              width: 11rem;
+              height: 8rem;
+              background-size: 11rem 8rem;
+              right: -2rem;
+            }
+          }
+
+          .hero_slide_right {
+            order: 1;
+            width: calc(100% - 5rem);
+            aspect-ratio: 1 / 1;
+            height: unset;
+            margin-bottom: 2rem;
+
+            .hero_slide_r_box {
+              .hero_slide_img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+
+        .hero_slide_rightnull {
+          right: -27.9rem;
+          top: 27.8rem;
+          height: 3.25rem;
+          width: 59rem;
+
+          .hero_slide_rightnull_text {
+            padding-top: 0.4rem;
+            padding-right: 2rem;
+          }
+        }
+      }
+
+      .custom-pagination-wrapper {
+        justify-content: center;
+        align-items: end;
       }
     }
   }
