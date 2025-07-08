@@ -87,7 +87,7 @@ const Header = () => {
         ></button>
 
         {/* header logo */}
-        <h1 className="logo_header">
+        <h1 className={`logo_header ${isMobile && active ? "hide" : ""}`}>
           <a href="/" className="logo_header_link" aria-label="Home"></a>
           <span className="logo_header_text blind">
             <span>코엑스</span>
@@ -101,7 +101,7 @@ const Header = () => {
           aria-label="주요 메뉴"
         >
           <ul className="primary_menu_box" ref={modepth1Ref}>
-            <li className="primary_menu_1 mo-li">
+            <li className="primary_menu_1 pc-li mo-li">
               <Link to="/" className="depth1">
                 행사
               </Link>
@@ -109,7 +109,7 @@ const Header = () => {
 
             {/* 2depth */}
             <li
-              className="primary_menu_2 mo-li"
+              className="primary_menu_2 pc-li mo-li"
               onClick={(e) => {
                 if (!isMobile) return;
                 e.preventDefault();
@@ -155,18 +155,18 @@ const Header = () => {
               </ul>
             </li>
 
-            <li className="primary_menu_3 mo-li">
+            <li className="primary_menu_3 pc-li mo-li">
               <Link to="/" className="depth1">
                 하이라이트
               </Link>
             </li>
-            <li className="primary_menu_pro_1 mo-li">
+            <li className="primary_menu_pro_1 pc-li mo-li">
               <Link to="/" className="depth1_pro">
                 <span className="box">Business</span>
                 <span className="pro-mo-arrow"></span>
               </Link>
             </li>
-            <li className="primary_menu_4 mo-li">
+            <li className="primary_menu_4 pc-li mo-li">
               <Link to="/" className="depth1 magok">
                 마곡 컨벤션센터
               </Link>
