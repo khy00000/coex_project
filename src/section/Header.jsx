@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+import useIsMobile from "../components/useIsMobile";
 
 const Header = () => {
   // 헤더 우측 서치 영역 액티브
@@ -22,16 +23,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onscroll);
   }, [lastscroll]);
 
-  // 모바일에서만, 리사이징에서도 반응하도록
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // 반응형 훅 (모바일에서만, 리사이징에서도 반응하도록)
+  const isMobile = useIsMobile();
 
   // 모바일 메뉴 1뎁스
   const [isMenu, setIsMenu] = useState(false);

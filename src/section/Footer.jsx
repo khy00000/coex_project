@@ -261,8 +261,11 @@ const Footer = () => {
                 안녕하세요 🤚
                 <br />
                 <br />
-                안내를 도와드릴 코엑스 챗봇입니다. 지금은 자동안내 가능
-                시간입니다.
+                안내를 도와드릴 코엑스 챗봇입니다.
+                <br />
+                <br />
+                궁금하신 점을 입력하시거나 아래 버튼을
+                <br />눌러주세요!
               </div>
               <div className="chatbutton_list">
                 {chatbotData.map((data, i) => (

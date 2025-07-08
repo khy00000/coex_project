@@ -41,7 +41,7 @@
       font-size: 1.125rem;
       font-weight: 500;
       line-height: 1.6em;
-      font-family: var(--mainfont-Poppins);
+      font-family: var(--font-en);
       z-index: 999;
 
       &::before {
@@ -129,7 +129,7 @@
           .evnet_list_item_category {
             font-size: 1rem;
             font-weight: 500;
-            font-family: var(--mainfont-Poppins);
+            font-family: var(--font-en);
             line-height: 1.4em;
             margin-bottom: 0.6875rem;
             padding-left: 0.875rem;
@@ -172,7 +172,7 @@
           .event_list_item_date {
             font-size: 1.25rem;
             font-weight: 500;
-            font-family: var(--mainfont-Poppins);
+            font-family: var(--font-en);
             line-height: 1.2em;
           }
         }

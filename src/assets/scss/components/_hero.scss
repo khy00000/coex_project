@@ -24,8 +24,7 @@
           font-size: 1.688rem;
           line-height: 1.4em;
           font-weight: 600;
-          font-family: "Poppins", "Pretendard", Helvetica, "Apple SD Gothic Neo",
-            sans-serif;
+          font-family: var(--font-en);
           color: var(--pink);
           margin-bottom: 0.625rem;
         }
@@ -64,8 +63,7 @@
             font-size: 1.625rem;
             line-height: 1.4em;
             font-weight: 500;
-            font-family: "Poppins", "Pretendard", Helvetica,
-              "Apple SD Gothic Neo", sans-serif;
+            font-family: var(--font-en);
           }
 
           .here_title_info_location {

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import guideData from "../data/guideData";
-
+import useIsMobile from "./useIsMobile";
 import FadeInGSAP from "../components/FadeInGSAP";
 
 const Guide = () => {
+  // const isMobile = useIsMobile();
+
   return (
     <div className="guide">
       <FadeInGSAP delay={0.3}>
@@ -14,6 +16,9 @@ const Guide = () => {
             전시 및 회의실
             <br />
             임대 정보
+          </span>
+          <span className="mo-guide_left_title_text">
+            전시 및 회의실 임대 정보
           </span>
         </div>
       </FadeInGSAP>

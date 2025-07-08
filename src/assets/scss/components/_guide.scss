@@ -38,6 +38,10 @@
       bottom: 2.5rem;
       right: 2.5rem;
     }
+
+    .mo-guide_left_title_text{
+      display: none;
+    }
   }
 
   .guide_right {
@@ -54,7 +58,7 @@
       font-size: 1.625rem;
       line-height: 1.2em;
       font-weight: 500;
-      font-family: var(--mainfont-Poppins);
+      font-family: var(--font-en);
     }
 
     .guide_right_list {
