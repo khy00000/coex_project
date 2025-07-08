@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import eventlistData from "../data/eventlistData";
-
+import useIsMobile from "./useIsMobile";
 import FadeInGSAP from "../components/FadeInGSAP";
 
 const Event = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="event">
       <div className="event_title_wrap">
@@ -26,24 +28,24 @@ const Event = () => {
               className={`
                 event_list_item
                 ${index === 0 ? "first_item" : ""}
-                ${index > 5 ? "bottom_item" : ""}
-                ${[2, 6].includes(index) ? "item_3_7" : ""}
                 ${item.ad ? "has-ad" : ""}
+                ${!isMobile && index > 5 ? "bottom_item" : ""}
+                ${!isMobile && [2, 6].includes(index) ? "item_3_7" : ""}
+                ${isMobile && [1, 4, 7].includes(index) ? "item_3_7" : ""}
+                ${isMobile && index > 6 ? "bottom_item" : ""}
               `.trim()}
               key={item.id}
             >
               {/* 이벤트 아이템 */}
               <Link to={item.link} className={`event_list_item_link`}>
-                <div className="item_padding">
-                  <div
-                    className="evnet_list_item_category"
-                    data-category={item.category}
-                  >
-                    {item.category}
-                  </div>
-                  <div className="event_list_item_title">{item.title}</div>
-                  <div className="event_list_item_date">{item.date}</div>
+                <div
+                  className="evnet_list_item_category"
+                  data-category={item.category}
+                >
+                  {item.category}
                 </div>
+                <div className="event_list_item_title">{item.title}</div>
+                <div className="event_list_item_date">{item.date}</div>
               </Link>
 
               {/* 호버 아이템 */}

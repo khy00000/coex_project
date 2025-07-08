@@ -492,7 +492,7 @@
                 .guide_right_text {
                   font-size: 1.1rem;
 
-                  &::after{
+                  &::after {
                     content: none;
                     display: none;
                   }
@@ -524,6 +524,74 @@
               &:hover .guide_right_text {
                 padding-right: unset;
               }
+            }
+          }
+        }
+      }
+    }
+
+    .event {
+      padding: 0 2rem;
+      height: 59.17rem;
+
+      .event_title_wrap {
+        width: 17.24rem;
+        height: 11.845rem;
+
+        .event_title {
+          font-size: 2.6rem;
+        }
+
+        .event_title_num {
+          font-size: 1.5rem;
+        }
+
+        .event_cal_text {
+          width: 10.6rem;
+          padding-left: 2rem;
+          font-size: 1rem;
+          white-space: nowrap;
+
+          &::before {
+            width: 1.5375rem;
+            height: 1.2875rem;
+            background-size: 1.5375rem 1.2875rem;
+          }
+        }
+      }
+
+      .event_table {
+        padding: 0 2rem;
+
+        .event_table_wrap {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 25%);
+
+          .event_list_item {
+            .event_list_item_link {
+              padding: 1.8rem 0.8rem;
+
+              .evnet_list_item_category {
+                font-size: 0.75rem;
+              }
+
+              .event_list_item_title {
+                margin-bottom: 4.25rem;
+                font-size: 1.25rem;
+              }
+
+              .event_list_item_date {
+                font-size: 0.875rem;
+              }
+            }
+
+            .event_list_item_hover {
+              display: none;
+            }
+
+            .ad_box {
+              background-size: unset;
+              background-position: top center;
             }
           }
         }
