@@ -598,4 +598,120 @@
       }
     }
   }
+
+  .main_ticket {
+    .main_ticket_wrap {
+      padding: 8rem 0;
+
+      .ticket_title_wrap {
+        width: 100% !important;
+        padding: 0 2rem;
+
+        h3 {
+          margin-bottom: 2rem;
+
+          .ticket_title {
+            font-size: 2.6rem;
+          }
+
+          .ticket_title_num {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .ticket_con {
+        .ticket_navi {
+          width: 100vw;
+          height: 3.75rem;
+          padding-right: 2rem;
+
+          .ticket_navi_wrap {
+            width: unset;
+            height: unset;
+            gap: 0.8125rem;
+
+            .ticket_prev,
+            .ticket_next {
+              width: 3.5rem;
+              height: 2.5rem;
+              background-size: 3.5rem 2.5rem;
+            }
+          }
+        }
+
+        .ticket_swiper {
+          .ticket_con_wrap {
+            width: unset;
+
+            .ticket_wrapper {
+              width: unset;
+
+              .ticket_center_wrap {
+                .ticket_center {
+                  // width: 71.4375rem;
+                  width: 877px;
+                  height: unset;
+                  padding: 1.375rem 1.625rem;
+
+                  .center_img {
+                    width: calc(100% - 69.21%);
+                    height: unset;
+                  }
+
+                  .center_right {
+                    width: 69.21%;
+                    height: 18.8rem;
+                    padding-left: 1.25rem;
+
+                    .center_right_title {
+                      font-size: 1.5rem;
+                    }
+
+                    .center_right_list {
+                      .list_info {
+                        .list_info_Dday {
+                          font-size: 1.5rem;
+                        }
+
+                        .list_info_day {
+                          font-size: 1.125rem;
+                        }
+                      }
+                    }
+
+                    .center_right_link {
+                      left: 18.77rem;
+
+                      .link_wrap1 {
+                        .center_link {
+                          padding: 0.875rem 1.5rem;
+                          font-size: 0.875rem;
+                        }
+                      }
+
+                      .link_wrap2 {
+                        .center_booklink {
+                          padding: 0.875rem 1.5rem;
+                          font-size: 0.875rem;
+                        }
+                      }
+                    }
+
+                    .ticket_bc {
+                      bottom: 1.375rem;
+                      right: 1.625rem;
+                      width: 6.875rem;
+                      height: 1.3rem;
+                      background-size: 6.875rem 1.3rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
