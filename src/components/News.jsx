@@ -12,6 +12,21 @@ function News() {
   //활성화된 탭 콘텐츠
   const activeTab = mainnewsdata.find((news) => news.tabid === activeTabId);
 
+  // 날짜 최신순으로 정렬 및 날짜 가공
+  const sortedContents = activeTab?.contents
+    ?.slice()
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .map((item) => {
+      const date = new Date(item.date);
+      return {
+        ...item,
+        datemonth: `${date.getFullYear()}.${String(
+          date.getMonth() + 1
+        ).padStart(2, "0")}`,
+        dateday: date.getDate(),
+      };
+    });
+
   return (
     <div className="news">
       {/* 뉴스 타이틀 */}
@@ -59,7 +74,7 @@ function News() {
         {/* 탭메뉴 리스트 영역 */}
         <div className="news_con_list">
           <ul className="news_area">
-            {activeTab?.contents?.map((contentsItem) => (
+            {sortedContents?.map((contentsItem) => (
               <FadeInGSAP delay={0.8} key={contentsItem.contentsid}>
                 <li className="news_item">
                   <Link to={contentsItem.link} className="news_item_link">
