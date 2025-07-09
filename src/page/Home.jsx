@@ -7,14 +7,29 @@ import Ticket from "../components/Ticket";
 import News from "../components/News";
 import Mediawall from "../components/Mediawall";
 
+import useIsMobile from "../components/useIsMobile";
+
 const Home = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div>
-      <div className="center-wrap">
-        <Hero />
-        <Guide />
-        <Event />
-      </div>
+      {isMobile ? (
+        <>
+          <Hero />
+          
+          <div className="center-wrap">
+            <Guide />
+            <Event />
+          </div>
+        </>
+      ) : (
+        <div className="center-wrap">
+          <Hero />
+          <Guide />
+          <Event />
+        </div>
+      )}
 
       <Ticket />
 
