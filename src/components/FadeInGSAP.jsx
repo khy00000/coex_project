@@ -1,40 +1,46 @@
 import { useRef, useEffect, isValidElement, cloneElement } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useIsMobile from "./useIsMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FadeInGSAP = ({ children, delay = 0 }) => {
   const sectionRef = useRef();
+  // 1025 이상에서만 작동
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const el = sectionRef.current;
 
-    gsap.fromTo(
-      el,
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        delay,
-        duration: 0.3,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 100%",
-          toggleActions: "play none none none",
+    if (!isMobile) {
+      gsap.fromTo(
+        el,
+        {
+          opacity: 0,
+          y: 50,
         },
-      }
-    );
+        {
+          opacity: 1,
+          y: 0,
+          delay,
+          duration: 0.3,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 100%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
 
+    // 클린업 함수
     return () => {
       gsap.killTweensOf(el);
     };
-  }, [delay]);
+  }, [delay, isMobile]);
 
-  // 자식이 단일 엘리먼트일 때만 작동하도록
+  // 자식이 유효한 엘리먼트인지 확인, ref 프롭스 자식에게 전달
   if (isValidElement(children)) {
     return cloneElement(children, { ref: sectionRef });
   }

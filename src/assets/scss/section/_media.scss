@@ -34,7 +34,7 @@
   }
 }
 
-@include respond-min("1025") {
+@include respond-min("laptop-l") {
   .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
     display: block;
   }
@@ -638,12 +638,12 @@
                     font-size: 2.25rem;
                   }
 
-                  .news_item_datemonth{
+                  .news_item_datemonth {
                     margin-top: unset;
                   }
                 }
 
-                .news_item_title{
+                .news_item_title {
                   font-size: 1.25rem;
                 }
               }
@@ -766,6 +766,52 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .mediawall {
+    padding: 7rem 2rem 12rem 2rem;
+    height: unset;
+
+    .mediawall_wrap {
+      width: unset;
+
+      .mediawall_left {
+        height: unset;
+
+        .mediawall_title_wrap {
+          .mediawall_title {
+            font-size: 3.2rem;
+          }
+        }
+
+        .mediameta {
+          height: unset;
+          gap: 2rem;
+
+          .mediameta_item {
+            height: unset;
+
+            .mediameta_item_list {
+              margin-top: 0.8rem;
+
+              .mediameta_item_list_link {
+                font-size: 1.2rem;
+              }
+            }
+          }
+
+          .mediawall_sub{
+            .mediawall_sub_text{
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+
+      .mediawall_right{
+
       }
     }
   }
