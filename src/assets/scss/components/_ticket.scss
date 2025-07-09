@@ -24,36 +24,27 @@
     position: relative;
     z-index: 2;
 
-    .ticket_title_wrap {
-      width: 1374px;
-      margin: 0 auto;
+    // 티켓 타이틀
+    h3 {
+      position: relative;
+      display: inline-block;
+      color: white;
+      margin-bottom: 5rem;
 
-      @include respond-min("desktop") {
-        width: 1720px;
+      .ticket_title {
+        font-size: 3.125rem;
+        font-weight: bold;
+        line-height: 1.2em;
+        padding-right: 2.5625rem;
       }
 
-      // 티켓 타이틀
-      h3 {
-        position: relative;
-        display: inline-block;
-        color: white;
-        margin-bottom: 5rem;
-
-        .ticket_title {
-          font-size: 3.125rem;
-          font-weight: bold;
-          line-height: 1.2em;
-          padding-right: 2.5625rem;
-        }
-
-        .ticket_title_num {
-          position: absolute;
-          display: block;
-          top: -0.25rem;
-          right: 0;
-          font-size: 1.875rem;
-          line-height: 1.2em;
-        }
+      .ticket_title_num {
+        position: absolute;
+        display: block;
+        top: -0.25rem;
+        right: 0;
+        font-size: 1.875rem;
+        line-height: 1.2em;
       }
     }
 

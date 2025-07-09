@@ -10,7 +10,7 @@ import Mediawall from "../components/Mediawall";
 const Home = () => {
   return (
     <div>
-      <div className="main_wrap">
+      <div className="center-wrap">
         <Hero />
         <Guide />
         <Event />
@@ -18,7 +18,7 @@ const Home = () => {
 
       <Ticket />
 
-      <div className="main_wrap">
+      <div className="center-wrap">
         <News />
       </div>
 

@@ -1,5 +1,10 @@
 @use "../setting/index" as *;
 
+.center-wrap {
+  width: 93.5vw;
+  margin: 0 auto;
+}
+
 #header {
   width: 100%;
   height: 66px;
@@ -11,10 +16,8 @@
   right: 0;
   z-index: 999999;
 
-  .header_wrap {
-    width: 1374px;
+  .center-wrap {
     height: 100%;
-    margin: 0 auto;
     position: relative;
   }
 }
@@ -22,21 +25,13 @@
 #main {
   width: 100%;
   height: auto;
-
-  .main_wrap {
-    width: 1374px;
-    margin: 0 auto;
-  }
 }
 
 #footer {
   width: 100%;
   position: relative;
-}
 
-// 전체 fadein 효과
-.fadein_gsap {
-  opacity: 0;
-  transform: translateY(50px);
-  will-change: opacity, transform;
+  .center-wrap {
+    padding-top: 8.125rem;
+  }
 }

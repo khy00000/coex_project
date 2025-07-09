@@ -21,12 +21,8 @@
 // }
 
 @include respond-min("desktop") {
-  .header_wrap {
-    width: 1720px;
-  }
-
-  .main_wrap {
-    width: 1720px;
+  .center-wrap {
+    width: 89.6vw;
   }
 
   .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
@@ -802,17 +798,18 @@
             }
           }
 
-          .mediawall_sub{
-            .mediawall_sub_text{
+          .mediawall_sub {
+            .mediawall_sub_text {
               font-size: 2rem;
             }
           }
         }
       }
-
-      .mediawall_right{
-
-      }
     }
+  }
+
+  .footer_wrap {
+    width: 100%;
+    padding: 8.125rem 2rem 0 2rem;
   }
 }

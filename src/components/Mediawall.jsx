@@ -32,7 +32,7 @@ function Mediawall() {
     <div className="mediawall">
       <div className="media_back"></div>
 
-      <div className="mediawall_wrap">
+      <div className="center-wrap">
         <div className="mediawall_left">
           <FadeInGSAP delay={0.9}>
             <h3 className="mediawall_title_wrap">

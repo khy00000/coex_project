@@ -57,7 +57,7 @@ const Footer = () => {
 
   return (
     <footer id="footer" role="contentinfo">
-      <div className="footer_wrap">
+      <div className="center-wrap">
         <div className="footer">
           <div className="footermain">
             <div className="footermaininfo">

@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <header id="header" className={`header ${hidden ? "hide" : ""}`}>
-      <div className="header_wrap">
+      <div className="center-wrap">
         {/* 모바일 버튼 */}
         <button
           className={`mo_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
