@@ -382,31 +382,21 @@
           }
         }
 
-        .hero_slide_right {
+        .hero-wrap {
           order: 1;
           width: calc(100% - 5rem);
-          aspect-ratio: 1 / 1;
-          height: unset;
           margin-bottom: 2rem;
 
-          .hero_slide_r_box {
-            .hero_slide_img {
-              width: 100%;
-              height: 100%;
+          .hero_slide_rightnull {
+            .hero_slide_rightnull_text {
+              top: 0rem;
+              right: 0.9rem;
+            }
+
+            .hero_slide_barcode {
+              right: 0;
             }
           }
-        }
-      }
-
-      .hero_slide_rightnull {
-        right: -27.9rem;
-        top: 27.8rem;
-        height: 3.25rem;
-        width: 59rem;
-
-        .hero_slide_rightnull_text {
-          padding-top: 0.4rem;
-          padding-right: 2rem;
         }
       }
     }
@@ -798,7 +788,7 @@
 
     .footermain {
       width: 50%;
-      
+
       .tel {
         font-size: 1rem;
         padding: 0.875rem 1rem;

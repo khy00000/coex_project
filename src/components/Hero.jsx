@@ -95,37 +95,39 @@ const Hero = () => {
             ></Link>
           </div>
 
-          <div className="hero_slide_right">
-            {/* 이미지 슬라이드 */}
-            <Swiper
-              modules={[Controller, Pagination]}
-              onSwiper={setImgSwiper}
-              pagination={{
-                el: ".swiper-pagination",
-                clickable: true,
-              }}
-              loop={true}
-            >
-              {heroitem.map((item) => (
-                <SwiperSlide key={item.heroid}>
-                  <Link to={item.link} className="hero_slide_r_box">
-                    <img
-                      className="hero_slide_img"
-                      src={item.img}
-                      alt={`슬라이드 이미지 ${item.id}`}
-                    />
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+          <div className="hero-wrap">
+            <div className="hero_slide_right">
+              {/* 이미지 슬라이드 */}
+              <Swiper
+                modules={[Controller, Pagination]}
+                onSwiper={setImgSwiper}
+                pagination={{
+                  el: ".swiper-pagination",
+                  clickable: true,
+                }}
+                loop={true}
+              >
+                {heroitem.map((item) => (
+                  <SwiperSlide key={item.heroid}>
+                    <Link to={item.link} className="hero_slide_r_box">
+                      <img
+                        className="hero_slide_img"
+                        src={item.img}
+                        alt={`슬라이드 이미지 ${item.id}`}
+                      />
+                    </Link>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
 
-        {/* 오른쪽 여백 바코드 영역 */}
-        <div className="hero_slide_rightnull">
-          <span className="hero_slide_barcode"></span>
-          <div className="hero_slide_rightnull_text">
-            {heroitem[currentIndex].category}
+            {/* 오른쪽 여백 바코드 영역 */}
+            <div className="hero_slide_rightnull">
+              <div className="hero_slide_rightnull_text">
+                {heroitem[currentIndex].category}
+              </div>
+              <span className="hero_slide_barcode"></span>
+            </div>
           </div>
         </div>
       </div>

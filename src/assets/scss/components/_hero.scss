@@ -88,51 +88,56 @@
         }
       }
 
-      //히어로 이미지 영역
-      .hero_slide_right {
+      .hero-wrap {
         width: 35rem;
-        height: 35rem;
         position: relative;
+        background-color: aqua;
 
-        //이미지 링크
-        .hero_slide_r_box {
-          display: block;
+        //히어로 이미지 영역
+        .hero_slide_right {
+          position: relative;
 
-          //히어로 슬라이드 이미지
-          .hero_slide_img {
-            width: 35rem;
-            height: 35rem;
+          //이미지 링크
+          .hero_slide_r_box {
+            display: block;
+
+            //히어로 슬라이드 이미지
+            .hero_slide_img {
+              width: 100%;
+            }
           }
         }
-      }
-    }
 
-    //hero 오른쪽 여백 바코드 영역
-    .hero_slide_rightnull {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      top: 15.6rem;
-      right: -22rem;
-      width: 35rem;
-      height: 3.75rem;
-      transform: rotate(-90deg);
-      // 박스 기준점 (왼쪽 아래 중심)
-      // transform-origin: left bottom;
+        .hero_slide_rightnull {
+          position: absolute;
+          top: 0;
+          right: -5rem;
+          height: 100%;
+          width: 5rem;
 
-      .hero_slide_barcode {
-        display: block;
-        background-image: url(../../img/bg/hero_slide_barcode.png);
-        width: 11.625rem;
-        height: 3.25rem;
-        background-repeat: no-repeat;
-        background-size: 11.625rem 3.25rem;
-      }
+          .hero_slide_rightnull_text {
+            white-space: nowrap;
+            font-size: 1.625rem;
+            line-height: 1.2em;
+            font-weight: 500;
+            transform: rotate(-90deg);
+            transform-origin: right bottom;
+            position: absolute;
+            top: -2rem;
+            right: 0;
+          }
 
-      .hero_slide_rightnull_text {
-        font-size: 1.625rem;
-        line-height: 1.2em;
-        font-weight: 500;
+          .hero_slide_barcode {
+            display: block;
+            background-image: url(../../img/bg/hero_slide_barcode.svg);
+            width: 3.25rem;
+            height: 11.625rem;
+            background-size: 3.25rem 11.625rem;
+            position: absolute;
+            bottom: 0;
+            right: 2rem;
+          }
+        }
       }
     }
   }
