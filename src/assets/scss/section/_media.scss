@@ -875,4 +875,165 @@
       }
     }
   }
+
+  .event {
+    .event_title_wrap {
+      h3 {
+        .event_title {
+          font-size: 2.6rem;
+        }
+
+        .event_title_num {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .main_ticket {
+    .main_ticket_wrap {
+      padding: 8rem 0;
+
+      h3 {
+        .ticket_title {
+          font-size: 2.6rem;
+        }
+
+        .ticket_title_num {
+          font-size: 1.5rem;
+        }
+      }
+
+      .ticket_con {
+        .ticket_swiper {
+          .ticket_con_wrap {
+            .ticket_wrapper {
+              justify-content: center;
+              .ticket_left {
+                width: 1.4rem;
+
+                .left_bg {
+                  height: 44.98rem;
+
+                  &::before {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-size: 1.4rem 1.4rem;
+                    top: -1.4rem;
+                  }
+
+                  &::after {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-size: 1.4rem 1.4rem;
+                    bottom: -1.4rem;
+                  }
+                }
+              }
+
+              .ticket_center_wrap {
+                .ticket_center {
+                  width: 100%;
+                  height: 47.584375rem;
+                  flex-direction: column;
+                  padding: 2.375rem 1rem 2.375rem;
+
+                  .center_img {
+                    width: 24.064rem;
+                    height: 24.064rem;
+                  }
+
+                  .center_right {
+                    width: 100%;
+                    padding: 1.5rem 0 2rem 0;
+                    height: 18.1875rem;
+
+                    .center_right_title {
+                      padding-top: unset;
+                    }
+
+                    .center_right_list {
+                      gap: 1.75rem;
+
+                      .list_info {
+                        width: auto;
+                        margin-top: 1.5rem;
+
+                        .list_info_title {
+                          margin-bottom: 0.3rem;
+                        }
+
+                        .list_info_Dday {
+                          font-size: 1rem;
+                          font-weight: 600;
+                        }
+
+                        .list_info_day {
+                          font-size: 1rem;
+                        }
+
+                        &:nth-child(2) {
+                          width: 6.13rem;
+                        }
+                      }
+                    }
+
+                    .center_right_link {
+                      bottom: 5rem;
+                      left: 1rem;
+
+                      .link_wrap1 {
+                        .center_link {
+                          font-size: 0.9375rem;
+                          padding: 0.875rem 1.5rem;
+                        }
+                      }
+
+                      .link_wrap2 {
+                        .center_booklink {
+                          font-size: 0.9375rem;
+                          padding: 0.875rem 1.5rem;
+                        }
+                      }
+                    }
+
+                    .ticket_bc {
+                      bottom: 3rem;
+                      right: 1rem;
+                      width: 4rem;
+                      height: 0.7rem;
+                      background-size: 4rem 0.7rem;
+                    }
+                  }
+                }
+              }
+
+              .ticket_right {
+                width: 1.4rem;
+
+                .right_bg {
+                  height: 44.98rem;
+                  border-right: 2px dashed #b1b1b1;
+
+                  &::before {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-size: 1.4rem 1.4rem;
+                    top: -1.4rem;
+                  }
+
+                  &::after {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background-size: 1.4rem 1.4rem;
+                    bottom: -1.4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

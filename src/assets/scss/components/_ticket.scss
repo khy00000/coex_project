@@ -2,7 +2,6 @@
 
 .main_ticket {
   width: 100%;
-  height: 784.82px;
   background-image: url(../../img/bg/ticket_bg.jpg);
   position: relative;
 
@@ -102,6 +101,7 @@
             height: 100%;
             display: flex;
             align-items: center;
+            justify-content: center;
 
             .ticket_left {
               width: 2.7rem;
@@ -109,10 +109,11 @@
               display: flex;
               flex-direction: column;
               justify-content: center;
+              align-items: flex-end;
 
               .left_bg {
                 width: 100%;
-                height: 273.63px;
+                height: 274px;
                 background-color: white;
                 position: relative;
                 display: block;
@@ -144,16 +145,14 @@
 
             // 티켓 센터
             .ticket_center {
-              width: 1060px;
-              height: 356.82px;
               background-color: white;
               padding: 1.375rem 1.375rem;
               display: flex;
               position: relative;
 
               .center_img {
-                width: 312.82px;
-                height: 312.82px;
+                width: 313px;
+                height: 313px;
                 position: relative;
                 overflow: hidden;
 
@@ -169,8 +168,8 @@
 
               // 티켓 정보
               .center_right {
-                width: 703.17px;
-                height: 312.82px;
+                width: 703px;
+                height: 313px;
                 padding-left: 2.875rem;
 
                 .center_right_title {
@@ -322,10 +321,11 @@
               display: flex;
               flex-direction: column;
               justify-content: center;
+              align-items: flex-start;
 
               .right_bg {
                 width: 100%;
-                height: 273.63px;
+                height: 274px;
                 background-color: white;
                 position: relative;
                 display: block;
