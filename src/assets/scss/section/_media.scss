@@ -1,17 +1,4 @@
 @use "../setting/mixin" as *;
-
-// // 초대형 화면용 (1471px 이상)
-// @include respond-min("desktop") {
-// }
-
-// // 1024px 이하
-// @include respond-max("laptop") {
-// }
-
-// // 768px 이하
-// @include respond-max("tablet") {
-// }
-
 // // 430px 이하
 // @include respond-max("mobile-l") {
 // }
@@ -20,6 +7,7 @@
 // @include respond-max("mobile-m") {
 // }
 
+// 1471 이상
 @include respond-min("desktop") {
   .center-wrap {
     width: 89.6vw;
@@ -30,12 +18,14 @@
   }
 }
 
+// 최소 1025
 @include respond-min("laptop-l") {
   .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
     display: block;
   }
 }
 
+// 1024 이하
 @include respond-max("laptop") {
   .center-wrap {
     width: 100%;
@@ -481,10 +471,14 @@
               }
             }
 
+            &:nth-child(1) .guide_right_icon {
+              width: 2.438rem;
+              height: 3.313rem;
+            }
+
             &:nth-child(2) .guide_right_icon {
               width: 2.125rem;
               height: 3.125rem;
-              background-size: 2.125rem 3.125rem;
               margin-bottom: 1.55rem;
               margin-left: -0.2rem;
             }
@@ -492,14 +486,12 @@
             &:nth-child(3) .guide_right_icon {
               width: 3.25rem;
               height: 3.5625rem;
-              background-size: 3.25rem 3.5625rem;
               margin-bottom: 1rem;
             }
 
             &:nth-child(4) .guide_right_icon {
               width: 3.413rem;
               height: 3.038rem;
-              background-size: 3.413rem 3.038rem;
               margin-bottom: 1.55rem;
             }
 
@@ -830,5 +822,57 @@
 
   .top_button.footerFix {
     top: 4rem;
+  }
+}
+
+// 768 이하
+@include respond-max("tablet") {
+  .guide {
+    .guide_right {
+      .guide_right_list {
+        .guide_right_list_wrap {
+          .guide_right_item {
+            height: 5rem;
+
+            .guide_right_item_link {
+              display: flex;
+              flex-direction: column;
+              align-items: unset;
+              justify-content: unset;
+
+              .guide_right_icon {
+                margin-bottom: unset;
+              }
+
+              .guide_right_text {
+                text-align: right;
+              }
+            }
+
+            &:nth-child(1) .guide_right_icon {
+              width: 2.438rem;
+              height: 3.313rem;
+            }
+
+            &:nth-child(2) .guide_right_icon {
+              width: 2.125rem;
+              height: 3.313rem;
+              top: -0.1rem;
+              left: -0.2rem;
+            }
+
+            &:nth-child(3) .guide_right_icon {
+              width: 3.25rem;
+              height: 3.313rem;
+            }
+
+            &:nth-child(4) .guide_right_icon {
+              width: 3.413rem;
+              height: 3.313rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

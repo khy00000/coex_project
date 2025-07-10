@@ -71,12 +71,12 @@
 
         .guide_right_item {
           width: 25%;
+          border-bottom: solid 1px #000;
 
           .guide_right_item_link {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            border-bottom: solid 1px #000;
             padding-bottom: 0.438rem;
 
             .guide_right_icon {
@@ -91,6 +91,7 @@
               font-weight: 500;
               position: relative;
               transition: 0.3s;
+              white-space: nowrap;
 
               &::after {
                 content: "";
