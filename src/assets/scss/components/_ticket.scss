@@ -92,19 +92,18 @@
         height: 100%;
 
         .ticket_con_wrap {
-          width: 1144px;
+          width: 1149px;
           height: 100%;
-          display: flex;
 
           .ticket_wrapper {
-            width: 1144px;
+            width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
 
             .ticket_left {
-              width: 2.7rem;
+              width: 43px;
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -121,11 +120,11 @@
                 &::before {
                   content: "";
                   background-image: url(../../img/bg/ticket_left_top.png);
-                  background-size: 2.7rem 2.7rem;
-                  width: 2.7rem;
-                  height: 2.7rem;
+                  background-size: 43px 43px;
+                  width: 43px;
+                  height: 43px;
                   position: absolute;
-                  top: -2.6rem;
+                  top: -43px;
                   left: 0;
                   z-index: 1;
                 }
@@ -133,11 +132,11 @@
                 &::after {
                   content: "";
                   background-image: url(../../img/bg/ticket_left_bottom.png);
-                  background-size: 2.7rem 2.7rem;
-                  width: 2.7rem;
-                  height: 2.7rem;
+                  background-size: 43px 43px;
+                  width: 43px;
+                  height: 43px;
                   position: absolute;
-                  bottom: -2.6rem;
+                  bottom: -43px;
                   left: 0;
                 }
               }
@@ -316,7 +315,7 @@
             }
 
             .ticket_right {
-              width: 2.8rem;
+              width: 46px;
               height: 100%;
               display: flex;
               flex-direction: column;
@@ -334,22 +333,22 @@
                 &::before {
                   content: "";
                   background-image: url(../../img/bg/ticket_right_top.png);
-                  background-size: 2.7rem 2.7rem;
-                  width: 2.7rem;
-                  height: 2.7rem;
+                  background-size: 43px 43px;
+                  width: 43px;
+                  height: 43px;
                   position: absolute;
-                  top: -2.6rem;
+                  top: -43px;
                   right: 0;
                 }
 
                 &::after {
                   content: "";
                   background-image: url(../../img/bg/ticket_right_bottom.png);
-                  background-size: 2.7rem 2.7rem;
-                  width: 2.7rem;
-                  height: 2.7rem;
+                  background-size: 43px 43px;
+                  width: 43px;
+                  height: 43px;
                   position: absolute;
-                  bottom: -2.6rem;
+                  bottom: -43px;
                   right: 0;
                 }
               }

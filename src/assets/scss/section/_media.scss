@@ -665,7 +665,6 @@
             width: unset;
 
             .ticket_wrapper {
-              width: unset;
 
               .ticket_center_wrap {
                 .ticket_center {
@@ -908,25 +907,26 @@
         .ticket_swiper {
           .ticket_con_wrap {
             .ticket_wrapper {
-              justify-content: center;
+
               .ticket_left {
-                width: 1.4rem;
+                width: 22px;
+                margin-right: -1px;
 
                 .left_bg {
                   height: 44.98rem;
 
                   &::before {
-                    width: 1.4rem;
-                    height: 1.4rem;
-                    background-size: 1.4rem 1.4rem;
-                    top: -1.4rem;
+                    width: 22px;
+                    height: 22px;
+                    background-size: 22px 22px;
+                    top: -22px;
                   }
 
                   &::after {
-                    width: 1.4rem;
-                    height: 1.4rem;
-                    background-size: 1.4rem 1.4rem;
-                    bottom: -1.4rem;
+                    width: 22px;
+                    height: 22px;
+                    background-size: 22px 22px;
+                    bottom: -22px;
                   }
                 }
               }
@@ -1009,24 +1009,25 @@
               }
 
               .ticket_right {
-                width: 1.4rem;
+                width: 24px;
+                margin-left: -1px;
 
                 .right_bg {
                   height: 44.98rem;
                   border-right: 2px dashed #b1b1b1;
 
                   &::before {
-                    width: 1.4rem;
-                    height: 1.4rem;
-                    background-size: 1.4rem 1.4rem;
-                    top: -1.4rem;
+                    width: 22px;
+                    height: 22px;
+                    background-size: 22px 22px;
+                    top: -22px;
                   }
 
                   &::after {
-                    width: 1.4rem;
-                    height: 1.4rem;
-                    background-size: 1.4rem 1.4rem;
-                    bottom: -1.4rem;
+                    width: 22px;
+                    height: 22px;
+                    background-size: 22px 22px;
+                    bottom: -22px;
                   }
                 }
               }
