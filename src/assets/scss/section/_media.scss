@@ -665,7 +665,6 @@
             width: unset;
 
             .ticket_wrapper {
-
               .ticket_center_wrap {
                 .ticket_center {
                   // width: 71.4375rem;
@@ -907,7 +906,6 @@
         .ticket_swiper {
           .ticket_con_wrap {
             .ticket_wrapper {
-
               .ticket_left {
                 width: 22px;
                 margin-right: -1px;
@@ -1037,4 +1035,25 @@
       }
     }
   }
+
+  .footer {
+    .footernav {
+      .footernavlist {
+        .footernavlist_item {
+          padding-bottom: 7.65rem;
+        }
+      }
+    }
+
+    .footerlink {
+      .footerlinksns {
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+
+// 747 이하
+@include respond-max("tablet-s") {
+
 }
