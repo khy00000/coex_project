@@ -825,6 +825,11 @@
 
 // 768 이하
 @include respond-max("tablet") {
+  .primary_menu .primary_menu_box .primary_menu_2 .depth2_menu.active {
+    height: 96px;
+    white-space: wrap;
+  }
+
   .guide {
     .guide_right {
       .guide_right_list {
@@ -1055,5 +1060,110 @@
 
 // 747 이하
 @include respond-max("tablet-s") {
+  #header {
+    height: 3.9rem;
 
+    .logo_header {
+      .logo_header_link {
+        width: 5.4rem;
+        height: 1.9125rem;
+        background-size: 5.4rem 1.9125rem;
+      }
+    }
+
+    .primary_menu {
+      top: 3.9rem;
+    }
+
+    .header_promotion_wrap {
+      right: 4.8rem;
+
+      .header_lang {
+        .header_lang_box {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .current {
+      display: none;
+    }
+  }
+
+  .hero {
+    padding-top: 3.9rem;
+
+    .hero_slide_box {
+      .hero_slide {
+        .hero_slide_left {
+          padding-left: 1.5rem;
+          height: 176.05px;
+
+          .hero_sub_title {
+            font-size: 1.1rem;
+          }
+
+          .hero_title_wrap {
+            .hero_title {
+              .hero_title_slide {
+                font-size: 2rem;
+              }
+            }
+          }
+
+          .here_title_info {
+            left: 1.5rem;
+            
+            .here_title_info_date {
+              font-size: 0.875rem;
+            }
+
+            .here_title_info_location {
+              font-size: 0.875rem;
+            }
+          }
+
+          .here_title_arrow {
+            width: 8rem;
+            height: 5rem;
+            background-size: 8rem 5rem;
+          }
+        }
+
+        .hero-wrap {
+          width: calc(100% - 2.5rem);
+          margin-bottom: 1.5rem;
+
+          .hero_slide_right {
+            .hero_slide_r_box {
+              .hero_slide_img {
+                width: 707px;
+                height: 664.58px;
+              }
+            }
+          }
+          .hero_slide_rightnull {
+            width: 2.5rem;
+            right: -2.5rem;
+
+            .hero_slide_rightnull_text {
+              font-size: 1.2rem;
+              top: -0.7rem;
+              right: 0.4rem;
+            }
+
+            .hero_slide_barcode {
+              width: 1.62rem;
+              height: 5.812rem;
+              background-size: 1.62rem 5.812rem;
+            }
+          }
+        }
+      }
+    }
+
+    .custom-pagination-wrapper{
+      height: 3rem;
+    }
+  }
 }
