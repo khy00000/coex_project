@@ -1395,4 +1395,74 @@
       }
     }
   }
+
+  .main_ticket {
+    .main_ticket_wrap {
+      padding: 4rem 0;
+
+      h3 {
+        padding-left: 2rem;
+        margin-bottom: 0.85rem;
+
+        .ticket_title {
+          font-size: 2.2rem;
+        }
+
+        .ticket_title_num {
+          font-size: 1.25rem;
+          right: 1rem;
+        }
+      }
+
+      .ticket_con {
+        .ticket_navi {
+          height: 3.7rem;
+
+          .ticket_navi_wrap {
+            .ticket_prev {
+              width: 2.8rem;
+              height: 1.8rem;
+              background-size: 2.8rem 1.8rem;
+            }
+
+            .ticket_next {
+              width: 2.8rem;
+              height: 1.8rem;
+              background-size: 2.8rem 1.8rem;
+            }
+          }
+        }
+
+        .ticket_swiper {
+          .ticket_con_wrap {
+            .ticket_wrapper {
+              .ticket_center_wrap {
+                .ticket_center {
+                  height: 46.73rem;
+
+                  .center_img {
+                    width: 23.4rem;
+                    height: 23.4rem;
+                  }
+                }
+              }
+
+              .ticket_left {
+                .left_bg {
+                  height: 43.76rem;
+                }
+              }
+
+              .ticket_right {
+                .right_bg {
+                  height: 43.76rem;
+                  border-right: 1px dashed #b1b1b1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
