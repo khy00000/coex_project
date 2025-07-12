@@ -26,8 +26,8 @@ const Ticket = () => {
       b.classList.remove("swiper-pagination-bullet-active")
     );
 
-    // realIndex를 데이터 길이 나눈 나머지 기준으로
-    const bulletIndex = swiper.realIndex % 2; // bookingitem.length가 2인 경우
+    // realIndex를 무조건 0 or 1
+    const bulletIndex = swiper.realIndex % 2;
     if (bullets[bulletIndex]) {
       bullets[bulletIndex].classList.add("swiper-pagination-bullet-active");
     }
