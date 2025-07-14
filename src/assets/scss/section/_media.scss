@@ -1053,6 +1053,11 @@
       }
     }
   }
+
+  .top_button {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 }
 
 // 747 이하
@@ -1555,7 +1560,6 @@
       display: block;
 
       .mediawall_left {
-
         .mediawall_title_wrap {
           .mediawall_title {
             font-size: 2.4rem;
@@ -1588,6 +1592,146 @@
       .mediawall_right {
         width: 100%;
         padding-top: 2rem;
+      }
+    }
+  }
+
+  #footer {
+    .center-wrap {
+      padding: 4.5rem 2rem 0 2rem;
+
+      .footer {
+        position: relative;
+        padding-bottom: 14.4rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-top: solid 1px #000;
+        }
+
+        .footermain {
+          width: 100%;
+          border-right: unset;
+          padding: 2.25rem 0;
+
+          &::before {
+            right: 0;
+          }
+
+          &::after {
+            content: none;
+          }
+
+          .tel {
+            font-size: 1rem;
+            padding: 0.875rem 1.5rem;
+            margin-top: 1rem;
+            text-align: left;
+          }
+        }
+
+        .footernav {
+          width: 100%;
+
+          .footernavlist {
+            .footernavlist_item {
+              padding-bottom: 14.98rem;
+
+              .footernav_link {
+                font-size: 1.2rem;
+                left: 0.875rem;
+              }
+
+              &:nth-child(1)::before {
+                left: 0rem;
+              }
+
+              &:nth-child(2)::before {
+                right: 0rem;
+              }
+
+              &:nth-child(1)::after,
+              &:nth-child(3)::after {
+                left: 0rem;
+              }
+
+              &:nth-child(2)::after,
+              &:nth-child(4)::after {
+                right: 0rem;
+              }
+            }
+          }
+        }
+
+        .footerlink {
+          width: 50%;
+          padding: 1.625rem 0.875rem 1rem;
+          position: static;
+
+          &::after {
+            content: none;
+          }
+
+          .footerlinklist {
+            .footerlinklist_item {
+              .footerlink_link {
+                font-size: 1rem;
+              }
+            }
+          }
+
+          .footerlinksns {
+            position: absolute;
+            left: 0;
+            right: 0;
+            font-size: 0;
+            justify-content: center;
+            align-items: center;
+            bottom: 2.45rem;
+          }
+        }
+
+        .footeinfo {
+          width: 50%;
+          padding: 1.625rem 0.875rem 1rem;
+          position: static;
+
+          &::after {
+            content: none;
+          }
+
+          .footerinfo_list {
+            .footerinfo_item {
+              &:last-child .footerinfo_link {
+                margin-bottom: 0;
+              }
+
+              .footerinfo_link {
+                font-size: 1rem;
+              }
+            }
+          }
+
+          .family_site {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 7.5rem;
+          }
+        }
+      }
+
+      .copyright {
+        font-size: 0.875rem;
+      }
+
+      .top_button.footerFix {
+        top: 1rem;
+        right: 1rem;
       }
     }
   }
