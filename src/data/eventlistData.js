@@ -44,7 +44,7 @@ const eventlistData = [
     hero: true,
     category: "POP-UP/EVENT",
     sub: "What’s On",
-    title: "코엑스 하트 프로젝트 (WITH LOVE, WE BLOOM)",
+    title: "코엑스 하트 프로젝트 (WITH LOVE)",
     date: "2025.05.02-2025.05.31",
     location: "코엑스 동문 로비",
     link: "#",
