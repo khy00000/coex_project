@@ -1,7 +1,4 @@
 @use "../setting/mixin" as *;
-// // 430px 이하
-// @include respond-max("mobile-l") {
-// }
 
 // // 393px 이하
 // @include respond-max("mobile-m") {
@@ -300,25 +297,8 @@
   }
 
   .search_bar {
-    &::after {
-      left: 14.45rem;
-    }
-
-    .search_bar_keyword {
-      width: 59.9vw;
-      right: 5.4rem;
-    }
-
-    .search_bar_button {
-      right: 5.8rem;
-    }
-
-    .keyword_area {
-      width: 784.63px;
-      height: 109.21px;
-      top: 3.8rem;
-      right: 1.4rem;
-    }
+    width: calc(-14.8rem + 93.5vw);
+    right: 5.4rem;
   }
 
   .hero {
@@ -830,6 +810,10 @@
     white-space: wrap;
   }
 
+  .search_bar {
+    width: calc(-14.8rem + 91.5vw);
+  }
+
   .guide {
     .guide_right {
       .guide_right_list {
@@ -1095,6 +1079,10 @@
     .current {
       display: none;
     }
+
+    .search_bar .keyword_area {
+      right: -5rem;
+    }
   }
 
   .hero {
@@ -1141,14 +1129,6 @@
           width: calc(100% - 2.5rem);
           margin-bottom: 1.5rem;
 
-          .hero_slide_right {
-            .hero_slide_r_box {
-              .hero_slide_img {
-                width: 707px;
-                height: 664.58px;
-              }
-            }
-          }
           .hero_slide_rightnull {
             width: 2.5rem;
             right: -2.5rem;
@@ -1735,4 +1715,15 @@
       }
     }
   }
+}
+
+// 580 이하
+@include respond-max("mobile-xl") {
+  .search_bar {
+    width: calc(-6.8rem + 88.5vw);
+  }
+}
+
+// // 419px 이하
+@include respond-max("mobile-l") {
 }

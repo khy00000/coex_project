@@ -175,7 +175,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="header_lang">
+          <div className={`header_lang ${isMobile && active ? "hide" : ""}`}>
             <ul className="header_lang_box">
               <li className="kor current">
                 <Link to="/">KOR</Link>
