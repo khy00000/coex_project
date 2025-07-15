@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import guideData from "../data/guideData";
-import useIsMobile from "./useIsMobile";
 import FadeInGSAP from "../components/FadeInGSAP";
 
 const Guide = () => {
-  // const isMobile = useIsMobile();
 
   return (
     <div className="guide">

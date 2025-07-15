@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { footersns, footerinfo, familysite } from "../data/footerData";
 import chatbotLogo from "../assets/img/logo/chatbot_logo.png";
 import { chatbotData } from "../data/chatbotData";
-import useIsMobile from "../components/useIsMobile";
+import useResponsive from "../components/useResponsive";
 
 const Footer = () => {
   // 패밀리 사이트 오픈
@@ -20,7 +20,7 @@ const Footer = () => {
   const [cbClose, setCbclose] = useState(false);
 
   // 반응형
-  const isMobile = useIsMobile();
+  const { isTablet, isMobile } = useResponsive();
 
   // 탑버튼 visible & 고정
   useEffect(() => {
@@ -30,7 +30,8 @@ const Footer = () => {
       const bodyHeight = document.body.offsetHeight;
 
       // 푸터 높이보다 조금 작게 설정
-      const scrollFooter = isMobile ? 900 : 400;
+      const scrollFooter =
+      isMobile ? 1300 : isTablet ? 900 : 400;
       const isNeerFooter =
         scrollTop + windowHeight >= bodyHeight - scrollFooter;
 
@@ -42,7 +43,7 @@ const Footer = () => {
 
     window.addEventListener("scroll", handlescroll);
     return () => window.removeEventListener("scroll", handlescroll);
-  }, [isMobile]);
+  }, [isMobile, isTablet]);
 
   // 탑버튼 클릭 이벤트
   const scrollToTop = () => {

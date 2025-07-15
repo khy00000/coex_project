@@ -1,7 +1,7 @@
 :root {
-  --font-main: 'Pretendard', sans-serif;
-  --font-en: 'Poppins', sans-serif;
-  --font-kr: 'Noto Sans KR', sans-serif;
+  --font-main: "Pretendard", sans-serif;
+  --font-en: "Poppins", sans-serif;
+  --font-kr: "Noto Sans KR", sans-serif;
 
   --black: #000;
   --white: #fff;
@@ -9,12 +9,14 @@
 }
 
 $breakpoints: (
-  'mobile-m': 370px,
-  'mobile-l': 419px,
-  'mobile-xl': 580px,
-  'tablet-s': 747px,
-  'tablet': 768px,
-  'laptop': 1024px,
-  'laptop-l': 1025px,
-  'desktop': 1471px
+  "mobile-s": 370px,
+  "mobile-m": 419px,
+  "mobile-l": 457px,
+  "mobile-xl": 580px,
+  "tablet-s": 747px,
+  "tablet": 768px,
+  "tablet-l": 799px,
+  "laptop": 1024px,
+  "laptop-l": 1025px,
+  "desktop": 1471px,
 );

@@ -8,11 +8,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import useIsMobile from "./useIsMobile";
+import useResponsive from "./useResponsive";
 import FadeInGSAP from "../components/FadeInGSAP";
 
 const Event = () => {
-  const isMobile = useIsMobile();
+  const {isDesktop, isTablet, isMobile} = useResponsive();
 
   return (
     <div className="event">
@@ -37,6 +37,7 @@ const Event = () => {
               clickable: true,
             }}
             loop={true}
+            autoHeight={true}
             slidesPerView="auto"
             className="mo-event_table"
           >
@@ -80,10 +81,10 @@ const Event = () => {
                 event_list_item
                 ${index === 0 ? "first_item" : ""}
                 ${item.ad ? "has-ad" : ""}
-                ${!isMobile && index > 5 ? "bottom_item" : ""}
-                ${!isMobile && [2, 6].includes(index) ? "item_3_7" : ""}
-                ${isMobile && [1, 4, 7].includes(index) ? "item_3_7" : ""}
-                ${isMobile && index > 6 ? "bottom_item" : ""}
+                ${isDesktop && index > 5 ? "bottom_item" : ""}
+                ${isDesktop && [2, 6].includes(index) ? "item_3_7" : ""}
+                ${isTablet && [1, 4, 7].includes(index) ? "item_3_7" : ""}
+                ${isTablet && index > 6 ? "bottom_item" : ""}
               `.trim()}
                 key={item.id}
               >

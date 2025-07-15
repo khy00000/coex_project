@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
-import useIsMobile from "../components/useIsMobile";
+import useResponsive from "../components/useResponsive";
 
 const Header = () => {
   // 헤더 우측 서치 영역 액티브
@@ -23,8 +23,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", onscroll);
   }, [lastscroll]);
 
-  // 반응형 훅 (모바일에서만, 리사이징에서도 반응하도록)
-  const isMobile = useIsMobile();
+  // 반응형 훅
+  const {isTablet, isDesktop} = useResponsive();
 
   // 모바일 메뉴 1뎁스
   const [isMenu, setIsMenu] = useState(false);
@@ -36,7 +36,7 @@ const Header = () => {
   const modepth1Ref = useRef(null);
 
   useEffect(() => {
-    if (!isMobile) return;
+    if (isDesktop) return;
 
     const items = modepth1Ref.current?.querySelectorAll(".mo-li");
 
@@ -50,16 +50,16 @@ const Header = () => {
         { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out" }
       );
     }
-  }, [isMenu, isMobile]);
+  }, [isMenu, isDesktop]);
 
   return (
     <header id="header" className={`header ${hidden ? "hide" : ""}`}>
       <div className="center-wrap">
         {/* 모바일 버튼 */}
         <button
-          className={`mo_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
+          className={`mo_menu ${isTablet && isMenu ? "momenuopen" : ""}`}
           onClick={(e) => {
-            if (!isMobile) return;
+            if (isDesktop) return;
             e.preventDefault();
             e.stopPropagation();
             setIsMenu((prev) => !prev);
@@ -70,9 +70,9 @@ const Header = () => {
           <span className="mo_menu_item"></span>
         </button>
         <button
-          className={`mo_menu_close ${isMobile && isMenu ? "momenuopen" : ""}`}
+          className={`mo_menu_close ${isTablet && isMenu ? "momenuopen" : ""}`}
           onClick={(e) => {
-            if (!isMobile) return;
+            if (isDesktop) return;
             e.preventDefault();
             e.stopPropagation();
             setIsMenu((prev) => !prev);
@@ -80,7 +80,7 @@ const Header = () => {
         ></button>
 
         {/* header logo */}
-        <h1 className={`logo_header ${isMobile && active ? "hide" : ""}`}>
+        <h1 className={`logo_header ${isTablet && active ? "hide" : ""}`}>
           <a href="/" className="logo_header_link" aria-label="Home"></a>
           <span className="logo_header_text blind">
             <span>코엑스</span>
@@ -90,7 +90,7 @@ const Header = () => {
         {/* primary menu */}
         <nav
           id="top_navi"
-          className={`primary_menu ${isMobile && isMenu ? "momenuopen" : ""}`}
+          className={`primary_menu ${isTablet && isMenu ? "momenuopen" : ""}`}
           aria-label="주요 메뉴"
         >
           <ul className="primary_menu_box" ref={modepth1Ref}>
@@ -104,7 +104,7 @@ const Header = () => {
             <li
               className="primary_menu_2 pc-li mo-li"
               onClick={(e) => {
-                if (!isMobile) return;
+                if (isDesktop) return;
                 e.preventDefault();
                 e.stopPropagation();
                 setIsOpen((prev) => !prev);
@@ -114,12 +114,12 @@ const Header = () => {
                 가이드
                 <span
                   className={`has-children ${
-                    isMobile && isOpen ? "rotate" : ""
+                    isTablet && isOpen ? "rotate" : ""
                   }`}
                 ></span>
               </Link>
               <ul
-                className={`depth2_menu ${isMobile && isOpen ? "active" : ""}`}
+                className={`depth2_menu ${isTablet && isOpen ? "active" : ""}`}
               >
                 <li className="primary_menu_4 menu">
                   <Link to="/">오시는 길</Link>
@@ -175,7 +175,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className={`header_lang ${isMobile && active ? "hide" : ""}`}>
+          <div className={`header_lang ${isTablet && active ? "hide" : ""}`}>
             <ul className="header_lang_box">
               <li className="kor current">
                 <Link to="/">KOR</Link>

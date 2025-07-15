@@ -7,14 +7,14 @@ import Ticket from "../components/Ticket";
 import News from "../components/News";
 import Mediawall from "../components/Mediawall";
 
-import useIsMobile from "../components/useIsMobile";
+import useResponsive from "../components/useResponsive";
 
 const Home = () => {
-  const isMobile = useIsMobile();
+  const {isTablet} = useResponsive();
 
   return (
     <div>
-      {isMobile ? (
+      {isTablet ? (
         <>
           <Hero />
           
