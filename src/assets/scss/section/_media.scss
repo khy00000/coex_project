@@ -1,9 +1,5 @@
 @use "../setting/mixin" as *;
 
-// // 393px 이하
-// @include respond-max("mobile-m") {
-// }
-
 // 1471 이상
 @include respond-min("desktop") {
   .center-wrap {
@@ -15,7 +11,7 @@
   }
 }
 
-// 최소 1025
+// 1025 이상
 @include respond-min("laptop-l") {
   .primary_menu .primary_menu_box .primary_menu_2:hover .depth2_menu {
     display: block;
@@ -1868,3 +1864,7 @@
     }
   }
 }
+
+// // 393px 이하
+// @include respond-max("mobile-m") {
+// }
