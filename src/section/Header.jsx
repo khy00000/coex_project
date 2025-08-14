@@ -22,7 +22,7 @@ const Header = () => {
   useEffect(() => {
     const onscroll = () => {
       const currentscroll = window.scrollY;
-      if (Math.abs(currentscroll - lastscroll) > 30) {
+      if (Math.abs(currentscroll - lastscroll) > 80) {
         setHidden(currentscroll > lastscroll);
         setLastcroll(currentscroll);
       }
