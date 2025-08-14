@@ -22,14 +22,18 @@ const Header = () => {
   useEffect(() => {
     const onscroll = () => {
       const currentscroll = window.scrollY;
-      if (Math.abs(currentscroll - lastscroll) > 80) {
-        setHidden(currentscroll > lastscroll);
-        setLastcroll(currentscroll);
-      }
+
+      // 최상단에서는 항상 보이도록
       if (currentscroll <= 0) {
         setHidden(false);
         setLastcroll(0);
         return;
+      }
+
+      // 80px 이상 움직였을 때 숨김 처리
+      if (Math.abs(currentscroll - lastscroll) > 80) {
+        setHidden(currentscroll > lastscroll);
+        setLastcroll(currentscroll);
       }
     };
     window.addEventListener("scroll", onscroll);
