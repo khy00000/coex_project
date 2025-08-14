@@ -26,6 +26,11 @@ const Header = () => {
         setHidden(currentscroll > lastscroll);
         setLastcroll(currentscroll);
       }
+      if (currentscroll <= 0) {
+        setHidden(false);
+        setLastcroll(0);
+        return;
+      }
     };
     window.addEventListener("scroll", onscroll);
     return () => window.removeEventListener("scroll", onscroll);
@@ -66,7 +71,9 @@ const Header = () => {
           <span className="mo_menu_item"></span>
         </button>
         <button
-          className={`mo_menu_close ${!isDesktop && isMenu ? "momenuopen" : ""}`}
+          className={`mo_menu_close ${
+            !isDesktop && isMenu ? "momenuopen" : ""
+          }`}
           onClick={(e) => {
             if (isDesktop) return;
             e.preventDefault();
@@ -115,7 +122,9 @@ const Header = () => {
                 ></span>
               </Link>
               <ul
-                className={`depth2_menu ${!isDesktop && isOpen ? "active" : ""}`}
+                className={`depth2_menu ${
+                  !isDesktop && isOpen ? "active" : ""
+                }`}
               >
                 <li className="primary_menu_4 menu">
                   <Link to="/">오시는 길</Link>
