@@ -12,6 +12,10 @@ const useResponsive = () => {
 
   const [status, setStatus] = useState(getStatus());
 
+  // useEffect(() => {
+  //   console.log("현재 뷰포트 상태:", status);
+  // }, [status]);
+
   useEffect(() => {
     const handleResize = () => {
       setStatus(getStatus());
