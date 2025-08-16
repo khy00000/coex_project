@@ -18,7 +18,7 @@ const eventlistData = [
     ad: true,
     category: "EXHIBITION",
     sub: "What’s On",
-    title: "2025 더 메종",
+    title: "2025 더 메종옹",
     date: "2025.05.08-2025.05.11",
     location: "A홀",
     link: "#",
