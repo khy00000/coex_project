@@ -273,11 +273,13 @@ const Footer = () => {
                 <br />눌러주세요!
               </div>
               <div className="chatbutton_list">
-                {chatbotData.map((data, i) => (
-                  <button key={i} className="chatinfo_item">
-                    <span className="chatinfo_txt">{data}</span>
+                  <button className="chatinfo_item">
+                    <span className="chatinfo_txt">행사일정 안내 📆</span>
+                    <span className="chatinfo_txt">주차 안내 🚗</span>
+                    <span className="chatinfo_txt">교통편 안내 🚈</span>
+                    <span className="chatinfo_txt">편의시설 안내 🛍️</span>
+                    <span className="chatinfo_txt">문의사항 남기기 📨</span>
                   </button>
-                ))}
               </div>
             </div>
           </div>

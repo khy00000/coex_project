@@ -1,16 +1,4 @@
-import eventlist0 from "../assets/img/bg/eventlist0.jpg";
-import eventlist1 from "../assets/img/bg/eventlist1.jpg";
-import eventlist2 from "../assets/img/bg/eventlist2.png";
-import eventlist3 from "../assets/img/bg/eventlist3.png";
-import eventlist4 from "../assets/img/bg/eventlist4.jpg";
-import eventlist5 from "../assets/img/bg/eventlist5.png";
-import eventlist6 from "../assets/img/bg/eventlist6.jpg";
-import eventlist7 from "../assets/img/bg/eventlist7.jpg";
-import eventlist8 from "../assets/img/bg/eventlist8.jpg";
-import eventlist9 from "../assets/img/bg/eventlist9.png";
-import eventlist10 from "../assets/img/bg/eventlist10.jpg";
-
-const eventlistData = [
+export const eventlistData = [
   {
     id: 0,
     heroid: 0,
@@ -22,7 +10,7 @@ const eventlistData = [
     date: "2025.05.08-2025.05.11",
     location: "A홀",
     link: "#",
-    img: eventlist0,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist0.jpg",
   },
   {
     id: 1,
@@ -36,7 +24,7 @@ const eventlistData = [
     location: "HALL D",
     link: "#",
     bookinglink: "#",
-    img: eventlist1,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist1.jpg",
   },
   {
     id: 2,
@@ -48,7 +36,7 @@ const eventlistData = [
     date: "2025.05.02-2025.05.31",
     location: "코엑스 동문 로비",
     link: "#",
-    img: eventlist2,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist2.png",
   },
   {
     id: 3,
@@ -60,7 +48,7 @@ const eventlistData = [
     date: "2025.05.01-2025.05.04",
     location: "HALL A",
     link: "#",
-    img: eventlist3,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist3.png",
   },
   {
     id: 4,
@@ -71,7 +59,7 @@ const eventlistData = [
     date: "2025.05.07-2025.05.09",
     location: "HALL C",
     link: "#",
-    img: eventlist4,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist4.jpg",
   },
   {
     id: 5,
@@ -82,7 +70,7 @@ const eventlistData = [
     date: "2025.05.08-2025.05.10",
     location: "HALL B",
     link: "#",
-    img: eventlist5,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist5.png",
   },
   {
     id: 6,
@@ -93,7 +81,7 @@ const eventlistData = [
     date: "2025.05.10-2025.05.11",
     location: "3F 컨퍼런스룸(남) 317호 - 318호",
     link: "#",
-    img: eventlist6,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist6.jpg",
   },
   {
     id: 7,
@@ -104,7 +92,7 @@ const eventlistData = [
     date: "2025.05.11-2025.05.11",
     location: "Hall C",
     link: "#",
-    img: eventlist7,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist7.jpg",
   },
   {
     id: 8,
@@ -115,7 +103,7 @@ const eventlistData = [
     date: "2025.05.14-2025.05.16",
     location: "Hall C",
     link: "#",
-    img: eventlist8,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist8.jpg",
   },
   {
     id: 9,
@@ -126,7 +114,7 @@ const eventlistData = [
     date: "2025.05.14-2025.05.16",
     location: "Hall A",
     link: "#",
-    img: eventlist9,
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist9.png",
   },
   {
     id: 10,
@@ -139,8 +127,6 @@ const eventlistData = [
     location: "HALL A",
     link: "#",
     bookinglink: "#",
-    img: eventlist10
-  }
+    img: "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist10.jpg",
+  },
 ];
-
-export default eventlistData;

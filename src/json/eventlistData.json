@@ -1,0 +1,132 @@
+[
+  {
+    "id": 0,
+    "heroid": 0,
+    "hero": true,
+    "ad": true,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 더 메종",
+    "date": "2025.05.08-2025.05.11",
+    "location": "A홀",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist0.jpg"
+  },
+  {
+    "id": 1,
+    "heroid": 1,
+    "hero": true,
+    "booking": true,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 올댓트래블",
+    "date": "2025.05.08-2025.05.10",
+    "location": "HALL D",
+    "link": "#",
+    "bookinglink": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist1.jpg"
+  },
+  {
+    "id": 2,
+    "heroid": 2,
+    "hero": true,
+    "category": "POP-UP/EVENT",
+    "sub": "What’s On",
+    "title": "코엑스 하트 프로젝트 (WITH LOVE)",
+    "date": "2025.05.02-2025.05.31",
+    "location": "코엑스 동문 로비",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist2.png"
+  },
+  {
+    "id": 3,
+    "heroid": 3,
+    "hero": true,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 코베 베이비페어 (상반기)",
+    "date": "2025.05.01-2025.05.04",
+    "location": "HALL A",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist3.png"
+  },
+  {
+    "id": 4,
+    "hero": false,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "바이오코리아 2025",
+    "date": "2025.05.07-2025.05.09",
+    "location": "HALL C",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist4.jpg"
+  },
+  {
+    "id": 5,
+    "hero": false,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 서울머니쇼",
+    "date": "2025.05.08-2025.05.10",
+    "location": "HALL B",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist5.png"
+  },
+  {
+    "id": 6,
+    "hero": false,
+    "category": "Convention",
+    "sub": "What’s On",
+    "title": "제378회 웨덱스 웨딩박람회",
+    "date": "2025.05.10-2025.05.11",
+    "location": "3F 컨퍼런스룸(남) 317호 - 318호",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist6.jpg"
+  },
+  {
+    "id": 7,
+    "hero": false,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 대한레이저피부모발학회 미용의료기기 박람회 및 춘계학술대회",
+    "date": "2025.05.11-2025.05.11",
+    "location": "Hall C",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist7.jpg"
+  },
+  {
+    "id": 8,
+    "hero": false,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "국제 전기전력 전시회 EPTK 2025",
+    "date": "2025.05.14-2025.05.16",
+    "location": "Hall C",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist8.jpg"
+  },
+  {
+    "id": 9,
+    "hero": false,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "2025 국제인공지능대전",
+    "date": "2025.05.14-2025.05.16",
+    "location": "Hall A",
+    "link": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist9.png"
+  },
+  {
+    "id": 10,
+    "hero": false,
+    "booking": true,
+    "category": "EXHIBITION",
+    "sub": "What’s On",
+    "title": "EV트렌드코리아 2025",
+    "date": "2025.06.03-2025.06.05",
+    "location": "HALL A",
+    "link": "#",
+    "bookinglink": "#",
+    "img": "https://raw.githubusercontent.com/khy00000/storage/refs/heads/main/coex/img/bg/eventlist10.jpg"
+  }
+]
