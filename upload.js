@@ -18,7 +18,7 @@ admin.initializeApp({
 const db = admin.firestore();
 
 // 업로드할 JSON 파일 목록
-const files = ["src/json/eventlistData.json", "src/json/mainnewsData.json"];
+const files = ["json/eventlistData.json", "json/mainnewsData.json"];
 
 // JSON 파일 Firestore 업로드 함수
 async function uploadJsonToFirestore(file) {
@@ -27,19 +27,40 @@ async function uploadJsonToFirestore(file) {
     const rawData = fs.readFileSync(filePath, "utf-8");
     const jsonData = JSON.parse(rawData);
 
-    const collectionName = path.basename(file, ".json"); // 파일명 -> 컬렉션 이름
+    const collectionName = path.basename(file, ".json"); // 파일명 -> 컬렉션 이름으로
 
     if (Array.isArray(jsonData)) {
       for (const doc of jsonData) {
-        // doc에 contentsid가 있으면 그것으로 문서 ID 사용, 없으면 자동 생성
-        const docRef = doc.contentsid
-          ? db.collection(collectionName).doc(String(doc.contentsid))
+        let docId = null;
+
+        const idKey = Object.keys(doc).find((key) => 
+          key.toLowerCase().includes("id")
+        );
+
+        if (idKey){
+          docId = String(doc[idKey]);
+        }
+
+        // 문서 ID docId 있으면 사용, 없으면 랜덤
+        const docRef = docId
+          ? db.collection(collectionName).doc(docId)
           : db.collection(collectionName).doc();
+
         await docRef.set(doc);
       }
       console.log(`${file} 배열 데이터 업로드 완료 (${jsonData.length}개 문서)`);
     } else if (typeof jsonData === "object") {
-      const docRef = db.collection(collectionName).doc("data");
+      // 단일 객체 JSON
+      const idKey = Object.keys(jsonData).find((key) =>
+        key.toLowerCase().includes("id")
+      );
+
+      const docId = idKey ? String(jsonData[idKey]) : undefined;
+
+      const docRef = docId
+        ? db.collection(collectionName).doc(docId)
+        : db.collection(collectionName).doc();
+
       await docRef.set(jsonData);
       console.log(`${file} 객체 데이터 업로드 완료`);
     } else {
