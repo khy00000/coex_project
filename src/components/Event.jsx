@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import eventlistData from "../data/eventlistData";
+import {eventlistData} from "../data/eventlistData.js";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";

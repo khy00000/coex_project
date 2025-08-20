@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import guideData from "../data/guideData";
-import FadeInGSAP from "../components/FadeInGSAP";
+import { guideData } from "../data/guideData.js";
+import FadeInGSAP from "../components/FadeInGSAP.jsx";
 
 const Guide = () => {
-
   return (
     <div className="guide">
       <FadeInGSAP delay={0.3}>

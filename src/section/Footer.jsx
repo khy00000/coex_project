@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { footersns, footerinfo, familysite } from "../data/footerData";
 import chatbotLogo from "../assets/img/logo/chatbot_logo.png";
-import { chatbotData } from "../data/chatbotData";
 import useResponsive from "../components/useResponsive";
 
 const Footer = () => {
