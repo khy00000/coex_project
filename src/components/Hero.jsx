@@ -9,13 +9,20 @@ import "swiper/css/pagination";
 import { useFirestoreCollection } from "./useFirestoreCollection";
 
 const Hero = () => {
-  // const heroitem = eventlistData.filter(
-  //   (item) => item.hero === true && item.heroid !== undefined
   // 파이어베이스 데이터 가져오기
   const { data: heroitem, loading } = useFirestoreCollection(
     "eventlistData",
     (item) => item.hero === true && item.heroid !== undefined
-  )
+  );
+
+  // const [logged, setLogged] = useState(false);
+
+  // useEffect(() => {
+  //   if (!logged && heroitem.length > 0) {
+  //     console.log("Firebase에서 받은 heroitem:", heroitem);
+  //     setLogged(true); // 한 번 찍고 플래그 true로 변경
+  //   }
+  // }, [heroitem, logged]);
 
   // herodata 현재 활성 index;
   const [currentIndex, setCurrentIndex] = useState(0);
