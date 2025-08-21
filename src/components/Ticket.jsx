@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { eventlistData } from "../data/eventlistData.js";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -9,10 +8,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import FadeInGSAP from "../components/FadeInGSAP";
+import { useFirestoreCollection } from "./useFirestoreCollection";
 
 const Ticket = () => {
   //부킹 데이터만 필터
-  const bookingitem = eventlistData.filter((item) => item.booking === true);
+  const { data: bookingitem, loading } = useFirestoreCollection(
+    "eventlistData",
+    (item) => item.booking !== undefined
+  );
 
   //부킹 티켓 임의 반복
   const refeatbooking = [...bookingitem, ...bookingitem];
@@ -33,6 +36,8 @@ const Ticket = () => {
     }
   };
 
+  if (loading) return <div>로딩중...</div>;
+  
   return (
     <div className="main_ticket">
       <div className="main_ticket_wrap">
