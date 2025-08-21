@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import mainnewsdata from "../data/mainnewsData";
-
 import FadeInGSAP from "../components/FadeInGSAP";
+import { useFirestoreCollection } from "./useFirestoreCollection";
 
 function News() {
-  // 공지사항 tabid : 0 기본값으로
+  const { data: mainnews, loading } = useFirestoreCollection(
+    "mainnewsData",
+    (news) => news.tabid !== undefined
+  );
+
+  // 활성 탭 상태
   const [activeTabId, setActiveTabId] = useState(0);
 
-  //활성화된 탭 콘텐츠
-  const activeTab = mainnewsdata.find((news) => news.tabid === activeTabId);
+  // 활성화된 탭 콘텐츠
+  const activeTab = mainnews.find((news) => news.tabid === activeTabId);
 
   // 날짜 최신순으로 정렬 및 날짜 가공
   const sortedContents = activeTab?.contents
@@ -26,6 +30,8 @@ function News() {
         dateday: date.getDate(),
       };
     });
+
+  if (loading) return <div>로딩중...</div>;
 
   return (
     <div className="news">
@@ -46,7 +52,7 @@ function News() {
         {/* 탭메뉴 타이틀 */}
         <div className="news_con_tap_wrap">
           <ul className="news_con_tap">
-            {mainnewsdata.map((news) => (
+            {mainnews.map((news) => (
               <li
                 key={news.tabid}
                 className={`news_con_tap_item ${

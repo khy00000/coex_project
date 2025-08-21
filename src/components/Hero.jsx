@@ -12,7 +12,7 @@ const Hero = () => {
   // 파이어베이스 데이터 가져오기
   const { data: heroitem, loading } = useFirestoreCollection(
     "eventlistData",
-    (item) => item.hero === true && item.heroid !== undefined
+    (item) => item.hero === true
   );
 
   // const [logged, setLogged] = useState(false);
