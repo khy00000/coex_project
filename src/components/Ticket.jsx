@@ -8,17 +8,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import FadeInGSAP from "../components/FadeInGSAP";
-import { useFirestoreCollection } from "./useFirestoreCollection";
 
-const Ticket = () => {
-  //부킹 데이터만 필터
-  const { data: bookingitem, loading } = useFirestoreCollection(
-    "eventlistData",
-    (item) => item.booking !== undefined
-  );
-
+const Ticket = ({data}) => {
   //부킹 티켓 임의 반복
-  const refeatbooking = [...bookingitem, ...bookingitem];
+  const refeatbooking = [...data, ...data];
 
   //불릿 두개
   const handleSlideChange = (swiper) => {
@@ -35,8 +28,6 @@ const Ticket = () => {
       bullets[bulletIndex].classList.add("swiper-pagination-bullet-active");
     }
   };
-
-  if (loading) return <div>로딩중...</div>;
   
   return (
     <div className="main_ticket">
@@ -45,7 +36,7 @@ const Ticket = () => {
           <div className="center-wrap">
             <h3>
               <span className="ticket_title">티켓 오픈</span>
-              <span className="ticket_title_num">{bookingitem.length}</span>
+              <span className="ticket_title_num">{data.length}</span>
             </h3>
           </div>
         </FadeInGSAP>

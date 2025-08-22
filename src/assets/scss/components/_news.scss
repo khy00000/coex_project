@@ -73,15 +73,6 @@
             cursor: pointer;
           }
 
-          .news_con_tap_item_link {
-            display: block;
-            color: #afafaf;
-            font-size: 1.5rem;
-            font-weight: bold;
-            line-height: 1.4em;
-          }
-
-          &.active .news_con_tap_item_link,
           &.active .news_con_tap_item_button{
             color: black;
           }

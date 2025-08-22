@@ -9,26 +9,9 @@ import "swiper/css/pagination";
 
 import useResponsive from "./useResponsive";
 import FadeInGSAP from "../components/FadeInGSAP";
-import { useFirestoreCollection } from "./useFirestoreCollection";
 
-const Event = () => {
+const Event = ({data}) => {
   const { isDesktop, isTablet, isMobile } = useResponsive();
-
-  const { data: eventitem, loading } = useFirestoreCollection(
-    "eventlistData",
-    (item) => item.id !== undefined
-  );
-
-  // const [logged, setLogged] = useState(false);
-
-  // useEffect(() => {
-  //   if (!logged && heroitem.length > 0) {
-  //     console.log("Firebase에서 받은 heroitem:", heroitem);
-  //     setLogged(true); // 한 번 찍고 플래그 true로 변경
-  //   }
-  // }, [heroitem, logged]);
-
-  if (loading) return <div>로딩중...</div>;
 
   return (
     <div className="event">
@@ -57,7 +40,7 @@ const Event = () => {
             slidesPerView="auto"
             className="mo-event_table"
           >
-            {eventitem.slice(0, 10).map((item, index) => (
+            {data.slice(0, 10).map((item, index) => (
               <SwiperSlide className="mo-event-item-wrap" key={item.id}>
                 {/* 이벤트 아이템 */}
                 <Link to={item.link} className="mo-event-item">
@@ -91,7 +74,7 @@ const Event = () => {
       ) : (
         <div className="event_table">
           <div className="event_table_wrap">
-            {eventitem.slice(0, 10).map((item, index) => (
+            {data.slice(0, 10).map((item, index) => (
               <div
                 className={`
                 event_list_item

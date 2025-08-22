@@ -8,33 +8,44 @@ import News from "../components/News";
 import Mediawall from "../components/Mediawall";
 
 import useResponsive from "../components/useResponsive";
+import { useFirestore } from "../components/useFirestore";
 
 const Home = () => {
-  const {isTablet} = useResponsive();
+  const { isTablet } = useResponsive();
+  const { data, loading } = useFirestore(["eventlistData", "mainnewsData"]);
+
+  if (loading || !data) {
+    return <div></div>;
+  }
+
+  const heroitem = data.eventlistData.filter((i) => i.hero);
+  const eventitem = data.eventlistData || [];
+  const bookingitem = data.eventlistData.filter((i) => i.booking);
+  const mainnews = data.mainnewsData || [];
 
   return (
     <div>
       {isTablet ? (
         <>
-          <Hero />
-          
+          <Hero data={heroitem} />
+
           <div className="center-wrap">
             <Guide />
-            <Event />
+            <Event data={eventitem} />
           </div>
         </>
       ) : (
         <div className="center-wrap">
-          <Hero />
+          <Hero data={heroitem} />
           <Guide />
-          <Event />
+          <Event data={eventitem} />
         </div>
       )}
 
-      <Ticket />
+      <Ticket data={bookingitem} />
 
       <div className="center-wrap">
-        <News />
+        <News data={mainnews} />
       </div>
 
       <Mediawall />

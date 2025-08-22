@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import FadeInGSAP from "../components/FadeInGSAP";
-import { useFirestoreCollection } from "./useFirestoreCollection";
 
-function News() {
-  const { data: mainnews, loading } = useFirestoreCollection(
-    "mainnewsData",
-    (news) => news.tabid !== undefined
-  );
-
+function News({data}) {
   // 활성 탭 상태
   const [activeTabId, setActiveTabId] = useState(0);
 
   // 활성화된 탭 콘텐츠
-  const activeTab = mainnews.find((news) => news.tabid === activeTabId);
+  const activeTab = data.find((news) => news.tabid === activeTabId);
 
   // 날짜 최신순으로 정렬 및 날짜 가공
   const sortedContents = activeTab?.contents
@@ -30,8 +24,6 @@ function News() {
         dateday: date.getDate(),
       };
     });
-
-  if (loading) return <div>로딩중...</div>;
 
   return (
     <div className="news">
@@ -52,26 +44,20 @@ function News() {
         {/* 탭메뉴 타이틀 */}
         <div className="news_con_tap_wrap">
           <ul className="news_con_tap">
-            {mainnews.map((news) => (
+            {data.map((news) => (
               <li
                 key={news.tabid}
                 className={`news_con_tap_item ${
                   news.tabid === activeTabId ? "active" : ""
                 }`}
               >
-                {news.contents ? (
-                  <button
-                    type="button"
-                    className="news_con_tap_item_button"
-                    onClick={() => setActiveTabId(news.tabid)}
-                  >
-                    {news.tabtitle}
-                  </button>
-                ) : (
-                  <Link to={news.link} className="news_con_tap_item_link">
-                    {news.tabtitle}
-                  </Link>
-                )}
+                <button
+                  type="button"
+                  className="news_con_tap_item_button"
+                  onClick={() => setActiveTabId(news.tabid)}
+                >
+                  {news.tabtitle}
+                </button>
               </li>
             ))}
           </ul>
@@ -79,10 +65,10 @@ function News() {
 
         {/* 탭메뉴 리스트 영역 */}
         <div className="news_con_list">
-          <ul className="news_area">
-            {sortedContents?.map((contentsItem) => (
-              <FadeInGSAP delay={0.8} key={contentsItem.contentsid}>
-                <li className="news_item">
+          <FadeInGSAP delay={0.8}>
+            <ul className="news_area">
+              {sortedContents?.map((contentsItem) => (
+                <li className="news_item" key={contentsItem.contentsid}>
                   <Link to={contentsItem.link} className="news_item_link">
                     <div className="news_item_date">
                       <span className="news_item_dateday">
@@ -95,9 +81,9 @@ function News() {
                     <div className="news_item_title">{contentsItem.title}</div>
                   </Link>
                 </li>
-              </FadeInGSAP>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </FadeInGSAP>
         </div>
       </div>
     </div>

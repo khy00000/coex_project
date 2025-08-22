@@ -6,24 +6,7 @@ import { Autoplay, Controller, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { useFirestoreCollection } from "./useFirestoreCollection";
-
-const Hero = () => {
-  // 파이어베이스 데이터 가져오기
-  const { data: heroitem, loading } = useFirestoreCollection(
-    "eventlistData",
-    (item) => item.hero === true
-  );
-
-  // const [logged, setLogged] = useState(false);
-
-  // useEffect(() => {
-  //   if (!logged && heroitem.length > 0) {
-  //     console.log("Firebase에서 받은 heroitem:", heroitem);
-  //     setLogged(true); // 한 번 찍고 플래그 true로 변경
-  //   }
-  // }, [heroitem, logged]);
-
+const Hero = ({data}) => {
   // herodata 현재 활성 index;
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,15 +39,12 @@ const Hero = () => {
     }
   }, [textSwiper, imgSwiper]);
 
-  // 파이어베이스 데이터 로딩중일시
-  if (loading) return <div>로딩중...</div>;
-
   return (
     <div className="hero">
       <div className="hero_slide_box">
         <div className="hero_slide">
           <div className="hero_slide_left">
-            <div className="hero_sub_title">{heroitem[currentIndex]?.sub}</div>
+            <div className="hero_sub_title">{data[currentIndex]?.sub}</div>
 
             {/* 텍스트 슬라이드 */}
             <Swiper
@@ -79,7 +59,7 @@ const Hero = () => {
               className="hero_title_wrap"
               ref={textWrapRef}
             >
-              {heroitem.map((item) => (
+              {data.map((item) => (
                 <SwiperSlide key={item.heroid} className="hero_title">
                   <Link
                     to={item.link}
@@ -95,14 +75,14 @@ const Hero = () => {
             {/* 스와이퍼 밖 데이터 */}
             <div className="here_title_info">
               <div className="here_title_info_date">
-                {heroitem[currentIndex]?.date}
+                {data[currentIndex]?.date}
               </div>
               <div className="here_title_info_location">
-                {heroitem[currentIndex]?.location}
+                {data[currentIndex]?.location}
               </div>
             </div>
             <Link
-              to={heroitem[currentIndex]?.link}
+              to={data[currentIndex]?.link}
               className="here_title_arrow"
               target="_blank"
             ></Link>
@@ -120,7 +100,7 @@ const Hero = () => {
                 }}
                 loop={true}
               >
-                {heroitem.map((item) => (
+                {data.map((item) => (
                   <SwiperSlide key={item.heroid}>
                     <Link to={item.link} className="hero_slide_r_box">
                       <img
@@ -137,7 +117,7 @@ const Hero = () => {
             {/* 오른쪽 여백 바코드 영역 */}
             <div className="hero_slide_rightnull">
               <div className="hero_slide_rightnull_text">
-                {heroitem[currentIndex]?.category}
+                {data[currentIndex]?.category}
               </div>
               <span className="hero_slide_barcode"></span>
             </div>
