@@ -96,7 +96,6 @@ const Event = () => {
                 className={`
                 event_list_item
                 ${index === 0 ? "first_item" : ""}
-                ${item.ad ? "has-ad" : ""}
                 ${isDesktop && index > 5 ? "bottom_item" : ""}
                 ${isDesktop && [2, 6].includes(index) ? "item_3_7" : ""}
                 ${isTablet && [1, 4, 7].includes(index) ? "item_3_7" : ""}
@@ -120,11 +119,6 @@ const Event = () => {
                 <Link to={item.link} className="event_list_item_hover">
                   <img src={item.img} alt={`이벤트 리스트이미지 ${item.id}`} />
                 </Link>
-
-                {/* 광고 아이템 */}
-                <div className="ad_box">
-                  <div className="ad">AD</div>
-                </div>
               </div>
             ))}
           </div>
