@@ -23,8 +23,6 @@ const Home = () => {
   const bookingitem = data.eventlistData.filter((i) => i.booking);
   const mainnews = data.mainnewsData || [];
 
-  console.log(eventitem)
-
   return (
     <div>
       {isTablet ? (

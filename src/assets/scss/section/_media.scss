@@ -1301,6 +1301,10 @@
           display: block;
           width: 100%;
 
+          .mo-event-img {
+            aspect-ratio: 1 / 1;
+          }
+
           .mo-event-data-wrap {
             padding: 1.25rem 2rem 2.5rem;
 

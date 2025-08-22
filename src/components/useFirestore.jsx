@@ -11,7 +11,10 @@ const useFirestore = (names) => {
       try {
         const results = await Promise.all(
           names.map(async (name) => {
-            const q = query(collection(db, name), orderBy("id", "asc"));
+            const q =
+              name === "mainnewsData"
+                ? query(collection(db, name), orderBy("tabid", "asc"))
+                : query(collection(db, name), orderBy("id", "asc"));
 
             const snapshot = await getDocs(q);
 
@@ -19,6 +22,7 @@ const useFirestore = (names) => {
               id: doc.id,
               ...doc.data(),
             }));
+
             return { [name]: docs };
           })
         );
