@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase.js";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 
-export const useFirestore = (names) => {
+const useFirestore = (names) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,10 @@ export const useFirestore = (names) => {
       try {
         const results = await Promise.all(
           names.map(async (name) => {
-            const snapshot = await getDocs(collection(db, name));
+            const q = query(collection(db, name), orderBy("id", "asc"));
+
+            const snapshot = await getDocs(q);
+
             const docs = snapshot.docs.map((doc) => ({
               id: doc.id,
               ...doc.data(),
@@ -29,3 +32,5 @@ export const useFirestore = (names) => {
 
   return { data, loading };
 };
+
+export default useFirestore;
