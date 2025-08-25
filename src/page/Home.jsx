@@ -8,15 +8,9 @@ import News from "../components/News";
 import Mediawall from "../components/Mediawall";
 
 import useResponsive from "../components/useResponsive";
-import useFirestore from "../components/useFirestore";
 
-const Home = () => {
+const Home = ({data}) => {
   const { isTablet } = useResponsive();
-  const { data, loading } = useFirestore(["eventlistData", "mainnewsData"]);
-
-  if (loading || !data) {
-    return <div></div>;
-  }
 
   const heroitem = data.eventlistData.filter((i) => i.hero);
   const eventitem = data.eventlistData || [];

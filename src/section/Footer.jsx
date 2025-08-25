@@ -29,8 +29,7 @@ const Footer = () => {
       const bodyHeight = document.body.offsetHeight;
 
       // 푸터 높이보다 조금 작게 설정
-      const scrollFooter =
-      isMobile ? 1300 : isTablet ? 900 : 400;
+      const scrollFooter = isMobile ? 1300 : isTablet ? 900 : 400;
       const isNeerFooter =
         scrollTop + windowHeight >= bodyHeight - scrollFooter;
 
@@ -269,16 +268,15 @@ const Footer = () => {
                 <br />
                 <br />
                 궁금하신 점을 입력하시거나 아래 버튼을
-                <br />눌러주세요!
+                <br />
+                눌러주세요!
               </div>
               <div className="chatbutton_list">
-                  <button className="chatinfo_item">
-                    <span className="chatinfo_txt">행사일정 안내 📆</span>
-                    <span className="chatinfo_txt">주차 안내 🚗</span>
-                    <span className="chatinfo_txt">교통편 안내 🚈</span>
-                    <span className="chatinfo_txt">편의시설 안내 🛍️</span>
-                    <span className="chatinfo_txt">문의사항 남기기 📨</span>
-                  </button>
+                <button className="chatinfo_item">행사일정 안내 📆</button>
+                <button className="chatinfo_item">주차 안내 🚗</button>
+                <button className="chatinfo_item">교통편 안내 🚈</button>
+                <button className="chatinfo_item">편의시설 안내 🛍️</button>
+                <button className="chatinfo_item">문의사항 남기기 📨</button>
               </div>
             </div>
           </div>
