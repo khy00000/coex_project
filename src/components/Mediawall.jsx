@@ -41,7 +41,7 @@ function Mediawall() {
           </FadeInGSAP>
 
           <div className="mediameta">
-            <FadeInGSAP delay={0.10}>
+            <FadeInGSAP delay={1}>
               <ul className="mediameta_item">
                 {mediametaItem.map((metaitem, m) => (
                   <li key={m} className="mediameta_item_list">
@@ -52,7 +52,7 @@ function Mediawall() {
             </FadeInGSAP>
 
             <div className="mediawall_sub">
-              <FadeInGSAP delay={0.11}>
+              <FadeInGSAP delay={1.1}>
                 <span className="mediawall_sub_text">
                   To Create The Best
                   <br />
