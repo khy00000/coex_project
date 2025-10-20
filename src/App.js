@@ -10,12 +10,13 @@ import Cursor from "./components/Cursor.jsx";
 
 import useFirestore from "./components/useFirestore.jsx";
 
-const App = () => {
-  const { data, loading, error } = useFirestore(["eventlistData", "mainnewsData"]);
+const COLLECTION_NAMES = ["eventlistData", "mainnewsData"];
 
-  if (error || loading || !data) {
-    return <div></div>;
-  }
+const App = () => {
+  const { data, loading, error } = useFirestore(COLLECTION_NAMES);
+
+  if (loading) return <div></div>;
+  if (error) return <div></div>;
 
   return (
     <BrowserRouter>
