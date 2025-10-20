@@ -11,9 +11,9 @@ import Cursor from "./components/Cursor.jsx";
 import useFirestore from "./components/useFirestore.jsx";
 
 const App = () => {
-  const { data, loading } = useFirestore(["eventlistData", "mainnewsData"]);
+  const { data, loading, error } = useFirestore(["eventlistData", "mainnewsData"]);
 
-  if (loading || !data) {
+  if (error || loading || !data) {
     return <div></div>;
   }
 
